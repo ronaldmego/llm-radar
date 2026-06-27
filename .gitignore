@@ -13,3 +13,5 @@ index.html
 # Env / local
 .env
 *.log
+
+**/*.quarto_ipynb
