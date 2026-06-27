@@ -1,1 +1,1110 @@
-<!doctype html><title>LLM Radar</title><p>Building…
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>LLM Radar</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-20fc9822bcdcf8da166f19444734e5bc.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-2e4daac90d0b4ba0c23d0a77811efccc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-20fc9822bcdcf8da166f19444734e5bc.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-650a54cdcca781d8800ee96a3445fcb1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-650a54cdcca781d8800ee96a3445fcb1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-650a54cdcca781d8800ee96a3445fcb1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-dashboard/quarto-dashboard.js"></script>
+<script src="site_libs/quarto-dashboard/stickythead.js"></script>
+
+
+
+<script src="site_libs/quarto-dashboard/web-components.js" type="module"></script>
+<script src="site_libs/quarto-dashboard/components.js"></script>
+
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+</head>
+
+<body class="quarto-dashboard dashboard-fill fullcontent quarto-light">
+
+<header id="quarto-dashboard-header">
+<nav class="navbar navbar-expand-md slim" data-bs-theme="dark">
+  <div class="navbar-container container-fluid">
+    <button class="navbar-toggler hidden" type="button" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-controls="dashboard-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>    
+
+
+    <div class="navbar-brand-container">
+
+
+      <div class="navbar-title">
+        <div class="navbar-title-text"><a href="#">LLM Radar</a></div>
+        
+        
+      </div>
+    </div>
+<div class="quarto-dashboard-links"><a class="quarto-dashboard-link" href="https://github.com/ronaldmego/llm-radar"><i class="bi bi-github"></i></a></div></div>
+</nav>
+</header>
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-layout-custom quarto-dashboard-content bslib-gap-spacing html-fill-container bslib-page-fill">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+<!-- main -->
+
+<div class="bslib-grid-item html-fill-item bslib-grid" data-layout="fill" style="display: grid; grid-template-rows: minmax(3em, 24fr) minmax(3em, 76fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card valuebox cell bslib-card html-fill-container bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #1f3a5f;">
+<div class="card-body html-fill-item html-fill-container">
+<div data-icon="boxes" class="html-fill-item html-fill-container value-box-grid">
+<div class="value-box-showcase html-fill-item html-fill-container">
+
+<i class="bi bi-boxes"></i></div>
+<div class="value-box-area">
+<p class="value-box-title">
+Models tracked
+</p>
+<p class="value-box-value">
+339
+</p>
+</div>
+</div>
+</div>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card valuebox cell bslib-card html-fill-container bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #2563a8;">
+<div class="card-body html-fill-item html-fill-container">
+<div data-icon="building" class="html-fill-item html-fill-container value-box-grid">
+<div class="value-box-showcase html-fill-item html-fill-container">
+
+<i class="bi bi-building"></i></div>
+<div class="value-box-area">
+<p class="value-box-title">
+Providers
+</p>
+<p class="value-box-value">
+56
+</p>
+</div>
+</div>
+</div>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card valuebox cell bslib-card html-fill-container bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #a8482b;">
+<div class="card-body html-fill-item html-fill-container">
+<div data-icon="stars" class="html-fill-item html-fill-container value-box-grid">
+<div class="value-box-showcase html-fill-item html-fill-container">
+
+<i class="bi bi-stars"></i></div>
+<div class="value-box-area">
+<p class="value-box-title">
+New this week
+</p>
+<p class="value-box-value">
+1
+</p>
+</div>
+</div>
+</div>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card valuebox cell bslib-card html-fill-container bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #15803d;">
+<div class="card-body html-fill-item html-fill-container">
+<div data-icon="arrows-angle-expand" class="html-fill-item html-fill-container value-box-grid">
+<div class="value-box-showcase html-fill-item html-fill-container">
+
+<i class="bi bi-arrows-angle-expand"></i></div>
+<div class="value-box-area">
+<p class="value-box-title">
+Biggest context
+</p>
+<p class="value-box-value">
+10,000K
+</p>
+</div>
+</div>
+</div>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card valuebox cell bslib-card html-fill-container bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #16202e;">
+<div class="card-body html-fill-item html-fill-container">
+<div data-icon="gift" class="html-fill-item html-fill-container value-box-grid">
+<div class="value-box-showcase html-fill-item html-fill-container">
+
+<i class="bi bi-gift"></i></div>
+<div class="value-box-area">
+<p class="value-box-title">
+Free models
+</p>
+<p class="value-box-value">
+26
+</p>
+</div>
+</div>
+</div>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+<div class="bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card tabset bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-header dashboard-card-no-title bslib-navs-card-title">
+
+<ul class="nav nav-tabs card-header-tabs" role="tablist" data-tabsetid="card-tabset-6"><li class="nav-item" role="presentation"><a href="#card-tabset-6-1" role="tab" data-toggle="tab" data-bs-toggle="tab" data-value="Newest" aria-selected="true" class="nav-link active">Newest</a></li><li class="nav-item" role="presentation"><a href="#card-tabset-6-2" role="tab" data-toggle="tab" data-bs-toggle="tab" data-value="Cheapest capable" aria-selected="false" class="nav-link">Cheapest capable</a></li><li class="nav-item" role="presentation"><a href="#card-tabset-6-3" role="tab" data-toggle="tab" data-bs-toggle="tab" data-value="Full catalog — search &amp; sort" aria-selected="false" class="nav-link">Full catalog — search &amp; sort</a></li></ul></div>
+
+
+
+
+
+<div id="3ade8a4a-fb1d-4a6c-8409-ac45482d5fc9" class="hidden">
+
+</div>
+<div class="tab-content html-fill-item html-fill-container" data-tabset-id="card-tabset-6"><div class="tab-pane active show html-fill-item html-fill-container" role="tabpanel" id="card-tabset-6-1"><div class="card-body html-fill-item html-fill-container" data-title="Newest">
+<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="7">
+<div id="folgglqidz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;" class="html-fill-item html-fill-container">
+<style>
+#folgglqidz table {
+          font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+
+#folgglqidz thead, tbody, tfoot, tr, td, th { border-style: none; }
+ tr { background-color: transparent; }
+#folgglqidz p { margin: 0; padding: 0; }
+ #folgglqidz .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 13px; font-weight: normal; font-style: normal; background-color: #faf7f1; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #folgglqidz .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #folgglqidz .gt_title { color: #333333; font-size: 20px; font-weight: 600; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #faf7f1; border-bottom-width: 0; }
+ #folgglqidz .gt_subtitle { color: #333333; font-size: 13px; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #faf7f1; border-top-width: 0; }
+ #folgglqidz .gt_heading { background-color: #faf7f1; text-align: center; border-bottom-color: #faf7f1; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #folgglqidz .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #folgglqidz .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #folgglqidz .gt_col_heading { color: #FFFFFF; background-color: #1f3a5f; font-size: 100%; font-weight: 600; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #folgglqidz .gt_column_spanner_outer { color: #FFFFFF; background-color: #1f3a5f; font-size: 100%; font-weight: 600; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #folgglqidz .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #folgglqidz .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #folgglqidz .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #folgglqidz .gt_spanner_row { border-bottom-style: hidden; }
+ #folgglqidz .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #faf7f1; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #folgglqidz .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #faf7f1; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #folgglqidz .gt_from_md> :first-child { margin-top: 0; }
+ #folgglqidz .gt_from_md> :last-child { margin-bottom: 0; }
+ #folgglqidz .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #folgglqidz .gt_stub { color: #333333; background-color: #faf7f1; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #folgglqidz .gt_stub_row_group { color: #333333; background-color: #faf7f1; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #folgglqidz .gt_row_group_first td { border-top-width: 2px; }
+ #folgglqidz .gt_row_group_first th { border-top-width: 2px; }
+ #folgglqidz .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #folgglqidz .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #folgglqidz .gt_summary_row { color: #333333; background-color: #faf7f1; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #folgglqidz .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
+ #folgglqidz .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #folgglqidz .gt_grand_summary_row { color: #333333; background-color: #faf7f1; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #folgglqidz .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #folgglqidz .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #folgglqidz .gt_sourcenotes { color: #333333; background-color: #faf7f1; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #folgglqidz .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #folgglqidz .gt_left { text-align: left; }
+ #folgglqidz .gt_center { text-align: center; }
+ #folgglqidz .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #folgglqidz .gt_font_normal { font-weight: normal; }
+ #folgglqidz .gt_font_bold { font-weight: bold; }
+ #folgglqidz .gt_font_italic { font-style: italic; }
+ #folgglqidz .gt_super { font-size: 65%; }
+ #folgglqidz .gt_footnotes { color: font-color(#faf7f1); background-color: #faf7f1; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #folgglqidz .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
+ #folgglqidz .gt_sourcenotes { color: #333333; background-color: #faf7f1; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #folgglqidz .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #folgglqidz .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #folgglqidz .gt_asterisk { font-size: 100%; vertical-align: 0; }
+ 
+</style>
+
+<table class="gt_table caption-top table" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<td colspan="7" class="gt_heading gt_title gt_font_normal">Newest models</td>
+</tr>
+<tr class="gt_heading even">
+<td colspan="7" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Most recently added to the OpenRouter catalog</td>
+</tr>
+<tr class="gt_col_headings header">
+<th id="name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Model</th>
+<th id="provider" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Provider</th>
+<th id="context_disp" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Context</th>
+<th id="in_disp" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">$/1M in</th>
+<th id="out_disp" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">$/1M out</th>
+<th id="flags" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Caps</th>
+<th id="created_str" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Added</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">Fugu Ultra</td>
+<td class="gt_row gt_left">Sakana</td>
+<td class="gt_row gt_right">1,000K</td>
+<td class="gt_row gt_right">$5.00</td>
+<td class="gt_row gt_right">$30.00</td>
+<td class="gt_row gt_center">🧠 🖼️ 🔧</td>
+<td class="gt_row gt_right">2026-06-24</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" style="color: #1f3a5f; font-weight: 600">Nano Banana 2 (Gemini 3.1 Flash Image)</td>
+<td class="gt_row gt_left gt_striped">Google</td>
+<td class="gt_row gt_right gt_striped">131K</td>
+<td class="gt_row gt_right gt_striped">$0.50</td>
+<td class="gt_row gt_right gt_striped">$3.00</td>
+<td class="gt_row gt_center gt_striped">🧠 🖼️</td>
+<td class="gt_row gt_right gt_striped">2026-06-18</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">Nano Banana Pro (Gemini 3 Pro Image)</td>
+<td class="gt_row gt_left">Google</td>
+<td class="gt_row gt_right">66K</td>
+<td class="gt_row gt_right">$2.00</td>
+<td class="gt_row gt_right">$12.00</td>
+<td class="gt_row gt_center">🧠 🖼️ 🔧</td>
+<td class="gt_row gt_right">2026-06-18</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" style="color: #1f3a5f; font-weight: 600">North Mini Code (free)</td>
+<td class="gt_row gt_left gt_striped">Cohere</td>
+<td class="gt_row gt_right gt_striped">256K</td>
+<td class="gt_row gt_right gt_striped">free</td>
+<td class="gt_row gt_right gt_striped">free</td>
+<td class="gt_row gt_center gt_striped">🧠 🔧</td>
+<td class="gt_row gt_right gt_striped">2026-06-17</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">GLM 5.2</td>
+<td class="gt_row gt_left">Z.ai</td>
+<td class="gt_row gt_right">1,049K</td>
+<td class="gt_row gt_right">$0.95</td>
+<td class="gt_row gt_right">$3.00</td>
+<td class="gt_row gt_center">🧠 🔧</td>
+<td class="gt_row gt_right">2026-06-16</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" style="color: #1f3a5f; font-weight: 600">Fusion</td>
+<td class="gt_row gt_left gt_striped">OpenRouter</td>
+<td class="gt_row gt_right gt_striped">1,000K</td>
+<td class="gt_row gt_right gt_striped">—</td>
+<td class="gt_row gt_right gt_striped">—</td>
+<td class="gt_row gt_center gt_striped">—</td>
+<td class="gt_row gt_right gt_striped">2026-06-13</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">Kimi K2.7 Code</td>
+<td class="gt_row gt_left">MoonshotAI</td>
+<td class="gt_row gt_right">262K</td>
+<td class="gt_row gt_right">$0.74</td>
+<td class="gt_row gt_right">$3.50</td>
+<td class="gt_row gt_center">🧠 🖼️ 🔧</td>
+<td class="gt_row gt_right">2026-06-12</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" style="color: #1f3a5f; font-weight: 600">Claude Fable Latest</td>
+<td class="gt_row gt_left gt_striped">Anthropic</td>
+<td class="gt_row gt_right gt_striped">1,000K</td>
+<td class="gt_row gt_right gt_striped">$10.00</td>
+<td class="gt_row gt_right gt_striped">$50.00</td>
+<td class="gt_row gt_center gt_striped">🧠 🖼️ 🔧</td>
+<td class="gt_row gt_right gt_striped">2026-06-09</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">Claude Fable 5</td>
+<td class="gt_row gt_left">Anthropic</td>
+<td class="gt_row gt_right">1,000K</td>
+<td class="gt_row gt_right">$10.00</td>
+<td class="gt_row gt_right">$50.00</td>
+<td class="gt_row gt_center">🧠 🖼️ 🔧</td>
+<td class="gt_row gt_right">2026-06-09</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" style="color: #1f3a5f; font-weight: 600">Nex-N2-Pro</td>
+<td class="gt_row gt_left gt_striped">Nex AGI</td>
+<td class="gt_row gt_right gt_striped">262K</td>
+<td class="gt_row gt_right gt_striped">$0.25</td>
+<td class="gt_row gt_right gt_striped">$1.00</td>
+<td class="gt_row gt_center gt_striped">🧠 🖼️</td>
+<td class="gt_row gt_right gt_striped">2026-06-08</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">Nemotron 3.5 Content Safety (free)</td>
+<td class="gt_row gt_left">NVIDIA</td>
+<td class="gt_row gt_right">128K</td>
+<td class="gt_row gt_right">free</td>
+<td class="gt_row gt_right">free</td>
+<td class="gt_row gt_center">🧠 🖼️</td>
+<td class="gt_row gt_right">2026-06-04</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" style="color: #1f3a5f; font-weight: 600">Nemotron 3 Ultra (free)</td>
+<td class="gt_row gt_left gt_striped">NVIDIA</td>
+<td class="gt_row gt_right gt_striped">1,000K</td>
+<td class="gt_row gt_right gt_striped">free</td>
+<td class="gt_row gt_right gt_striped">free</td>
+<td class="gt_row gt_center gt_striped">🧠 🔧</td>
+<td class="gt_row gt_right gt_striped">2026-06-04</td>
+</tr>
+</tbody><tfoot>
+<tr class="gt_sourcenotes odd">
+<td colspan="7" class="gt_sourcenote"><span class="gt_from_md">🧠 reasoning · 🖼️ multimodal · 🔧 tools · Data: <a href="https://openrouter.ai">OpenRouter</a></span></td>
+</tr>
+</tfoot>
+
+</table>
+
+
+</div>
+</div>
+</div></div><div class="tab-pane html-fill-item html-fill-container" role="tabpanel" id="card-tabset-6-2"><div class="card-body html-fill-item html-fill-container" data-title="Cheapest capable">
+<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="8">
+<div id="mbncwnfeos" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;" class="html-fill-item html-fill-container">
+<style>
+#mbncwnfeos table {
+          font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+
+#mbncwnfeos thead, tbody, tfoot, tr, td, th { border-style: none; }
+ tr { background-color: transparent; }
+#mbncwnfeos p { margin: 0; padding: 0; }
+ #mbncwnfeos .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 13px; font-weight: normal; font-style: normal; background-color: #faf7f1; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #mbncwnfeos .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #mbncwnfeos .gt_title { color: #333333; font-size: 20px; font-weight: 600; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #faf7f1; border-bottom-width: 0; }
+ #mbncwnfeos .gt_subtitle { color: #333333; font-size: 13px; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #faf7f1; border-top-width: 0; }
+ #mbncwnfeos .gt_heading { background-color: #faf7f1; text-align: center; border-bottom-color: #faf7f1; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #mbncwnfeos .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #mbncwnfeos .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #mbncwnfeos .gt_col_heading { color: #FFFFFF; background-color: #1f3a5f; font-size: 100%; font-weight: 600; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #mbncwnfeos .gt_column_spanner_outer { color: #FFFFFF; background-color: #1f3a5f; font-size: 100%; font-weight: 600; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #mbncwnfeos .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #mbncwnfeos .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #mbncwnfeos .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #mbncwnfeos .gt_spanner_row { border-bottom-style: hidden; }
+ #mbncwnfeos .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #faf7f1; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #mbncwnfeos .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #faf7f1; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #mbncwnfeos .gt_from_md> :first-child { margin-top: 0; }
+ #mbncwnfeos .gt_from_md> :last-child { margin-bottom: 0; }
+ #mbncwnfeos .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #mbncwnfeos .gt_stub { color: #333333; background-color: #faf7f1; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #mbncwnfeos .gt_stub_row_group { color: #333333; background-color: #faf7f1; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #mbncwnfeos .gt_row_group_first td { border-top-width: 2px; }
+ #mbncwnfeos .gt_row_group_first th { border-top-width: 2px; }
+ #mbncwnfeos .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #mbncwnfeos .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #mbncwnfeos .gt_summary_row { color: #333333; background-color: #faf7f1; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #mbncwnfeos .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
+ #mbncwnfeos .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #mbncwnfeos .gt_grand_summary_row { color: #333333; background-color: #faf7f1; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #mbncwnfeos .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #mbncwnfeos .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #mbncwnfeos .gt_sourcenotes { color: #333333; background-color: #faf7f1; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #mbncwnfeos .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #mbncwnfeos .gt_left { text-align: left; }
+ #mbncwnfeos .gt_center { text-align: center; }
+ #mbncwnfeos .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #mbncwnfeos .gt_font_normal { font-weight: normal; }
+ #mbncwnfeos .gt_font_bold { font-weight: bold; }
+ #mbncwnfeos .gt_font_italic { font-style: italic; }
+ #mbncwnfeos .gt_super { font-size: 65%; }
+ #mbncwnfeos .gt_footnotes { color: font-color(#faf7f1); background-color: #faf7f1; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #mbncwnfeos .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
+ #mbncwnfeos .gt_sourcenotes { color: #333333; background-color: #faf7f1; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #mbncwnfeos .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #mbncwnfeos .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #mbncwnfeos .gt_asterisk { font-size: 100%; vertical-align: 0; }
+ 
+</style>
+
+<table class="gt_table caption-top table" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<td colspan="7" class="gt_heading gt_title gt_font_normal">Cheapest capable models</td>
+</tr>
+<tr class="gt_heading even">
+<td colspan="7" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">≥100K context, lowest input price ($/1M tokens)</td>
+</tr>
+<tr class="gt_col_headings header">
+<th id="name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Model</th>
+<th id="provider" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Provider</th>
+<th id="context_disp" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Context</th>
+<th id="in_disp" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">$/1M in</th>
+<th id="out_disp" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">$/1M out</th>
+<th id="flags" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Caps</th>
+<th id="created_str" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Added</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">Ling-2.6-flash</td>
+<td class="gt_row gt_left">inclusionAI</td>
+<td class="gt_row gt_right">262K</td>
+<td class="gt_row gt_right">$0.01</td>
+<td class="gt_row gt_right">$0.03</td>
+<td class="gt_row gt_center">🔧</td>
+<td class="gt_row gt_right">2026-04-21</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" style="color: #1f3a5f; font-weight: 600">Granite 4.0 Micro</td>
+<td class="gt_row gt_left gt_striped">IBM</td>
+<td class="gt_row gt_right gt_striped">131K</td>
+<td class="gt_row gt_right gt_striped">$0.02</td>
+<td class="gt_row gt_right gt_striped">$0.11</td>
+<td class="gt_row gt_center gt_striped">—</td>
+<td class="gt_row gt_right gt_striped">2025-10-20</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">Llama 3.1 8B Instruct</td>
+<td class="gt_row gt_left">Meta</td>
+<td class="gt_row gt_right">131K</td>
+<td class="gt_row gt_right">$0.02</td>
+<td class="gt_row gt_right">$0.03</td>
+<td class="gt_row gt_center">🔧</td>
+<td class="gt_row gt_right">2024-07-23</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" style="color: #1f3a5f; font-weight: 600">Mistral Nemo</td>
+<td class="gt_row gt_left gt_striped">Mistral</td>
+<td class="gt_row gt_right gt_striped">131K</td>
+<td class="gt_row gt_right gt_striped">$0.02</td>
+<td class="gt_row gt_right gt_striped">$0.03</td>
+<td class="gt_row gt_center gt_striped">🔧</td>
+<td class="gt_row gt_right gt_striped">2024-07-19</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">Llama 3.2 1B Instruct</td>
+<td class="gt_row gt_left">Meta</td>
+<td class="gt_row gt_right">131K</td>
+<td class="gt_row gt_right">$0.03</td>
+<td class="gt_row gt_right">$0.20</td>
+<td class="gt_row gt_center">—</td>
+<td class="gt_row gt_right">2024-09-25</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" style="color: #1f3a5f; font-weight: 600">gpt-oss-20b</td>
+<td class="gt_row gt_left gt_striped">OpenAI</td>
+<td class="gt_row gt_right gt_striped">131K</td>
+<td class="gt_row gt_right gt_striped">$0.03</td>
+<td class="gt_row gt_right gt_striped">$0.14</td>
+<td class="gt_row gt_center gt_striped">🧠 🔧</td>
+<td class="gt_row gt_right gt_striped">2025-08-05</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">gpt-oss-120b</td>
+<td class="gt_row gt_left">OpenAI</td>
+<td class="gt_row gt_right">131K</td>
+<td class="gt_row gt_right">$0.03</td>
+<td class="gt_row gt_right">$0.15</td>
+<td class="gt_row gt_center">🧠 🔧</td>
+<td class="gt_row gt_right">2025-08-05</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" style="color: #1f3a5f; font-weight: 600">LFM2-24B-A2B</td>
+<td class="gt_row gt_left gt_striped">LiquidAI</td>
+<td class="gt_row gt_right gt_striped">128K</td>
+<td class="gt_row gt_right gt_striped">$0.03</td>
+<td class="gt_row gt_right gt_striped">$0.12</td>
+<td class="gt_row gt_center gt_striped">—</td>
+<td class="gt_row gt_right gt_striped">2026-02-25</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">Nova Micro 1.0</td>
+<td class="gt_row gt_left">Amazon</td>
+<td class="gt_row gt_right">128K</td>
+<td class="gt_row gt_right">$0.04</td>
+<td class="gt_row gt_right">$0.14</td>
+<td class="gt_row gt_center">🔧</td>
+<td class="gt_row gt_right">2024-12-05</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" style="color: #1f3a5f; font-weight: 600">Command R7B (12-2024)</td>
+<td class="gt_row gt_left gt_striped">Cohere</td>
+<td class="gt_row gt_right gt_striped">128K</td>
+<td class="gt_row gt_right gt_striped">$0.04</td>
+<td class="gt_row gt_right gt_striped">$0.15</td>
+<td class="gt_row gt_center gt_striped">—</td>
+<td class="gt_row gt_right gt_striped">2024-12-14</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">Qwen2.5 7B Instruct</td>
+<td class="gt_row gt_left">Qwen</td>
+<td class="gt_row gt_right">131K</td>
+<td class="gt_row gt_right">$0.04</td>
+<td class="gt_row gt_right">$0.10</td>
+<td class="gt_row gt_center">🔧</td>
+<td class="gt_row gt_right">2024-10-16</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" style="color: #1f3a5f; font-weight: 600">Trinity Mini</td>
+<td class="gt_row gt_left gt_striped">Arcee AI</td>
+<td class="gt_row gt_right gt_striped">131K</td>
+<td class="gt_row gt_right gt_striped">$0.04</td>
+<td class="gt_row gt_right gt_striped">$0.15</td>
+<td class="gt_row gt_center gt_striped">🧠 🔧</td>
+<td class="gt_row gt_right gt_striped">2025-12-01</td>
+</tr>
+</tbody><tfoot>
+<tr class="gt_sourcenotes odd">
+<td colspan="7" class="gt_sourcenote"><span class="gt_from_md">🧠 reasoning · 🖼️ multimodal · 🔧 tools · Data: <a href="https://openrouter.ai">OpenRouter</a></span></td>
+</tr>
+</tfoot>
+
+</table>
+
+
+</div>
+</div>
+</div></div><div class="tab-pane html-fill-item html-fill-container" role="tabpanel" id="card-tabset-6-3"><div class="card-body html-fill-item html-fill-container" data-title="Full catalog — search &amp; sort">
+<script type="ojs-define">{"contents": [{"name": "models", "value": [{"name": "Fugu Ultra", "provider": "Sakana", "context_k": 1000, "price_in": 5.0, "price_out": 30.0, "modalities": "text, image", "created_str": "2026-06-24"}, {"name": "Nano Banana 2 (Gemini 3.1 Flash Image)", "provider": "Google", "context_k": 131, "price_in": 0.5, "price_out": 3.0, "modalities": "image, text", "created_str": "2026-06-18"}, {"name": "Nano Banana Pro (Gemini 3 Pro Image)", "provider": "Google", "context_k": 66, "price_in": 2.0, "price_out": 12.0, "modalities": "image, text", "created_str": "2026-06-18"}, {"name": "North Mini Code (free)", "provider": "Cohere", "context_k": 256, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2026-06-17"}, {"name": "GLM 5.2", "provider": "Z.ai", "context_k": 1049, "price_in": 0.95, "price_out": 3.0, "modalities": "text", "created_str": "2026-06-16"}, {"name": "Fusion", "provider": "OpenRouter", "context_k": 1000, "price_in": null, "price_out": null, "modalities": "text", "created_str": "2026-06-13"}, {"name": "Kimi K2.7 Code", "provider": "MoonshotAI", "context_k": 262, "price_in": 0.74, "price_out": 3.5, "modalities": "text, image", "created_str": "2026-06-12"}, {"name": "Claude Fable Latest", "provider": "Anthropic", "context_k": 1000, "price_in": 10.0, "price_out": 50.0, "modalities": "text, image, file", "created_str": "2026-06-09"}, {"name": "Claude Fable 5", "provider": "Anthropic", "context_k": 1000, "price_in": 10.0, "price_out": 50.0, "modalities": "text, image, file", "created_str": "2026-06-09"}, {"name": "Nex-N2-Pro", "provider": "Nex AGI", "context_k": 262, "price_in": 0.25, "price_out": 1.0, "modalities": "text, image", "created_str": "2026-06-08"}, {"name": "Nemotron 3.5 Content Safety (free)", "provider": "NVIDIA", "context_k": 128, "price_in": 0.0, "price_out": 0.0, "modalities": "text, image", "created_str": "2026-06-04"}, {"name": "Nemotron 3 Ultra (free)", "provider": "NVIDIA", "context_k": 1000, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2026-06-04"}, {"name": "Nemotron 3 Ultra", "provider": "NVIDIA", "context_k": 1000, "price_in": 0.5, "price_out": 2.2, "modalities": "text", "created_str": "2026-06-04"}, {"name": "Qwen3.7 Plus", "provider": "Qwen", "context_k": 1000, "price_in": 0.32, "price_out": 1.28, "modalities": "text, image", "created_str": "2026-06-03"}, {"name": "MiniMax M3", "provider": "MiniMax", "context_k": 1049, "price_in": 0.3, "price_out": 1.2, "modalities": "text, image, video", "created_str": "2026-05-31"}, {"name": "Step 3.7 Flash", "provider": "StepFun", "context_k": 256, "price_in": 0.2, "price_out": 1.15, "modalities": "text, image, video", "created_str": "2026-05-28"}, {"name": "Claude Opus 4.8 (Fast)", "provider": "Anthropic", "context_k": 1000, "price_in": 10.0, "price_out": 50.0, "modalities": "text, image, file", "created_str": "2026-05-27"}, {"name": "Claude Opus 4.8", "provider": "Anthropic", "context_k": 1000, "price_in": 5.0, "price_out": 25.0, "modalities": "text, image, file", "created_str": "2026-05-27"}, {"name": "Qwen3.7 Max", "provider": "Qwen", "context_k": 1000, "price_in": 1.25, "price_out": 3.75, "modalities": "text", "created_str": "2026-05-21"}, {"name": "Grok Build 0.1", "provider": "xAI", "context_k": 256, "price_in": 1.0, "price_out": 2.0, "modalities": "text, image", "created_str": "2026-05-20"}, {"name": "Gemini 3.5 Flash", "provider": "Google", "context_k": 1049, "price_in": 1.5, "price_out": 9.0, "modalities": "text, image, video, file, audio", "created_str": "2026-05-19"}, {"name": "Claude Opus 4.7 (Fast)", "provider": "Anthropic", "context_k": 1000, "price_in": 30.0, "price_out": 150.0, "modalities": "text, image, file", "created_str": "2026-05-12"}, {"name": "Perceptron Mk1", "provider": "Perceptron", "context_k": 33, "price_in": 0.15, "price_out": 1.5, "modalities": "text, image, video", "created_str": "2026-05-12"}, {"name": "Ring-2.6-1T", "provider": "inclusionAI", "context_k": 262, "price_in": 0.075, "price_out": 0.625, "modalities": "text", "created_str": "2026-05-08"}, {"name": "Gemini 3.1 Flash Lite", "provider": "Google", "context_k": 1049, "price_in": 0.25, "price_out": 1.5, "modalities": "text, image, video, file, audio", "created_str": "2026-05-07"}, {"name": "GPT Chat Latest", "provider": "OpenAI", "context_k": 400, "price_in": 5.0, "price_out": 30.0, "modalities": "text, image, file", "created_str": "2026-05-05"}, {"name": "Grok 4.3", "provider": "xAI", "context_k": 1000, "price_in": 1.25, "price_out": 2.5, "modalities": "text, image, file", "created_str": "2026-04-30"}, {"name": "Granite 4.1 8B", "provider": "IBM", "context_k": 131, "price_in": 0.05, "price_out": 0.1, "modalities": "text", "created_str": "2026-04-30"}, {"name": "Mistral Medium 3.5", "provider": "Mistral", "context_k": 262, "price_in": 1.5, "price_out": 7.5, "modalities": "text, image, file", "created_str": "2026-04-30"}, {"name": "Owl Alpha", "provider": "Openrouter", "context_k": 1049, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2026-04-28"}, {"name": "Nemotron 3 Nano Omni (free)", "provider": "NVIDIA", "context_k": 256, "price_in": 0.0, "price_out": 0.0, "modalities": "text, audio, image, video", "created_str": "2026-04-28"}, {"name": "Laguna XS.2 (free)", "provider": "Poolside", "context_k": 262, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2026-04-28"}, {"name": "Laguna XS.2", "provider": "Poolside", "context_k": 262, "price_in": 0.1, "price_out": 0.2, "modalities": "text", "created_str": "2026-04-28"}, {"name": "Laguna M.1 (free)", "provider": "Poolside", "context_k": 262, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2026-04-28"}, {"name": "Laguna M.1", "provider": "Poolside", "context_k": 262, "price_in": 0.2, "price_out": 0.4, "modalities": "text", "created_str": "2026-04-28"}, {"name": "Anthropic Claude Haiku Latest", "provider": "Anthropic", "context_k": 200, "price_in": 1.0, "price_out": 5.0, "modalities": "text, image, file", "created_str": "2026-04-27"}, {"name": "OpenAI GPT Mini Latest", "provider": "Openai", "context_k": 400, "price_in": 0.75, "price_out": 4.5, "modalities": "file, image, text", "created_str": "2026-04-27"}, {"name": "Google Gemini Pro Latest", "provider": "Google", "context_k": 1049, "price_in": 2.0, "price_out": 12.0, "modalities": "audio, file, image, text, video", "created_str": "2026-04-27"}, {"name": "MoonshotAI Kimi Latest", "provider": "Moonshotai", "context_k": 262, "price_in": 0.66, "price_out": 3.41, "modalities": "text, image", "created_str": "2026-04-27"}, {"name": "Google Gemini Flash Latest", "provider": "Google", "context_k": 1049, "price_in": 1.5, "price_out": 9.0, "modalities": "text, image, video, file, audio", "created_str": "2026-04-27"}, {"name": "Anthropic Claude Sonnet Latest", "provider": "Anthropic", "context_k": 1000, "price_in": 3.0, "price_out": 15.0, "modalities": "text, image, file", "created_str": "2026-04-27"}, {"name": "OpenAI GPT Latest", "provider": "Openai", "context_k": 1050, "price_in": 5.0, "price_out": 30.0, "modalities": "file, image, text", "created_str": "2026-04-27"}, {"name": "Qwen3.5 Plus 2026-04-20", "provider": "Qwen", "context_k": 1000, "price_in": 0.3, "price_out": 1.8, "modalities": "text, image, video", "created_str": "2026-04-27"}, {"name": "Qwen3.6 Flash", "provider": "Qwen", "context_k": 1000, "price_in": 0.1875, "price_out": 1.125, "modalities": "text, image, video", "created_str": "2026-04-27"}, {"name": "Qwen3.6 35B A3B", "provider": "Qwen", "context_k": 262, "price_in": 0.14, "price_out": 1.0, "modalities": "text, image, video", "created_str": "2026-04-27"}, {"name": "Qwen3.6 Max Preview", "provider": "Qwen", "context_k": 262, "price_in": 1.04, "price_out": 6.24, "modalities": "text", "created_str": "2026-04-27"}, {"name": "Qwen3.6 27B", "provider": "Qwen", "context_k": 262, "price_in": 0.2596, "price_out": 2.385, "modalities": "text, image, video", "created_str": "2026-04-27"}, {"name": "GPT-5.5 Pro", "provider": "OpenAI", "context_k": 1050, "price_in": 30.0, "price_out": 180.0, "modalities": "file, image, text", "created_str": "2026-04-24"}, {"name": "GPT-5.5", "provider": "OpenAI", "context_k": 1050, "price_in": 5.0, "price_out": 30.0, "modalities": "file, image, text", "created_str": "2026-04-24"}, {"name": "DeepSeek V4 Pro", "provider": "DeepSeek", "context_k": 1049, "price_in": 0.435, "price_out": 0.87, "modalities": "text", "created_str": "2026-04-24"}, {"name": "DeepSeek V4 Flash", "provider": "DeepSeek", "context_k": 1049, "price_in": 0.09, "price_out": 0.18, "modalities": "text", "created_str": "2026-04-24"}, {"name": "Ling-2.6-1T", "provider": "inclusionAI", "context_k": 262, "price_in": 0.075, "price_out": 0.625, "modalities": "text", "created_str": "2026-04-23"}, {"name": "Hy3 preview", "provider": "Tencent", "context_k": 262, "price_in": 0.063, "price_out": 0.21, "modalities": "text", "created_str": "2026-04-22"}, {"name": "MiMo-V2.5-Pro", "provider": "Xiaomi", "context_k": 1049, "price_in": 0.435, "price_out": 0.87, "modalities": "text", "created_str": "2026-04-22"}, {"name": "MiMo-V2.5", "provider": "Xiaomi", "context_k": 1049, "price_in": 0.105, "price_out": 0.28, "modalities": "text, audio, image, video", "created_str": "2026-04-22"}, {"name": "GPT-5.4 Image 2", "provider": "OpenAI", "context_k": 272, "price_in": 8.0, "price_out": 15.0, "modalities": "image, text, file", "created_str": "2026-04-21"}, {"name": "Ling-2.6-flash", "provider": "inclusionAI", "context_k": 262, "price_in": 0.01, "price_out": 0.03, "modalities": "text", "created_str": "2026-04-21"}, {"name": "Claude Opus Latest", "provider": "Anthropic", "context_k": 1000, "price_in": 5.0, "price_out": 25.0, "modalities": "text, image, file", "created_str": "2026-04-21"}, {"name": "Pareto Code Router", "provider": "Openrouter", "context_k": 2000, "price_in": null, "price_out": null, "modalities": "text", "created_str": "2026-04-21"}, {"name": "Kimi K2.6", "provider": "MoonshotAI", "context_k": 262, "price_in": 0.66, "price_out": 3.41, "modalities": "text, image", "created_str": "2026-04-20"}, {"name": "Claude Opus 4.7", "provider": "Anthropic", "context_k": 1000, "price_in": 5.0, "price_out": 25.0, "modalities": "text, image, file", "created_str": "2026-04-16"}, {"name": "Claude Opus 4.6 (Fast)", "provider": "Anthropic", "context_k": 1000, "price_in": 30.0, "price_out": 150.0, "modalities": "text, image, file", "created_str": "2026-04-07"}, {"name": "GLM 5.1", "provider": "Z.ai", "context_k": 203, "price_in": 0.98, "price_out": 3.08, "modalities": "text", "created_str": "2026-04-07"}, {"name": "Gemma 4 26B A4B  (free)", "provider": "Google", "context_k": 262, "price_in": 0.0, "price_out": 0.0, "modalities": "image, text, video", "created_str": "2026-04-03"}, {"name": "Gemma 4 26B A4B", "provider": "Google", "context_k": 262, "price_in": 0.06, "price_out": 0.33, "modalities": "image, text, video", "created_str": "2026-04-03"}, {"name": "Gemma 4 31B (free)", "provider": "Google", "context_k": 262, "price_in": 0.0, "price_out": 0.0, "modalities": "image, text, video", "created_str": "2026-04-02"}, {"name": "Gemma 4 31B", "provider": "Google", "context_k": 262, "price_in": 0.12, "price_out": 0.35, "modalities": "image, text, video", "created_str": "2026-04-02"}, {"name": "Qwen3.6 Plus", "provider": "Qwen", "context_k": 1000, "price_in": 0.325, "price_out": 1.95, "modalities": "text, image, video", "created_str": "2026-04-02"}, {"name": "GLM 5V Turbo", "provider": "Z.ai", "context_k": 203, "price_in": 1.2, "price_out": 4.0, "modalities": "image, text, video", "created_str": "2026-04-01"}, {"name": "Trinity Large Thinking", "provider": "Arcee AI", "context_k": 262, "price_in": 0.25, "price_out": 0.8, "modalities": "text", "created_str": "2026-04-01"}, {"name": "Grok 4.20 Multi-Agent", "provider": "xAI", "context_k": 2000, "price_in": 1.25, "price_out": 2.5, "modalities": "text, image, file", "created_str": "2026-03-31"}, {"name": "Grok 4.20", "provider": "xAI", "context_k": 2000, "price_in": 1.25, "price_out": 2.5, "modalities": "text, image, file", "created_str": "2026-03-31"}, {"name": "Lyria 3 Pro Preview", "provider": "Google", "context_k": 1049, "price_in": 0.0, "price_out": 0.0, "modalities": "text, image", "created_str": "2026-03-30"}, {"name": "Lyria 3 Clip Preview", "provider": "Google", "context_k": 1049, "price_in": 0.0, "price_out": 0.0, "modalities": "text, image", "created_str": "2026-03-30"}, {"name": "KAT-Coder-Pro V2", "provider": "Kwaipilot", "context_k": 256, "price_in": 0.3, "price_out": 1.2, "modalities": "text", "created_str": "2026-03-27"}, {"name": "Reka Edge", "provider": "Rekaai", "context_k": 16, "price_in": 0.1, "price_out": 0.1, "modalities": "image, text, video", "created_str": "2026-03-20"}, {"name": "MiniMax M2.7", "provider": "MiniMax", "context_k": 205, "price_in": 0.18, "price_out": 0.72, "modalities": "text", "created_str": "2026-03-18"}, {"name": "GPT-5.4 Nano", "provider": "OpenAI", "context_k": 400, "price_in": 0.2, "price_out": 1.25, "modalities": "file, image, text", "created_str": "2026-03-17"}, {"name": "GPT-5.4 Mini", "provider": "OpenAI", "context_k": 400, "price_in": 0.75, "price_out": 4.5, "modalities": "file, image, text", "created_str": "2026-03-17"}, {"name": "Mistral Small 4", "provider": "Mistral", "context_k": 262, "price_in": 0.15, "price_out": 0.6, "modalities": "text, image", "created_str": "2026-03-16"}, {"name": "GLM 5 Turbo", "provider": "Z.ai", "context_k": 262, "price_in": 1.2, "price_out": 4.0, "modalities": "text", "created_str": "2026-03-15"}, {"name": "Nemotron 3 Super (free)", "provider": "NVIDIA", "context_k": 1000, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2026-03-11"}, {"name": "Nemotron 3 Super", "provider": "NVIDIA", "context_k": 1000, "price_in": 0.085, "price_out": 0.4, "modalities": "text", "created_str": "2026-03-11"}, {"name": "Seed-2.0-Lite", "provider": "ByteDance Seed", "context_k": 262, "price_in": 0.25, "price_out": 2.0, "modalities": "text, image, video", "created_str": "2026-03-10"}, {"name": "Qwen3.5-9B", "provider": "Qwen", "context_k": 262, "price_in": 0.1, "price_out": 0.15, "modalities": "text, image, video", "created_str": "2026-03-10"}, {"name": "GPT-5.4 Pro", "provider": "OpenAI", "context_k": 1050, "price_in": 30.0, "price_out": 180.0, "modalities": "text, image, file", "created_str": "2026-03-05"}, {"name": "GPT-5.4", "provider": "OpenAI", "context_k": 1050, "price_in": 2.5, "price_out": 15.0, "modalities": "text, image, file", "created_str": "2026-03-05"}, {"name": "Mercury 2", "provider": "Inception", "context_k": 128, "price_in": 0.25, "price_out": 0.75, "modalities": "text", "created_str": "2026-03-04"}, {"name": "GPT-5.3 Chat", "provider": "OpenAI", "context_k": 128, "price_in": 1.75, "price_out": 14.0, "modalities": "text, image, file", "created_str": "2026-03-03"}, {"name": "Gemini 3.1 Flash Lite Preview", "provider": "Google", "context_k": 1049, "price_in": 0.25, "price_out": 1.5, "modalities": "text, image, video, file, audio", "created_str": "2026-03-03"}, {"name": "Seed-2.0-Mini", "provider": "ByteDance Seed", "context_k": 262, "price_in": 0.1, "price_out": 0.4, "modalities": "text, image, video", "created_str": "2026-02-26"}, {"name": "Nano Banana 2 (Gemini 3.1 Flash Image Preview)", "provider": "Google", "context_k": 131, "price_in": 0.5, "price_out": 3.0, "modalities": "image, text", "created_str": "2026-02-26"}, {"name": "Qwen3.5-35B-A3B", "provider": "Qwen", "context_k": 262, "price_in": 0.14, "price_out": 1.0, "modalities": "text, image, video", "created_str": "2026-02-25"}, {"name": "Qwen3.5-27B", "provider": "Qwen", "context_k": 262, "price_in": 0.195, "price_out": 1.56, "modalities": "text, image, video", "created_str": "2026-02-25"}, {"name": "Qwen3.5-122B-A10B", "provider": "Qwen", "context_k": 262, "price_in": 0.26, "price_out": 2.08, "modalities": "text, image, video", "created_str": "2026-02-25"}, {"name": "Qwen3.5-Flash", "provider": "Qwen", "context_k": 1000, "price_in": 0.065, "price_out": 0.26, "modalities": "text, image, video", "created_str": "2026-02-25"}, {"name": "LFM2-24B-A2B", "provider": "LiquidAI", "context_k": 128, "price_in": 0.03, "price_out": 0.12, "modalities": "text", "created_str": "2026-02-25"}, {"name": "Gemini 3.1 Pro Preview Custom Tools", "provider": "Google", "context_k": 1049, "price_in": 2.0, "price_out": 12.0, "modalities": "text, audio, image, video, file", "created_str": "2026-02-25"}, {"name": "GPT-5.3-Codex", "provider": "OpenAI", "context_k": 400, "price_in": 1.75, "price_out": 14.0, "modalities": "text, image, file", "created_str": "2026-02-24"}, {"name": "Aion-2.0", "provider": "AionLabs", "context_k": 131, "price_in": 0.8, "price_out": 1.6, "modalities": "text", "created_str": "2026-02-23"}, {"name": "Gemini 3.1 Pro Preview", "provider": "Google", "context_k": 1049, "price_in": 2.0, "price_out": 12.0, "modalities": "audio, file, image, text, video", "created_str": "2026-02-19"}, {"name": "Claude Sonnet 4.6", "provider": "Anthropic", "context_k": 1000, "price_in": 3.0, "price_out": 15.0, "modalities": "text, image, file", "created_str": "2026-02-17"}, {"name": "Qwen3.5 Plus 2026-02-15", "provider": "Qwen", "context_k": 1000, "price_in": 0.26, "price_out": 1.56, "modalities": "text, image, video", "created_str": "2026-02-16"}, {"name": "Qwen3.5 397B A17B", "provider": "Qwen", "context_k": 256, "price_in": 0.385, "price_out": 2.45, "modalities": "text, image, video", "created_str": "2026-02-16"}, {"name": "MiniMax M2.5", "provider": "MiniMax", "context_k": 205, "price_in": 0.12, "price_out": 0.48, "modalities": "text", "created_str": "2026-02-12"}, {"name": "GLM 5", "provider": "Z.ai", "context_k": 203, "price_in": 0.6, "price_out": 1.92, "modalities": "text", "created_str": "2026-02-11"}, {"name": "Qwen3 Max Thinking", "provider": "Qwen", "context_k": 262, "price_in": 0.78, "price_out": 3.9, "modalities": "text", "created_str": "2026-02-09"}, {"name": "Claude Opus 4.6", "provider": "Anthropic", "context_k": 1000, "price_in": 5.0, "price_out": 25.0, "modalities": "text, image, file", "created_str": "2026-02-04"}, {"name": "Qwen3 Coder Next", "provider": "Qwen", "context_k": 262, "price_in": 0.11, "price_out": 0.8, "modalities": "text", "created_str": "2026-02-04"}, {"name": "Free Models Router", "provider": "Openrouter", "context_k": 200, "price_in": 0.0, "price_out": 0.0, "modalities": "text, image", "created_str": "2026-02-01"}, {"name": "Step 3.5 Flash", "provider": "StepFun", "context_k": 262, "price_in": 0.09, "price_out": 0.3, "modalities": "text", "created_str": "2026-01-29"}, {"name": "Kimi K2.5", "provider": "MoonshotAI", "context_k": 262, "price_in": 0.375, "price_out": 2.025, "modalities": "text, image", "created_str": "2026-01-27"}, {"name": "Solar Pro 3", "provider": "Upstage", "context_k": 128, "price_in": 0.15, "price_out": 0.6, "modalities": "text", "created_str": "2026-01-27"}, {"name": "MiniMax M2-her", "provider": "MiniMax", "context_k": 66, "price_in": 0.3, "price_out": 1.2, "modalities": "text", "created_str": "2026-01-23"}, {"name": "Palmyra X5", "provider": "Writer", "context_k": 1040, "price_in": 0.6, "price_out": 6.0, "modalities": "text", "created_str": "2026-01-21"}, {"name": "LFM2.5-1.2B-Thinking (free)", "provider": "LiquidAI", "context_k": 33, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2026-01-20"}, {"name": "LFM2.5-1.2B-Instruct (free)", "provider": "LiquidAI", "context_k": 33, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2026-01-20"}, {"name": "GPT Audio", "provider": "OpenAI", "context_k": 128, "price_in": 2.5, "price_out": 10.0, "modalities": "text, audio", "created_str": "2026-01-19"}, {"name": "GPT Audio Mini", "provider": "OpenAI", "context_k": 128, "price_in": 0.6, "price_out": 2.4, "modalities": "text, audio", "created_str": "2026-01-19"}, {"name": "GLM 4.7 Flash", "provider": "Z.ai", "context_k": 203, "price_in": 0.06, "price_out": 0.4, "modalities": "text", "created_str": "2026-01-19"}, {"name": "GPT-5.2-Codex", "provider": "OpenAI", "context_k": 400, "price_in": 1.75, "price_out": 14.0, "modalities": "text, image", "created_str": "2026-01-14"}, {"name": "Seed 1.6 Flash", "provider": "ByteDance Seed", "context_k": 262, "price_in": 0.075, "price_out": 0.3, "modalities": "image, text, video", "created_str": "2025-12-23"}, {"name": "Seed 1.6", "provider": "ByteDance Seed", "context_k": 262, "price_in": 0.25, "price_out": 2.0, "modalities": "image, text, video", "created_str": "2025-12-23"}, {"name": "MiniMax M2.1", "provider": "MiniMax", "context_k": 205, "price_in": 0.29, "price_out": 0.95, "modalities": "text", "created_str": "2025-12-23"}, {"name": "GLM 4.7", "provider": "Z.ai", "context_k": 203, "price_in": 0.4, "price_out": 1.75, "modalities": "text", "created_str": "2025-12-22"}, {"name": "Gemini 3 Flash Preview", "provider": "Google", "context_k": 1049, "price_in": 0.5, "price_out": 3.0, "modalities": "text, image, file, audio, video", "created_str": "2025-12-17"}, {"name": "Nemotron 3 Nano 30B A3B", "provider": "NVIDIA", "context_k": 262, "price_in": 0.05, "price_out": 0.2, "modalities": "text", "created_str": "2025-12-14"}, {"name": "Nemotron 3 Nano 30B A3B (free)", "provider": "NVIDIA", "context_k": 256, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2025-12-14"}, {"name": "GPT-5.2 Chat", "provider": "OpenAI", "context_k": 128, "price_in": 1.75, "price_out": 14.0, "modalities": "file, image, text", "created_str": "2025-12-10"}, {"name": "GPT-5.2 Pro", "provider": "OpenAI", "context_k": 400, "price_in": 21.0, "price_out": 168.0, "modalities": "image, text, file", "created_str": "2025-12-10"}, {"name": "GPT-5.2", "provider": "OpenAI", "context_k": 400, "price_in": 1.75, "price_out": 14.0, "modalities": "file, image, text", "created_str": "2025-12-10"}, {"name": "Devstral 2 2512", "provider": "Mistral", "context_k": 262, "price_in": 0.4, "price_out": 2.0, "modalities": "text, file", "created_str": "2025-12-09"}, {"name": "Relace Search", "provider": "Relace", "context_k": 256, "price_in": 1.0, "price_out": 3.0, "modalities": "text", "created_str": "2025-12-08"}, {"name": "GLM 4.6V", "provider": "Z.ai", "context_k": 131, "price_in": 0.3, "price_out": 0.9, "modalities": "image, text, video", "created_str": "2025-12-08"}, {"name": "Body Builder (beta)", "provider": "Openrouter", "context_k": 128, "price_in": null, "price_out": null, "modalities": "text", "created_str": "2025-12-05"}, {"name": "GPT-5.1-Codex-Max", "provider": "OpenAI", "context_k": 400, "price_in": 1.25, "price_out": 10.0, "modalities": "text, image", "created_str": "2025-12-04"}, {"name": "Nova 2 Lite", "provider": "Amazon", "context_k": 1000, "price_in": 0.3, "price_out": 2.5, "modalities": "text, image, video, file", "created_str": "2025-12-02"}, {"name": "Ministral 3 14B 2512", "provider": "Mistral", "context_k": 262, "price_in": 0.2, "price_out": 0.2, "modalities": "text, image", "created_str": "2025-12-02"}, {"name": "Ministral 3 8B 2512", "provider": "Mistral", "context_k": 262, "price_in": 0.15, "price_out": 0.15, "modalities": "text, image", "created_str": "2025-12-02"}, {"name": "Ministral 3 3B 2512", "provider": "Mistral", "context_k": 131, "price_in": 0.1, "price_out": 0.1, "modalities": "text, image", "created_str": "2025-12-02"}, {"name": "Mistral Large 3 2512", "provider": "Mistral", "context_k": 262, "price_in": 0.5, "price_out": 1.5, "modalities": "text, image, file", "created_str": "2025-12-01"}, {"name": "Trinity Mini", "provider": "Arcee AI", "context_k": 131, "price_in": 0.045, "price_out": 0.15, "modalities": "text", "created_str": "2025-12-01"}, {"name": "DeepSeek V3.2", "provider": "DeepSeek", "context_k": 131, "price_in": 0.2288, "price_out": 0.3432, "modalities": "text", "created_str": "2025-12-01"}, {"name": "Claude Opus 4.5", "provider": "Anthropic", "context_k": 200, "price_in": 5.0, "price_out": 25.0, "modalities": "file, image, text", "created_str": "2025-11-24"}, {"name": "Olmo 3 32B Think", "provider": "AllenAI", "context_k": 66, "price_in": 0.15, "price_out": 0.5, "modalities": "text", "created_str": "2025-11-21"}, {"name": "Nano Banana Pro (Gemini 3 Pro Image Preview)", "provider": "Google", "context_k": 66, "price_in": 2.0, "price_out": 12.0, "modalities": "image, text", "created_str": "2025-11-20"}, {"name": "Cogito v2.1 671B", "provider": "Deep Cogito", "context_k": 128, "price_in": 1.25, "price_out": 1.25, "modalities": "text", "created_str": "2025-11-13"}, {"name": "GPT-5.1", "provider": "OpenAI", "context_k": 400, "price_in": 1.25, "price_out": 10.0, "modalities": "image, text, file", "created_str": "2025-11-13"}, {"name": "GPT-5.1 Chat", "provider": "OpenAI", "context_k": 128, "price_in": 1.25, "price_out": 10.0, "modalities": "file, image, text", "created_str": "2025-11-13"}, {"name": "GPT-5.1-Codex", "provider": "OpenAI", "context_k": 400, "price_in": 1.25, "price_out": 10.0, "modalities": "text, image", "created_str": "2025-11-13"}, {"name": "GPT-5.1-Codex-Mini", "provider": "OpenAI", "context_k": 400, "price_in": 0.25, "price_out": 2.0, "modalities": "image, text", "created_str": "2025-11-13"}, {"name": "Kimi K2 Thinking", "provider": "MoonshotAI", "context_k": 262, "price_in": 0.6, "price_out": 2.5, "modalities": "text", "created_str": "2025-11-06"}, {"name": "Nova Premier 1.0", "provider": "Amazon", "context_k": 1000, "price_in": 2.5, "price_out": 12.5, "modalities": "text, image", "created_str": "2025-10-31"}, {"name": "Sonar Pro Search", "provider": "Perplexity", "context_k": 200, "price_in": 3.0, "price_out": 15.0, "modalities": "text, image", "created_str": "2025-10-30"}, {"name": "Voxtral Small 24B 2507", "provider": "Mistral", "context_k": 32, "price_in": 0.1, "price_out": 0.3, "modalities": "text, audio, file", "created_str": "2025-10-30"}, {"name": "gpt-oss-safeguard-20b", "provider": "OpenAI", "context_k": 131, "price_in": 0.075, "price_out": 0.3, "modalities": "text", "created_str": "2025-10-29"}, {"name": "Nemotron Nano 12B 2 VL (free)", "provider": "NVIDIA", "context_k": 128, "price_in": 0.0, "price_out": 0.0, "modalities": "image, text, video", "created_str": "2025-10-28"}, {"name": "MiniMax M2", "provider": "MiniMax", "context_k": 205, "price_in": 0.255, "price_out": 1.0, "modalities": "text", "created_str": "2025-10-23"}, {"name": "Qwen3 VL 32B Instruct", "provider": "Qwen", "context_k": 262, "price_in": 0.104, "price_out": 0.416, "modalities": "text, image", "created_str": "2025-10-23"}, {"name": "Granite 4.0 Micro", "provider": "IBM", "context_k": 131, "price_in": 0.017, "price_out": 0.112, "modalities": "text", "created_str": "2025-10-20"}, {"name": "Phi 4 Mini Instruct", "provider": "Microsoft", "context_k": 131, "price_in": 0.08, "price_out": 0.35, "modalities": "text", "created_str": "2025-10-17"}, {"name": "GPT-5 Image Mini", "provider": "OpenAI", "context_k": 400, "price_in": 2.5, "price_out": 2.0, "modalities": "file, image, text", "created_str": "2025-10-16"}, {"name": "Claude Haiku 4.5", "provider": "Anthropic", "context_k": 200, "price_in": 1.0, "price_out": 5.0, "modalities": "text, image, file", "created_str": "2025-10-15"}, {"name": "Qwen3 VL 8B Thinking", "provider": "Qwen", "context_k": 256, "price_in": 0.117, "price_out": 1.365, "modalities": "image, text", "created_str": "2025-10-14"}, {"name": "Qwen3 VL 8B Instruct", "provider": "Qwen", "context_k": 256, "price_in": 0.08, "price_out": 0.5, "modalities": "image, text", "created_str": "2025-10-14"}, {"name": "GPT-5 Image", "provider": "OpenAI", "context_k": 400, "price_in": 10.0, "price_out": 10.0, "modalities": "image, text, file", "created_str": "2025-10-14"}, {"name": "o3 Deep Research", "provider": "OpenAI", "context_k": 200, "price_in": 10.0, "price_out": 40.0, "modalities": "image, text, file", "created_str": "2025-10-10"}, {"name": "o4 Mini Deep Research", "provider": "OpenAI", "context_k": 200, "price_in": 2.0, "price_out": 8.0, "modalities": "file, image, text", "created_str": "2025-10-10"}, {"name": "Llama 3.3 Nemotron Super 49B V1.5", "provider": "NVIDIA", "context_k": 131, "price_in": 0.4, "price_out": 0.4, "modalities": "text", "created_str": "2025-10-10"}, {"name": "Nano Banana (Gemini 2.5 Flash Image)", "provider": "Google", "context_k": 33, "price_in": 0.3, "price_out": 2.5, "modalities": "image, text", "created_str": "2025-10-07"}, {"name": "Qwen3 VL 30B A3B Thinking", "provider": "Qwen", "context_k": 131, "price_in": 0.13, "price_out": 1.56, "modalities": "text, image", "created_str": "2025-10-06"}, {"name": "Qwen3 VL 30B A3B Instruct", "provider": "Qwen", "context_k": 262, "price_in": 0.13, "price_out": 0.52, "modalities": "text, image", "created_str": "2025-10-06"}, {"name": "GPT-5 Pro", "provider": "OpenAI", "context_k": 400, "price_in": 15.0, "price_out": 120.0, "modalities": "image, text, file", "created_str": "2025-10-06"}, {"name": "GLM 4.6", "provider": "Z.ai", "context_k": 203, "price_in": 0.43, "price_out": 1.74, "modalities": "text", "created_str": "2025-09-30"}, {"name": "Claude Sonnet 4.5", "provider": "Anthropic", "context_k": 1000, "price_in": 3.0, "price_out": 15.0, "modalities": "text, image, file", "created_str": "2025-09-29"}, {"name": "DeepSeek V3.2 Exp", "provider": "DeepSeek", "context_k": 164, "price_in": 0.27, "price_out": 0.41, "modalities": "text", "created_str": "2025-09-29"}, {"name": "Cydonia 24B V4.1", "provider": "TheDrummer", "context_k": 131, "price_in": 0.3, "price_out": 0.5, "modalities": "text", "created_str": "2025-09-27"}, {"name": "Relace Apply 3", "provider": "Relace", "context_k": 256, "price_in": 0.85, "price_out": 1.25, "modalities": "text", "created_str": "2025-09-26"}, {"name": "Gemini 2.5 Flash Lite Preview 09-2025", "provider": "Google", "context_k": 1049, "price_in": 0.1, "price_out": 0.4, "modalities": "text, image, file, audio, video", "created_str": "2025-09-25"}, {"name": "Qwen3 VL 235B A22B Thinking", "provider": "Qwen", "context_k": 131, "price_in": 0.26, "price_out": 2.6, "modalities": "text, image", "created_str": "2025-09-23"}, {"name": "Qwen3 VL 235B A22B Instruct", "provider": "Qwen", "context_k": 262, "price_in": 0.2, "price_out": 0.88, "modalities": "text, image", "created_str": "2025-09-23"}, {"name": "Qwen3 Max", "provider": "Qwen", "context_k": 262, "price_in": 0.78, "price_out": 3.9, "modalities": "text", "created_str": "2025-09-23"}, {"name": "Qwen3 Coder Plus", "provider": "Qwen", "context_k": 1000, "price_in": 0.65, "price_out": 3.25, "modalities": "text", "created_str": "2025-09-23"}, {"name": "GPT-5 Codex", "provider": "OpenAI", "context_k": 400, "price_in": 1.25, "price_out": 10.0, "modalities": "text, image", "created_str": "2025-09-23"}, {"name": "DeepSeek V3.1 Terminus", "provider": "DeepSeek", "context_k": 164, "price_in": 0.27, "price_out": 0.95, "modalities": "text", "created_str": "2025-09-22"}, {"name": "Qwen3 Coder Flash", "provider": "Qwen", "context_k": 1000, "price_in": 0.195, "price_out": 0.975, "modalities": "text", "created_str": "2025-09-17"}, {"name": "Qwen3 Next 80B A3B Thinking", "provider": "Qwen", "context_k": 262, "price_in": 0.0975, "price_out": 0.78, "modalities": "text", "created_str": "2025-09-11"}, {"name": "Qwen3 Next 80B A3B Instruct (free)", "provider": "Qwen", "context_k": 262, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2025-09-11"}, {"name": "Qwen3 Next 80B A3B Instruct", "provider": "Qwen", "context_k": 262, "price_in": 0.09, "price_out": 1.1, "modalities": "text", "created_str": "2025-09-11"}, {"name": "Qwen Plus 0728 (thinking)", "provider": "Qwen", "context_k": 1000, "price_in": 0.26, "price_out": 0.78, "modalities": "text", "created_str": "2025-09-08"}, {"name": "Qwen Plus 0728", "provider": "Qwen", "context_k": 1000, "price_in": 0.26, "price_out": 0.78, "modalities": "text", "created_str": "2025-09-08"}, {"name": "Nemotron Nano 9B V2 (free)", "provider": "NVIDIA", "context_k": 128, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2025-09-05"}, {"name": "Kimi K2 0905", "provider": "MoonshotAI", "context_k": 262, "price_in": 0.6, "price_out": 2.5, "modalities": "text", "created_str": "2025-09-04"}, {"name": "Qwen3 30B A3B Thinking 2507", "provider": "Qwen", "context_k": 131, "price_in": 0.08, "price_out": 0.4, "modalities": "text", "created_str": "2025-08-28"}, {"name": "Hermes 4 70B", "provider": "Nous", "context_k": 131, "price_in": 0.13, "price_out": 0.4, "modalities": "text", "created_str": "2025-08-26"}, {"name": "Hermes 4 405B", "provider": "Nous", "context_k": 131, "price_in": 1.0, "price_out": 3.0, "modalities": "text", "created_str": "2025-08-26"}, {"name": "DeepSeek V3.1", "provider": "DeepSeek", "context_k": 164, "price_in": 0.21, "price_out": 0.79, "modalities": "text", "created_str": "2025-08-21"}, {"name": "Mistral Medium 3.1", "provider": "Mistral", "context_k": 131, "price_in": 0.4, "price_out": 2.0, "modalities": "text, image, file", "created_str": "2025-08-13"}, {"name": "GLM 4.5V", "provider": "Z.ai", "context_k": 66, "price_in": 0.6, "price_out": 1.8, "modalities": "text, image", "created_str": "2025-08-11"}, {"name": "Jamba Large 1.7", "provider": "AI21", "context_k": 256, "price_in": 2.0, "price_out": 8.0, "modalities": "text", "created_str": "2025-08-08"}, {"name": "GPT-5 Chat", "provider": "OpenAI", "context_k": 128, "price_in": 1.25, "price_out": 10.0, "modalities": "file, image, text", "created_str": "2025-08-07"}, {"name": "GPT-5", "provider": "OpenAI", "context_k": 400, "price_in": 1.25, "price_out": 10.0, "modalities": "text, image, file", "created_str": "2025-08-07"}, {"name": "GPT-5 Mini", "provider": "OpenAI", "context_k": 400, "price_in": 0.25, "price_out": 2.0, "modalities": "text, image, file", "created_str": "2025-08-07"}, {"name": "GPT-5 Nano", "provider": "OpenAI", "context_k": 400, "price_in": 0.05, "price_out": 0.4, "modalities": "text, image, file", "created_str": "2025-08-07"}, {"name": "gpt-oss-120b (free)", "provider": "OpenAI", "context_k": 131, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2025-08-05"}, {"name": "gpt-oss-120b", "provider": "OpenAI", "context_k": 131, "price_in": 0.03, "price_out": 0.15, "modalities": "text", "created_str": "2025-08-05"}, {"name": "gpt-oss-20b (free)", "provider": "OpenAI", "context_k": 131, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2025-08-05"}, {"name": "gpt-oss-20b", "provider": "OpenAI", "context_k": 131, "price_in": 0.029, "price_out": 0.14, "modalities": "text", "created_str": "2025-08-05"}, {"name": "Claude Opus 4.1", "provider": "Anthropic", "context_k": 200, "price_in": 15.0, "price_out": 75.0, "modalities": "image, text, file", "created_str": "2025-08-05"}, {"name": "Codestral 2508", "provider": "Mistral", "context_k": 256, "price_in": 0.3, "price_out": 0.9, "modalities": "text, file", "created_str": "2025-08-01"}, {"name": "Qwen3 Coder 30B A3B Instruct", "provider": "Qwen", "context_k": 160, "price_in": 0.07, "price_out": 0.27, "modalities": "text", "created_str": "2025-07-31"}, {"name": "Qwen3 30B A3B Instruct 2507", "provider": "Qwen", "context_k": 131, "price_in": 0.0481, "price_out": 0.193, "modalities": "text", "created_str": "2025-07-29"}, {"name": "GLM 4.5", "provider": "Z.ai", "context_k": 131, "price_in": 0.6, "price_out": 2.2, "modalities": "text", "created_str": "2025-07-25"}, {"name": "GLM 4.5 Air", "provider": "Z.ai", "context_k": 131, "price_in": 0.13, "price_out": 0.85, "modalities": "text", "created_str": "2025-07-25"}, {"name": "Qwen3 235B A22B Thinking 2507", "provider": "Qwen", "context_k": 262, "price_in": 0.1, "price_out": 0.1, "modalities": "text", "created_str": "2025-07-25"}, {"name": "Qwen3 Coder 480B A35B (free)", "provider": "Qwen", "context_k": 1049, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2025-07-23"}, {"name": "Qwen3 Coder 480B A35B", "provider": "Qwen", "context_k": 1049, "price_in": 0.22, "price_out": 1.8, "modalities": "text", "created_str": "2025-07-23"}, {"name": "UI-TARS 7B", "provider": "ByteDance", "context_k": 128, "price_in": 0.1, "price_out": 0.2, "modalities": "image, text", "created_str": "2025-07-22"}, {"name": "Gemini 2.5 Flash Lite", "provider": "Google", "context_k": 1049, "price_in": 0.1, "price_out": 0.4, "modalities": "text, image, file, audio, video", "created_str": "2025-07-22"}, {"name": "Qwen3 235B A22B Instruct 2507", "provider": "Qwen", "context_k": 262, "price_in": 0.09, "price_out": 0.1, "modalities": "text", "created_str": "2025-07-21"}, {"name": "Switchpoint Router", "provider": "Switchpoint", "context_k": 131, "price_in": 0.85, "price_out": 3.4, "modalities": "text", "created_str": "2025-07-11"}, {"name": "Kimi K2 0711", "provider": "MoonshotAI", "context_k": 131, "price_in": 0.57, "price_out": 2.3, "modalities": "text", "created_str": "2025-07-11"}, {"name": "Uncensored (free)", "provider": "Venice", "context_k": 33, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2025-07-09"}, {"name": "Hunyuan A13B Instruct", "provider": "Tencent", "context_k": 131, "price_in": 0.14, "price_out": 0.57, "modalities": "text", "created_str": "2025-07-08"}, {"name": "Morph V3 Large", "provider": "Morph", "context_k": 262, "price_in": 0.9, "price_out": 1.9, "modalities": "text", "created_str": "2025-07-07"}, {"name": "Morph V3 Fast", "provider": "Morph", "context_k": 82, "price_in": 0.8, "price_out": 1.2, "modalities": "text", "created_str": "2025-07-07"}, {"name": "ERNIE 4.5 VL 424B A47B", "provider": "Baidu", "context_k": 131, "price_in": 0.42, "price_out": 1.25, "modalities": "image, text", "created_str": "2025-06-30"}, {"name": "Mistral Small 3.2 24B", "provider": "Mistral", "context_k": 128, "price_in": 0.075, "price_out": 0.2, "modalities": "image, text", "created_str": "2025-06-20"}, {"name": "MiniMax M1", "provider": "MiniMax", "context_k": 1000, "price_in": 0.4, "price_out": 2.2, "modalities": "text", "created_str": "2025-06-17"}, {"name": "Gemini 2.5 Flash", "provider": "Google", "context_k": 1049, "price_in": 0.3, "price_out": 2.5, "modalities": "file, image, text, audio, video", "created_str": "2025-06-17"}, {"name": "Gemini 2.5 Pro", "provider": "Google", "context_k": 1049, "price_in": 1.25, "price_out": 10.0, "modalities": "text, image, file, audio, video", "created_str": "2025-06-17"}, {"name": "o3 Pro", "provider": "OpenAI", "context_k": 200, "price_in": 20.0, "price_out": 80.0, "modalities": "text, file, image", "created_str": "2025-06-10"}, {"name": "Gemini 2.5 Pro Preview 06-05", "provider": "Google", "context_k": 1049, "price_in": 1.25, "price_out": 10.0, "modalities": "file, image, text, audio", "created_str": "2025-06-05"}, {"name": "R1 0528", "provider": "DeepSeek", "context_k": 164, "price_in": 0.5, "price_out": 2.15, "modalities": "text", "created_str": "2025-05-28"}, {"name": "Claude Opus 4", "provider": "Anthropic", "context_k": 200, "price_in": 15.0, "price_out": 75.0, "modalities": "image, text, file", "created_str": "2025-05-22"}, {"name": "Claude Sonnet 4", "provider": "Anthropic", "context_k": 1000, "price_in": 3.0, "price_out": 15.0, "modalities": "image, text, file", "created_str": "2025-05-22"}, {"name": "Gemma 3n 4B", "provider": "Google", "context_k": 33, "price_in": 0.06, "price_out": 0.12, "modalities": "text", "created_str": "2025-05-20"}, {"name": "Mistral Medium 3", "provider": "Mistral", "context_k": 131, "price_in": 0.4, "price_out": 2.0, "modalities": "text, image, file", "created_str": "2025-05-07"}, {"name": "Gemini 2.5 Pro Preview 05-06", "provider": "Google", "context_k": 1049, "price_in": 1.25, "price_out": 10.0, "modalities": "text, image, file, audio, video", "created_str": "2025-05-07"}, {"name": "Virtuoso Large", "provider": "Arcee AI", "context_k": 131, "price_in": 0.75, "price_out": 1.2, "modalities": "text", "created_str": "2025-05-05"}, {"name": "Coder Large", "provider": "Arcee AI", "context_k": 33, "price_in": 0.5, "price_out": 0.8, "modalities": "text", "created_str": "2025-05-05"}, {"name": "Llama Guard 4 12B", "provider": "Meta", "context_k": 164, "price_in": 0.18, "price_out": 0.18, "modalities": "image, text", "created_str": "2025-04-30"}, {"name": "Qwen3 30B A3B", "provider": "Qwen", "context_k": 131, "price_in": 0.12, "price_out": 0.5, "modalities": "text", "created_str": "2025-04-28"}, {"name": "Qwen3 8B", "provider": "Qwen", "context_k": 131, "price_in": 0.05, "price_out": 0.4, "modalities": "text", "created_str": "2025-04-28"}, {"name": "Qwen3 14B", "provider": "Qwen", "context_k": 132, "price_in": 0.1, "price_out": 0.24, "modalities": "text", "created_str": "2025-04-28"}, {"name": "Qwen3 32B", "provider": "Qwen", "context_k": 131, "price_in": 0.08, "price_out": 0.28, "modalities": "text", "created_str": "2025-04-28"}, {"name": "Qwen3 235B A22B", "provider": "Qwen", "context_k": 131, "price_in": 0.455, "price_out": 1.82, "modalities": "text", "created_str": "2025-04-28"}, {"name": "o4 Mini High", "provider": "OpenAI", "context_k": 200, "price_in": 1.1, "price_out": 4.4, "modalities": "image, text, file", "created_str": "2025-04-16"}, {"name": "o3", "provider": "OpenAI", "context_k": 200, "price_in": 2.0, "price_out": 8.0, "modalities": "image, text, file", "created_str": "2025-04-16"}, {"name": "o4 Mini", "provider": "OpenAI", "context_k": 200, "price_in": 1.1, "price_out": 4.4, "modalities": "image, text, file", "created_str": "2025-04-16"}, {"name": "GPT-4.1", "provider": "OpenAI", "context_k": 1048, "price_in": 2.0, "price_out": 8.0, "modalities": "image, text, file", "created_str": "2025-04-14"}, {"name": "GPT-4.1 Mini", "provider": "OpenAI", "context_k": 1048, "price_in": 0.4, "price_out": 1.6, "modalities": "image, text, file", "created_str": "2025-04-14"}, {"name": "GPT-4.1 Nano", "provider": "OpenAI", "context_k": 1048, "price_in": 0.1, "price_out": 0.4, "modalities": "image, text, file", "created_str": "2025-04-14"}, {"name": "Llama 4 Maverick", "provider": "Meta", "context_k": 1049, "price_in": 0.15, "price_out": 0.6, "modalities": "text, image", "created_str": "2025-04-05"}, {"name": "Llama 4 Scout", "provider": "Meta", "context_k": 10000, "price_in": 0.1, "price_out": 0.3, "modalities": "text, image", "created_str": "2025-04-05"}, {"name": "DeepSeek V3 0324", "provider": "DeepSeek", "context_k": 164, "price_in": 0.2, "price_out": 0.77, "modalities": "text", "created_str": "2025-03-24"}, {"name": "o1-pro", "provider": "OpenAI", "context_k": 200, "price_in": 150.0, "price_out": 600.0, "modalities": "text, image, file", "created_str": "2025-03-19"}, {"name": "Mistral Small 3.1 24B", "provider": "Mistral", "context_k": 128, "price_in": 0.351, "price_out": 0.555, "modalities": "text, image", "created_str": "2025-03-17"}, {"name": "Gemma 3 4B", "provider": "Google", "context_k": 131, "price_in": 0.05, "price_out": 0.1, "modalities": "text, image", "created_str": "2025-03-13"}, {"name": "Gemma 3 12B", "provider": "Google", "context_k": 131, "price_in": 0.05, "price_out": 0.15, "modalities": "text, image", "created_str": "2025-03-13"}, {"name": "Command A", "provider": "Cohere", "context_k": 256, "price_in": 2.5, "price_out": 10.0, "modalities": "text", "created_str": "2025-03-13"}, {"name": "GPT-4o-mini Search Preview", "provider": "OpenAI", "context_k": 128, "price_in": 0.15, "price_out": 0.6, "modalities": "text", "created_str": "2025-03-12"}, {"name": "GPT-4o Search Preview", "provider": "OpenAI", "context_k": 128, "price_in": 2.5, "price_out": 10.0, "modalities": "text", "created_str": "2025-03-12"}, {"name": "Reka Flash 3", "provider": "Rekaai", "context_k": 66, "price_in": 0.1, "price_out": 0.2, "modalities": "text", "created_str": "2025-03-12"}, {"name": "Gemma 3 27B", "provider": "Google", "context_k": 131, "price_in": 0.08, "price_out": 0.16, "modalities": "text, image", "created_str": "2025-03-12"}, {"name": "Skyfall 36B V2", "provider": "TheDrummer", "context_k": 33, "price_in": 0.55, "price_out": 0.8, "modalities": "text", "created_str": "2025-03-10"}, {"name": "Sonar Reasoning Pro", "provider": "Perplexity", "context_k": 128, "price_in": 2.0, "price_out": 8.0, "modalities": "text, image", "created_str": "2025-03-07"}, {"name": "Sonar Pro", "provider": "Perplexity", "context_k": 200, "price_in": 3.0, "price_out": 15.0, "modalities": "text, image", "created_str": "2025-03-07"}, {"name": "Sonar Deep Research", "provider": "Perplexity", "context_k": 128, "price_in": 2.0, "price_out": 8.0, "modalities": "text", "created_str": "2025-03-07"}, {"name": "Saba", "provider": "Mistral", "context_k": 33, "price_in": 0.2, "price_out": 0.6, "modalities": "text, file", "created_str": "2025-02-17"}, {"name": "o3 Mini High", "provider": "OpenAI", "context_k": 200, "price_in": 1.1, "price_out": 4.4, "modalities": "text, file", "created_str": "2025-02-12"}, {"name": "Aion-1.0", "provider": "AionLabs", "context_k": 131, "price_in": 4.0, "price_out": 8.0, "modalities": "text", "created_str": "2025-02-04"}, {"name": "Aion-1.0-Mini", "provider": "AionLabs", "context_k": 131, "price_in": 0.7, "price_out": 1.4, "modalities": "text", "created_str": "2025-02-04"}, {"name": "Aion-RP 1.0 (8B)", "provider": "AionLabs", "context_k": 33, "price_in": 0.8, "price_out": 1.6, "modalities": "text", "created_str": "2025-02-04"}, {"name": "Qwen2.5 VL 72B Instruct", "provider": "Qwen", "context_k": 131, "price_in": 0.8, "price_out": 1.0, "modalities": "text, image", "created_str": "2025-02-01"}, {"name": "Qwen-Plus", "provider": "Qwen", "context_k": 1000, "price_in": 0.26, "price_out": 0.78, "modalities": "text", "created_str": "2025-02-01"}, {"name": "o3 Mini", "provider": "OpenAI", "context_k": 200, "price_in": 1.1, "price_out": 4.4, "modalities": "text, file", "created_str": "2025-01-31"}, {"name": "Mistral Small 3", "provider": "Mistral", "context_k": 33, "price_in": 0.05, "price_out": 0.08, "modalities": "text", "created_str": "2025-01-30"}, {"name": "Sonar", "provider": "Perplexity", "context_k": 127, "price_in": 1.0, "price_out": 1.0, "modalities": "text, image", "created_str": "2025-01-27"}, {"name": "R1 Distill Llama 70B", "provider": "DeepSeek", "context_k": 128, "price_in": 0.8, "price_out": 0.8, "modalities": "text", "created_str": "2025-01-23"}, {"name": "R1", "provider": "DeepSeek", "context_k": 164, "price_in": 0.7, "price_out": 2.5, "modalities": "text", "created_str": "2025-01-20"}, {"name": "MiniMax-01", "provider": "MiniMax", "context_k": 1000, "price_in": 0.2, "price_out": 1.1, "modalities": "text, image", "created_str": "2025-01-15"}, {"name": "Phi 4", "provider": "Microsoft", "context_k": 16, "price_in": 0.07, "price_out": 0.14, "modalities": "text", "created_str": "2025-01-10"}, {"name": "Llama 3.1 70B Hanami x1", "provider": "Sao10K", "context_k": 16, "price_in": 3.0, "price_out": 3.0, "modalities": "text", "created_str": "2025-01-08"}, {"name": "DeepSeek V3", "provider": "DeepSeek", "context_k": 131, "price_in": 0.2002, "price_out": 0.8001, "modalities": "text", "created_str": "2024-12-26"}, {"name": "Llama 3.3 Euryale 70B", "provider": "Sao10K", "context_k": 131, "price_in": 0.65, "price_out": 0.75, "modalities": "text", "created_str": "2024-12-18"}, {"name": "o1", "provider": "OpenAI", "context_k": 200, "price_in": 15.0, "price_out": 60.0, "modalities": "text, image, file", "created_str": "2024-12-17"}, {"name": "Command R7B (12-2024)", "provider": "Cohere", "context_k": 128, "price_in": 0.0375, "price_out": 0.15, "modalities": "text", "created_str": "2024-12-14"}, {"name": "Llama 3.3 70B Instruct (free)", "provider": "Meta", "context_k": 131, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2024-12-06"}, {"name": "Llama 3.3 70B Instruct", "provider": "Meta", "context_k": 131, "price_in": 0.1, "price_out": 0.32, "modalities": "text", "created_str": "2024-12-06"}, {"name": "Nova Lite 1.0", "provider": "Amazon", "context_k": 300, "price_in": 0.06, "price_out": 0.24, "modalities": "text, image", "created_str": "2024-12-05"}, {"name": "Nova Micro 1.0", "provider": "Amazon", "context_k": 128, "price_in": 0.035, "price_out": 0.14, "modalities": "text", "created_str": "2024-12-05"}, {"name": "Nova Pro 1.0", "provider": "Amazon", "context_k": 300, "price_in": 0.8, "price_out": 3.2, "modalities": "text, image", "created_str": "2024-12-05"}, {"name": "GPT-4o (2024-11-20)", "provider": "OpenAI", "context_k": 128, "price_in": 2.5, "price_out": 10.0, "modalities": "text, image, file", "created_str": "2024-11-20"}, {"name": "Mistral Large 2407", "provider": "Mistralai", "context_k": 131, "price_in": 2.0, "price_out": 6.0, "modalities": "text, file", "created_str": "2024-11-19"}, {"name": "Qwen2.5 Coder 32B Instruct", "provider": "Qwen", "context_k": 128, "price_in": 0.66, "price_out": 1.0, "modalities": "text", "created_str": "2024-11-11"}, {"name": "UnslopNemo 12B", "provider": "TheDrummer", "context_k": 33, "price_in": 0.4, "price_out": 0.4, "modalities": "text", "created_str": "2024-11-08"}, {"name": "Magnum v4 72B", "provider": "Anthracite-Org", "context_k": 33, "price_in": 3.0, "price_out": 5.0, "modalities": "text", "created_str": "2024-10-22"}, {"name": "Qwen2.5 7B Instruct", "provider": "Qwen", "context_k": 131, "price_in": 0.04, "price_out": 0.1, "modalities": "text", "created_str": "2024-10-16"}, {"name": "Inflection 3 Productivity", "provider": "Inflection", "context_k": 8, "price_in": 2.5, "price_out": 10.0, "modalities": "text", "created_str": "2024-10-11"}, {"name": "Inflection 3 Pi", "provider": "Inflection", "context_k": 8, "price_in": 2.5, "price_out": 10.0, "modalities": "text", "created_str": "2024-10-11"}, {"name": "Rocinante 12B", "provider": "TheDrummer", "context_k": 33, "price_in": 0.25, "price_out": 0.5, "modalities": "text", "created_str": "2024-09-30"}, {"name": "Llama 3.2 3B Instruct (free)", "provider": "Meta", "context_k": 131, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2024-09-25"}, {"name": "Llama 3.2 3B Instruct", "provider": "Meta", "context_k": 131, "price_in": 0.0509, "price_out": 0.335, "modalities": "text", "created_str": "2024-09-25"}, {"name": "Llama 3.2 1B Instruct", "provider": "Meta", "context_k": 131, "price_in": 0.027, "price_out": 0.201, "modalities": "text", "created_str": "2024-09-25"}, {"name": "Llama 3.2 11B Vision Instruct", "provider": "Meta", "context_k": 131, "price_in": 0.345, "price_out": 0.345, "modalities": "text, image", "created_str": "2024-09-25"}, {"name": "Qwen2.5 72B Instruct", "provider": "Qwen", "context_k": 131, "price_in": 0.36, "price_out": 0.4, "modalities": "text", "created_str": "2024-09-19"}, {"name": "Command R (08-2024)", "provider": "Cohere", "context_k": 128, "price_in": 0.15, "price_out": 0.6, "modalities": "text", "created_str": "2024-08-30"}, {"name": "Command R+ (08-2024)", "provider": "Cohere", "context_k": 128, "price_in": 2.5, "price_out": 10.0, "modalities": "text", "created_str": "2024-08-30"}, {"name": "Llama 3.1 Euryale 70B v2.2", "provider": "Sao10K", "context_k": 131, "price_in": 0.85, "price_out": 0.85, "modalities": "text", "created_str": "2024-08-28"}, {"name": "Hermes 3 70B Instruct", "provider": "Nous", "context_k": 131, "price_in": 0.7, "price_out": 0.7, "modalities": "text", "created_str": "2024-08-18"}, {"name": "Hermes 3 405B Instruct (free)", "provider": "Nous", "context_k": 131, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2024-08-16"}, {"name": "Hermes 3 405B Instruct", "provider": "Nous", "context_k": 131, "price_in": 1.0, "price_out": 1.0, "modalities": "text", "created_str": "2024-08-16"}, {"name": "Llama 3 8B Lunaris", "provider": "Sao10K", "context_k": 8, "price_in": 0.04, "price_out": 0.05, "modalities": "text", "created_str": "2024-08-13"}, {"name": "GPT-4o (2024-08-06)", "provider": "OpenAI", "context_k": 128, "price_in": 2.5, "price_out": 10.0, "modalities": "text, image, file", "created_str": "2024-08-06"}, {"name": "Llama 3.1 8B Instruct", "provider": "Meta", "context_k": 131, "price_in": 0.02, "price_out": 0.03, "modalities": "text", "created_str": "2024-07-23"}, {"name": "Llama 3.1 70B Instruct", "provider": "Meta", "context_k": 131, "price_in": 0.4, "price_out": 0.4, "modalities": "text", "created_str": "2024-07-23"}, {"name": "Mistral Nemo", "provider": "Mistral", "context_k": 131, "price_in": 0.02, "price_out": 0.03, "modalities": "text", "created_str": "2024-07-19"}, {"name": "GPT-4o-mini", "provider": "OpenAI", "context_k": 128, "price_in": 0.15, "price_out": 0.6, "modalities": "text, image, file", "created_str": "2024-07-18"}, {"name": "GPT-4o-mini (2024-07-18)", "provider": "OpenAI", "context_k": 128, "price_in": 0.15, "price_out": 0.6, "modalities": "text, image, file", "created_str": "2024-07-18"}, {"name": "Gemma 2 27B", "provider": "Google", "context_k": 8, "price_in": 0.65, "price_out": 0.65, "modalities": "text", "created_str": "2024-07-13"}, {"name": "GPT-4o (2024-05-13)", "provider": "OpenAI", "context_k": 128, "price_in": 5.0, "price_out": 15.0, "modalities": "text, image, file", "created_str": "2024-05-13"}, {"name": "GPT-4o", "provider": "OpenAI", "context_k": 128, "price_in": 2.5, "price_out": 10.0, "modalities": "text, image, file", "created_str": "2024-05-13"}, {"name": "Llama 3 8B Instruct", "provider": "Meta", "context_k": 8, "price_in": 0.14, "price_out": 0.14, "modalities": "text", "created_str": "2024-04-18"}, {"name": "Mixtral 8x22B Instruct", "provider": "Mistral", "context_k": 66, "price_in": 2.0, "price_out": 6.0, "modalities": "text, file", "created_str": "2024-04-17"}, {"name": "WizardLM-2 8x22B", "provider": "Microsoft", "context_k": 66, "price_in": 0.62, "price_out": 0.62, "modalities": "text", "created_str": "2024-04-16"}, {"name": "GPT-4 Turbo", "provider": "OpenAI", "context_k": 128, "price_in": 10.0, "price_out": 30.0, "modalities": "text, image", "created_str": "2024-04-09"}, {"name": "Claude 3 Haiku", "provider": "Anthropic", "context_k": 200, "price_in": 0.25, "price_out": 1.25, "modalities": "text, image", "created_str": "2024-03-13"}, {"name": "Mistral Large", "provider": "Mistralai", "context_k": 128, "price_in": 2.0, "price_out": 6.0, "modalities": "text, file", "created_str": "2024-02-26"}, {"name": "GPT-4 Turbo Preview", "provider": "OpenAI", "context_k": 128, "price_in": 10.0, "price_out": 30.0, "modalities": "text", "created_str": "2024-01-25"}, {"name": "GPT-3.5 Turbo (older v0613)", "provider": "OpenAI", "context_k": 4, "price_in": 1.0, "price_out": 2.0, "modalities": "text", "created_str": "2024-01-25"}, {"name": "Auto Router", "provider": "Openrouter", "context_k": 2000, "price_in": null, "price_out": null, "modalities": "text, image, audio, file, video", "created_str": "2023-11-08"}, {"name": "GPT-3.5 Turbo Instruct", "provider": "OpenAI", "context_k": 4, "price_in": 1.5, "price_out": 2.0, "modalities": "text", "created_str": "2023-09-28"}, {"name": "GPT-3.5 Turbo 16k", "provider": "OpenAI", "context_k": 16, "price_in": 3.0, "price_out": 4.0, "modalities": "text", "created_str": "2023-08-28"}, {"name": "Weaver (alpha)", "provider": "Mancer", "context_k": 8, "price_in": 0.75, "price_out": 1.0, "modalities": "text", "created_str": "2023-08-02"}, {"name": "ReMM SLERP 13B", "provider": "Undi95", "context_k": 6, "price_in": 0.45, "price_out": 0.65, "modalities": "text", "created_str": "2023-07-22"}, {"name": "MythoMax 13B", "provider": "Gryphe", "context_k": 4, "price_in": 0.06, "price_out": 0.06, "modalities": "text", "created_str": "2023-07-02"}, {"name": "GPT-3.5 Turbo", "provider": "OpenAI", "context_k": 16, "price_in": 0.5, "price_out": 1.5, "modalities": "text", "created_str": "2023-05-28"}, {"name": "GPT-4", "provider": "OpenAI", "context_k": 8, "price_in": 30.0, "price_out": 60.0, "modalities": "text", "created_str": "2023-05-28"}]}]}</script>
+<div class="code-copy-outer-scaffold html-fill-item html-fill-container"><div class="sourceCode cell-code hidden html-fill-item html-fill-container" id="cb1" data-startfrom="85" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 84;"><span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>viewof q <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">search</span>(models<span class="op">,</span> { <span class="dt">placeholder</span><span class="op">:</span> <span class="vs">`Search </span><span class="sc">${</span>models<span class="op">.</span><span class="at">length</span><span class="sc">}</span><span class="vs"> models…`</span> })</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display html-fill-item html-fill-container">
+<div id="ojs-cell-1" data-nodetype="declaration" class="html-fill-item html-fill-container">
+
+</div>
+</div>
+<div class="code-copy-outer-scaffold html-fill-item html-fill-container"><div class="sourceCode cell-code hidden html-fill-item html-fill-container" id="cb2" data-startfrom="90" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 89;"><span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(q<span class="op">,</span> {</span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>  <span class="dt">columns</span><span class="op">:</span> [<span class="st">"name"</span><span class="op">,</span> <span class="st">"provider"</span><span class="op">,</span> <span class="st">"context_k"</span><span class="op">,</span> <span class="st">"price_in"</span><span class="op">,</span> <span class="st">"price_out"</span><span class="op">,</span> <span class="st">"modalities"</span><span class="op">,</span> <span class="st">"created_str"</span>]<span class="op">,</span></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>  <span class="dt">header</span><span class="op">:</span> {</span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>    <span class="dt">name</span><span class="op">:</span> <span class="st">"Model"</span><span class="op">,</span> <span class="dt">provider</span><span class="op">:</span> <span class="st">"Provider"</span><span class="op">,</span> <span class="dt">context_k</span><span class="op">:</span> <span class="st">"Context (K)"</span><span class="op">,</span></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>    <span class="dt">price_in</span><span class="op">:</span> <span class="st">"$/1M in"</span><span class="op">,</span> <span class="dt">price_out</span><span class="op">:</span> <span class="st">"$/1M out"</span><span class="op">,</span> <span class="dt">modalities</span><span class="op">:</span> <span class="st">"Modalities"</span><span class="op">,</span> <span class="dt">created_str</span><span class="op">:</span> <span class="st">"Added"</span></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>  <span class="dt">sort</span><span class="op">:</span> <span class="st">"created_str"</span><span class="op">,</span></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>  <span class="dt">reverse</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>  <span class="dt">rows</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>  <span class="dt">layout</span><span class="op">:</span> <span class="st">"auto"</span></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display html-fill-item html-fill-container">
+<div id="ojs-cell-2" data-nodetype="expression" class="html-fill-item html-fill-container">
+
+</div>
+</div>
+</div></div></div><bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+</div>
+
+
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBxID0gSW5wdXRzLnNlYXJjaChtb2RlbHMsIHsgcGxhY2Vob2xkZXI6IGBTZWFyY2ggJHttb2RlbHMubGVuZ3RofSBtb2RlbHPigKZgIH0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJJbnB1dHMudGFibGUocSwge1xuICBjb2x1bW5zOiBbXCJuYW1lXCIsIFwicHJvdmlkZXJcIiwgXCJjb250ZXh0X2tcIiwgXCJwcmljZV9pblwiLCBcInByaWNlX291dFwiLCBcIm1vZGFsaXRpZXNcIiwgXCJjcmVhdGVkX3N0clwiXSxcbiAgaGVhZGVyOiB7XG4gICAgbmFtZTogXCJNb2RlbFwiLCBwcm92aWRlcjogXCJQcm92aWRlclwiLCBjb250ZXh0X2s6IFwiQ29udGV4dCAoSylcIixcbiAgICBwcmljZV9pbjogXCIkLzFNIGluXCIsIHByaWNlX291dDogXCIkLzFNIG91dFwiLCBtb2RhbGl0aWVzOiBcIk1vZGFsaXRpZXNcIiwgY3JlYXRlZF9zdHI6IFwiQWRkZWRcIlxuICB9LFxuICBzb3J0OiBcImNyZWF0ZWRfc3RyXCIsXG4gIHJldmVyc2U6IHRydWUsXG4gIHJvd3M6IDIwLFxuICBsYXlvdXQ6IFwiYXV0b1wiXG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdxJykifV19
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/ronaldmego\.github\.io\/llm-radar");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (_event) {
+  if (window.bslib.Card) {
+    window.bslib.Card.initializeAllCards();
+  }
+}); 
+</script>
+  
+
+
+
+</body></html>
