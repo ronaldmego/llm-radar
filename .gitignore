@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+
+# Quarto
+/.quarto/
+/_site/
+/index_files/
+index.html
+
+# Env / local
+.env
+*.log
