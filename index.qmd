@@ -32,6 +32,10 @@ stats = summary_stats(df)
 # Open-weights side — Hugging Face
 hf_df = process_hf_models(HuggingFaceClient().get_models())
 hf_stats = hf_summary_stats(hf_df)
+
+# Fetch/render timestamp for the source-and-freshness footers (veracity).
+from datetime import datetime, timezone
+updated = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 ```
 
 # Hosted
@@ -68,7 +72,7 @@ dict(value=f'{stats["max_context_k"]:,}K', icon="arrows-angle-expand", color="#1
 dict(value=stats["free_models"], icon="gift", color="#16202e")
 ```
 
-## Row {height=76%}
+## Row {height=68%}
 
 ### Column {.tabset}
 
@@ -116,6 +120,19 @@ Inputs.table(q, {
 
 :::
 
+## Row {height=8%}
+
+```{python}
+#| echo: false
+#| output: asis
+print(
+    "**Source:** OpenRouter `/api/v1/models` (public, no auth) — "
+    "[open the raw JSON](https://openrouter.ai/api/v1/models) · "
+    f"**Data as of:** {updated} · "
+    "**Code:** [github.com/ronaldmego/llm-radar](https://github.com/ronaldmego/llm-radar)"
+)
+```
+
 # Open-weights
 
 ## Row {height=24%}
@@ -150,7 +167,7 @@ dict(value=hf_stats["orgs"], icon="building", color="#2563a8")
 dict(value=hf_stats["new_this_week"], icon="stars", color="#16202e")
 ```
 
-## Row {height=76%}
+## Row {height=68%}
 
 ### Column {.tabset}
 
@@ -200,3 +217,17 @@ Inputs.table(hfq, {
 ```
 
 :::
+
+## Row {height=8%}
+
+```{python}
+#| echo: false
+#| output: asis
+print(
+    "**Source:** Hugging Face Hub `/api/models?pipeline_tag=text-generation&sort=downloads` "
+    "(public, no auth) — "
+    "[open the raw JSON](https://huggingface.co/api/models?pipeline_tag=text-generation&sort=downloads&direction=-1&limit=5) · "
+    f"**Data as of:** {updated} · "
+    "**Code:** [github.com/ronaldmego/llm-radar](https://github.com/ronaldmego/llm-radar)"
+)
+```
