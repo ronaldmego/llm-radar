@@ -128,7 +128,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="quarto-dashboard-header">
 <nav class="navbar navbar-expand-md slim" data-bs-theme="dark">
   <div class="navbar-container container-fluid">
-    <button class="navbar-toggler hidden" type="button" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-controls="dashboard-collapse" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-controls="dashboard-collapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>    
 
@@ -142,20 +142,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         
       </div>
     </div>
-<div class="quarto-dashboard-links"><a class="quarto-dashboard-link" href="https://github.com/ronaldmego/llm-radar"><i class="bi bi-github"></i></a></div></div>
+<div id="dashboard-collapse" class="navbar-collapse collapse"><ul class="navbar-nav navbar-nav-scroll me-auto" role="tablist"><li class="nav-item" role="presentation"><a id="tab-hosted" class="nav-link active" data-bs-toggle="tab" role="tab" data-bs-target="#hosted" data-scrolling="false" href="#hosted" aria-controls="hosted" aria-selected="true"><span class="nav-link-text">Hosted</span></a></li><li class="nav-item" role="presentation"><a id="tab-open-weights" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#open-weights" data-scrolling="false" href="#open-weights" aria-controls="open-weights" aria-selected="false"><span class="nav-link-text">Open-weights</span></a></li></ul><div class="quarto-dashboard-links"><a class="quarto-dashboard-link" href="https://github.com/ronaldmego/llm-radar"><i class="bi bi-github"></i></a></div></div></div>
 </nav>
 </header>
 <div id="quarto-search-results"></div>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-layout-custom quarto-dashboard-content bslib-gap-spacing html-fill-container bslib-page-fill">
+<div id="quarto-content" class="quarto-container page-layout-custom quarto-dashboard-content bslib-gap-spacing html-fill-container bslib-page-fill quarto-dashboard-pages">
 <!-- sidebar -->
 <!-- margin-sidebar -->
 <!-- main -->
 
-<div class="bslib-grid-item html-fill-item bslib-grid" data-layout="fill" style="display: grid; grid-template-rows: minmax(3em, 24fr) minmax(3em, 76fr); grid-auto-columns: minmax(0, 1fr);">
-<div class="bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr);
+<div class="bslib-grid-item html-fill-item tab-content bslib-grid" data-layout="fill" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div id="hosted" class="dashboard-page tab-pane show active html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-hosted">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 24fr) minmax(3em, 76fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr);
 grid-auto-rows: minmax(0, 1fr);">
-<div class="card valuebox cell bslib-card html-fill-container bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #1f3a5f;">
+<div class="card valuebox cell html-fill-item html-fill-container bslib-card bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #1f3a5f;">
 <div class="card-body html-fill-item html-fill-container">
 <div data-icon="boxes" class="html-fill-item html-fill-container value-box-grid">
 <div class="value-box-showcase html-fill-item html-fill-container">
@@ -171,7 +173,7 @@ Models tracked
 </div>
 </div>
 </div>
-<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card valuebox cell bslib-card html-fill-container bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #2563a8;">
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card valuebox cell html-fill-item html-fill-container bslib-card bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #2563a8;">
 <div class="card-body html-fill-item html-fill-container">
 <div data-icon="building" class="html-fill-item html-fill-container value-box-grid">
 <div class="value-box-showcase html-fill-item html-fill-container">
@@ -187,7 +189,7 @@ Providers
 </div>
 </div>
 </div>
-<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card valuebox cell bslib-card html-fill-container bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #a8482b;">
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card valuebox cell html-fill-item html-fill-container bslib-card bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #a8482b;">
 <div class="card-body html-fill-item html-fill-container">
 <div data-icon="stars" class="html-fill-item html-fill-container value-box-grid">
 <div class="value-box-showcase html-fill-item html-fill-container">
@@ -203,7 +205,7 @@ New this week
 </div>
 </div>
 </div>
-<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card valuebox cell bslib-card html-fill-container bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #15803d;">
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card valuebox cell html-fill-item html-fill-container bslib-card bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #15803d;">
 <div class="card-body html-fill-item html-fill-container">
 <div data-icon="arrows-angle-expand" class="html-fill-item html-fill-container value-box-grid">
 <div class="value-box-showcase html-fill-item html-fill-container">
@@ -219,7 +221,7 @@ Biggest context
 </div>
 </div>
 </div>
-<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card valuebox cell bslib-card html-fill-container bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #16202e;">
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card valuebox cell html-fill-item html-fill-container bslib-card bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #16202e;">
 <div class="card-body html-fill-item html-fill-container">
 <div data-icon="gift" class="html-fill-item html-fill-container value-box-grid">
 <div class="value-box-showcase html-fill-item html-fill-container">
@@ -237,78 +239,73 @@ Free models
 </div>
 <script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 </div>
-<div class="bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
 grid-auto-rows: minmax(0, 1fr);">
-<div class="card tabset bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card tabset html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-header dashboard-card-no-title bslib-navs-card-title">
 
 <ul class="nav nav-tabs card-header-tabs" role="tablist" data-tabsetid="card-tabset-6"><li class="nav-item" role="presentation"><a href="#card-tabset-6-1" role="tab" data-toggle="tab" data-bs-toggle="tab" data-value="Newest" aria-selected="true" class="nav-link active">Newest</a></li><li class="nav-item" role="presentation"><a href="#card-tabset-6-2" role="tab" data-toggle="tab" data-bs-toggle="tab" data-value="Cheapest capable" aria-selected="false" class="nav-link">Cheapest capable</a></li><li class="nav-item" role="presentation"><a href="#card-tabset-6-3" role="tab" data-toggle="tab" data-bs-toggle="tab" data-value="Full catalog — search &amp; sort" aria-selected="false" class="nav-link">Full catalog — search &amp; sort</a></li></ul></div>
 
 
 
-
-
-<div id="3ade8a4a-fb1d-4a6c-8409-ac45482d5fc9" class="hidden">
-
-</div>
 <div class="tab-content html-fill-item html-fill-container" data-tabset-id="card-tabset-6"><div class="tab-pane active show html-fill-item html-fill-container" role="tabpanel" id="card-tabset-6-1"><div class="card-body html-fill-item html-fill-container" data-title="Newest">
 <div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="7">
-<div id="gzbijdjnau" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;" class="html-fill-item html-fill-container">
+<div id="eefjfwwnrx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;" class="html-fill-item html-fill-container">
 <style>
-#gzbijdjnau table {
+#eefjfwwnrx table {
           font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
 
-#gzbijdjnau thead, tbody, tfoot, tr, td, th { border-style: none; }
+#eefjfwwnrx thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#gzbijdjnau p { margin: 0; padding: 0; }
- #gzbijdjnau .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 13px; font-weight: normal; font-style: normal; background-color: #faf7f1; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
- #gzbijdjnau .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #gzbijdjnau .gt_title { color: #333333; font-size: 20px; font-weight: 600; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #faf7f1; border-bottom-width: 0; }
- #gzbijdjnau .gt_subtitle { color: #333333; font-size: 13px; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #faf7f1; border-top-width: 0; }
- #gzbijdjnau .gt_heading { background-color: #faf7f1; text-align: center; border-bottom-color: #faf7f1; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #gzbijdjnau .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #gzbijdjnau .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #gzbijdjnau .gt_col_heading { color: #FFFFFF; background-color: #1f3a5f; font-size: 100%; font-weight: 600; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
- #gzbijdjnau .gt_column_spanner_outer { color: #FFFFFF; background-color: #1f3a5f; font-size: 100%; font-weight: 600; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #gzbijdjnau .gt_column_spanner_outer:first-child { padding-left: 0; }
- #gzbijdjnau .gt_column_spanner_outer:last-child { padding-right: 0; }
- #gzbijdjnau .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #gzbijdjnau .gt_spanner_row { border-bottom-style: hidden; }
- #gzbijdjnau .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #faf7f1; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #gzbijdjnau .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #faf7f1; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #gzbijdjnau .gt_from_md> :first-child { margin-top: 0; }
- #gzbijdjnau .gt_from_md> :last-child { margin-bottom: 0; }
- #gzbijdjnau .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #gzbijdjnau .gt_stub { color: #333333; background-color: #faf7f1; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
- #gzbijdjnau .gt_stub_row_group { color: #333333; background-color: #faf7f1; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
- #gzbijdjnau .gt_row_group_first td { border-top-width: 2px; }
- #gzbijdjnau .gt_row_group_first th { border-top-width: 2px; }
- #gzbijdjnau .gt_striped { color: #333333; background-color: #F4F4F4; }
- #gzbijdjnau .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #gzbijdjnau .gt_summary_row { color: #333333; background-color: #faf7f1; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #gzbijdjnau .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
- #gzbijdjnau .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #gzbijdjnau .gt_grand_summary_row { color: #333333; background-color: #faf7f1; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #gzbijdjnau .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #gzbijdjnau .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #gzbijdjnau .gt_sourcenotes { color: #333333; background-color: #faf7f1; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #gzbijdjnau .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #gzbijdjnau .gt_left { text-align: left; }
- #gzbijdjnau .gt_center { text-align: center; }
- #gzbijdjnau .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #gzbijdjnau .gt_font_normal { font-weight: normal; }
- #gzbijdjnau .gt_font_bold { font-weight: bold; }
- #gzbijdjnau .gt_font_italic { font-style: italic; }
- #gzbijdjnau .gt_super { font-size: 65%; }
- #gzbijdjnau .gt_footnotes { color: font-color(#faf7f1); background-color: #faf7f1; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #gzbijdjnau .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
- #gzbijdjnau .gt_sourcenotes { color: #333333; background-color: #faf7f1; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #gzbijdjnau .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #gzbijdjnau .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #gzbijdjnau .gt_asterisk { font-size: 100%; vertical-align: 0; }
+#eefjfwwnrx p { margin: 0; padding: 0; }
+ #eefjfwwnrx .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 13px; font-weight: normal; font-style: normal; background-color: #faf7f1; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #eefjfwwnrx .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #eefjfwwnrx .gt_title { color: #333333; font-size: 20px; font-weight: 600; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #faf7f1; border-bottom-width: 0; }
+ #eefjfwwnrx .gt_subtitle { color: #333333; font-size: 13px; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #faf7f1; border-top-width: 0; }
+ #eefjfwwnrx .gt_heading { background-color: #faf7f1; text-align: center; border-bottom-color: #faf7f1; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #eefjfwwnrx .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #eefjfwwnrx .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #eefjfwwnrx .gt_col_heading { color: #FFFFFF; background-color: #1f3a5f; font-size: 100%; font-weight: 600; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #eefjfwwnrx .gt_column_spanner_outer { color: #FFFFFF; background-color: #1f3a5f; font-size: 100%; font-weight: 600; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #eefjfwwnrx .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #eefjfwwnrx .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #eefjfwwnrx .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #eefjfwwnrx .gt_spanner_row { border-bottom-style: hidden; }
+ #eefjfwwnrx .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #faf7f1; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #eefjfwwnrx .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #faf7f1; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #eefjfwwnrx .gt_from_md> :first-child { margin-top: 0; }
+ #eefjfwwnrx .gt_from_md> :last-child { margin-bottom: 0; }
+ #eefjfwwnrx .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #eefjfwwnrx .gt_stub { color: #333333; background-color: #faf7f1; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #eefjfwwnrx .gt_stub_row_group { color: #333333; background-color: #faf7f1; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #eefjfwwnrx .gt_row_group_first td { border-top-width: 2px; }
+ #eefjfwwnrx .gt_row_group_first th { border-top-width: 2px; }
+ #eefjfwwnrx .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #eefjfwwnrx .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #eefjfwwnrx .gt_summary_row { color: #333333; background-color: #faf7f1; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #eefjfwwnrx .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
+ #eefjfwwnrx .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #eefjfwwnrx .gt_grand_summary_row { color: #333333; background-color: #faf7f1; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #eefjfwwnrx .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #eefjfwwnrx .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #eefjfwwnrx .gt_sourcenotes { color: #333333; background-color: #faf7f1; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #eefjfwwnrx .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #eefjfwwnrx .gt_left { text-align: left; }
+ #eefjfwwnrx .gt_center { text-align: center; }
+ #eefjfwwnrx .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #eefjfwwnrx .gt_font_normal { font-weight: normal; }
+ #eefjfwwnrx .gt_font_bold { font-weight: bold; }
+ #eefjfwwnrx .gt_font_italic { font-style: italic; }
+ #eefjfwwnrx .gt_super { font-size: 65%; }
+ #eefjfwwnrx .gt_footnotes { color: font-color(#faf7f1); background-color: #faf7f1; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #eefjfwwnrx .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
+ #eefjfwwnrx .gt_sourcenotes { color: #333333; background-color: #faf7f1; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #eefjfwwnrx .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #eefjfwwnrx .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #eefjfwwnrx .gt_asterisk { font-size: 100%; vertical-align: 0; }
  
 </style>
 
@@ -452,62 +449,62 @@ grid-auto-rows: minmax(0, 1fr);">
 </div>
 </div></div><div class="tab-pane html-fill-item html-fill-container" role="tabpanel" id="card-tabset-6-2"><div class="card-body html-fill-item html-fill-container" data-title="Cheapest capable">
 <div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="8">
-<div id="daikfvftbk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;" class="html-fill-item html-fill-container">
+<div id="boxvwpvqfg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;" class="html-fill-item html-fill-container">
 <style>
-#daikfvftbk table {
+#boxvwpvqfg table {
           font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
 
-#daikfvftbk thead, tbody, tfoot, tr, td, th { border-style: none; }
+#boxvwpvqfg thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#daikfvftbk p { margin: 0; padding: 0; }
- #daikfvftbk .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 13px; font-weight: normal; font-style: normal; background-color: #faf7f1; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
- #daikfvftbk .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #daikfvftbk .gt_title { color: #333333; font-size: 20px; font-weight: 600; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #faf7f1; border-bottom-width: 0; }
- #daikfvftbk .gt_subtitle { color: #333333; font-size: 13px; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #faf7f1; border-top-width: 0; }
- #daikfvftbk .gt_heading { background-color: #faf7f1; text-align: center; border-bottom-color: #faf7f1; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #daikfvftbk .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #daikfvftbk .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #daikfvftbk .gt_col_heading { color: #FFFFFF; background-color: #1f3a5f; font-size: 100%; font-weight: 600; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
- #daikfvftbk .gt_column_spanner_outer { color: #FFFFFF; background-color: #1f3a5f; font-size: 100%; font-weight: 600; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #daikfvftbk .gt_column_spanner_outer:first-child { padding-left: 0; }
- #daikfvftbk .gt_column_spanner_outer:last-child { padding-right: 0; }
- #daikfvftbk .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #daikfvftbk .gt_spanner_row { border-bottom-style: hidden; }
- #daikfvftbk .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #faf7f1; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #daikfvftbk .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #faf7f1; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #daikfvftbk .gt_from_md> :first-child { margin-top: 0; }
- #daikfvftbk .gt_from_md> :last-child { margin-bottom: 0; }
- #daikfvftbk .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #daikfvftbk .gt_stub { color: #333333; background-color: #faf7f1; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
- #daikfvftbk .gt_stub_row_group { color: #333333; background-color: #faf7f1; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
- #daikfvftbk .gt_row_group_first td { border-top-width: 2px; }
- #daikfvftbk .gt_row_group_first th { border-top-width: 2px; }
- #daikfvftbk .gt_striped { color: #333333; background-color: #F4F4F4; }
- #daikfvftbk .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #daikfvftbk .gt_summary_row { color: #333333; background-color: #faf7f1; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #daikfvftbk .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
- #daikfvftbk .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #daikfvftbk .gt_grand_summary_row { color: #333333; background-color: #faf7f1; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #daikfvftbk .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #daikfvftbk .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #daikfvftbk .gt_sourcenotes { color: #333333; background-color: #faf7f1; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #daikfvftbk .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #daikfvftbk .gt_left { text-align: left; }
- #daikfvftbk .gt_center { text-align: center; }
- #daikfvftbk .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #daikfvftbk .gt_font_normal { font-weight: normal; }
- #daikfvftbk .gt_font_bold { font-weight: bold; }
- #daikfvftbk .gt_font_italic { font-style: italic; }
- #daikfvftbk .gt_super { font-size: 65%; }
- #daikfvftbk .gt_footnotes { color: font-color(#faf7f1); background-color: #faf7f1; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #daikfvftbk .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
- #daikfvftbk .gt_sourcenotes { color: #333333; background-color: #faf7f1; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #daikfvftbk .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #daikfvftbk .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #daikfvftbk .gt_asterisk { font-size: 100%; vertical-align: 0; }
+#boxvwpvqfg p { margin: 0; padding: 0; }
+ #boxvwpvqfg .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 13px; font-weight: normal; font-style: normal; background-color: #faf7f1; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #boxvwpvqfg .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #boxvwpvqfg .gt_title { color: #333333; font-size: 20px; font-weight: 600; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #faf7f1; border-bottom-width: 0; }
+ #boxvwpvqfg .gt_subtitle { color: #333333; font-size: 13px; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #faf7f1; border-top-width: 0; }
+ #boxvwpvqfg .gt_heading { background-color: #faf7f1; text-align: center; border-bottom-color: #faf7f1; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #boxvwpvqfg .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #boxvwpvqfg .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #boxvwpvqfg .gt_col_heading { color: #FFFFFF; background-color: #1f3a5f; font-size: 100%; font-weight: 600; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #boxvwpvqfg .gt_column_spanner_outer { color: #FFFFFF; background-color: #1f3a5f; font-size: 100%; font-weight: 600; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #boxvwpvqfg .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #boxvwpvqfg .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #boxvwpvqfg .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #boxvwpvqfg .gt_spanner_row { border-bottom-style: hidden; }
+ #boxvwpvqfg .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #faf7f1; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #boxvwpvqfg .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #faf7f1; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #boxvwpvqfg .gt_from_md> :first-child { margin-top: 0; }
+ #boxvwpvqfg .gt_from_md> :last-child { margin-bottom: 0; }
+ #boxvwpvqfg .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #boxvwpvqfg .gt_stub { color: #333333; background-color: #faf7f1; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #boxvwpvqfg .gt_stub_row_group { color: #333333; background-color: #faf7f1; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #boxvwpvqfg .gt_row_group_first td { border-top-width: 2px; }
+ #boxvwpvqfg .gt_row_group_first th { border-top-width: 2px; }
+ #boxvwpvqfg .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #boxvwpvqfg .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #boxvwpvqfg .gt_summary_row { color: #333333; background-color: #faf7f1; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #boxvwpvqfg .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
+ #boxvwpvqfg .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #boxvwpvqfg .gt_grand_summary_row { color: #333333; background-color: #faf7f1; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #boxvwpvqfg .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #boxvwpvqfg .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #boxvwpvqfg .gt_sourcenotes { color: #333333; background-color: #faf7f1; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #boxvwpvqfg .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #boxvwpvqfg .gt_left { text-align: left; }
+ #boxvwpvqfg .gt_center { text-align: center; }
+ #boxvwpvqfg .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #boxvwpvqfg .gt_font_normal { font-weight: normal; }
+ #boxvwpvqfg .gt_font_bold { font-weight: bold; }
+ #boxvwpvqfg .gt_font_italic { font-style: italic; }
+ #boxvwpvqfg .gt_super { font-size: 65%; }
+ #boxvwpvqfg .gt_footnotes { color: font-color(#faf7f1); background-color: #faf7f1; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #boxvwpvqfg .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
+ #boxvwpvqfg .gt_sourcenotes { color: #333333; background-color: #faf7f1; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #boxvwpvqfg .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #boxvwpvqfg .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #boxvwpvqfg .gt_asterisk { font-size: 100%; vertical-align: 0; }
  
 </style>
 
@@ -549,22 +546,22 @@ grid-auto-rows: minmax(0, 1fr);">
 <td class="gt_row gt_right gt_striped">2025-10-20</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">Mistral Nemo</td>
-<td class="gt_row gt_left">Mistral</td>
+<td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">Llama 3.1 8B Instruct</td>
+<td class="gt_row gt_left">Meta</td>
 <td class="gt_row gt_right">131K</td>
 <td class="gt_row gt_right">$0.02</td>
 <td class="gt_row gt_right">$0.03</td>
 <td class="gt_row gt_center">🔧</td>
-<td class="gt_row gt_right">2024-07-19</td>
+<td class="gt_row gt_right">2024-07-23</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left gt_striped" style="color: #1f3a5f; font-weight: 600">Llama 3.1 8B Instruct</td>
-<td class="gt_row gt_left gt_striped">Meta</td>
+<td class="gt_row gt_left gt_striped" style="color: #1f3a5f; font-weight: 600">Mistral Nemo</td>
+<td class="gt_row gt_left gt_striped">Mistral</td>
 <td class="gt_row gt_right gt_striped">131K</td>
 <td class="gt_row gt_right gt_striped">$0.02</td>
 <td class="gt_row gt_right gt_striped">$0.03</td>
 <td class="gt_row gt_center gt_striped">🔧</td>
-<td class="gt_row gt_right gt_striped">2024-07-23</td>
+<td class="gt_row gt_right gt_striped">2024-07-19</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">Llama 3.2 1B Instruct</td>
@@ -585,22 +582,22 @@ grid-auto-rows: minmax(0, 1fr);">
 <td class="gt_row gt_right gt_striped">2025-08-05</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">LFM2-24B-A2B</td>
-<td class="gt_row gt_left">LiquidAI</td>
-<td class="gt_row gt_right">128K</td>
+<td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">gpt-oss-120b</td>
+<td class="gt_row gt_left">OpenAI</td>
+<td class="gt_row gt_right">131K</td>
 <td class="gt_row gt_right">$0.03</td>
-<td class="gt_row gt_right">$0.12</td>
-<td class="gt_row gt_center">—</td>
-<td class="gt_row gt_right">2026-02-25</td>
+<td class="gt_row gt_right">$0.15</td>
+<td class="gt_row gt_center">🧠 🔧</td>
+<td class="gt_row gt_right">2025-08-05</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left gt_striped" style="color: #1f3a5f; font-weight: 600">gpt-oss-120b</td>
-<td class="gt_row gt_left gt_striped">OpenAI</td>
-<td class="gt_row gt_right gt_striped">131K</td>
+<td class="gt_row gt_left gt_striped" style="color: #1f3a5f; font-weight: 600">LFM2-24B-A2B</td>
+<td class="gt_row gt_left gt_striped">LiquidAI</td>
+<td class="gt_row gt_right gt_striped">128K</td>
 <td class="gt_row gt_right gt_striped">$0.03</td>
-<td class="gt_row gt_right gt_striped">$0.15</td>
-<td class="gt_row gt_center gt_striped">🧠 🔧</td>
-<td class="gt_row gt_right gt_striped">2025-08-05</td>
+<td class="gt_row gt_right gt_striped">$0.12</td>
+<td class="gt_row gt_center gt_striped">—</td>
+<td class="gt_row gt_right gt_striped">2026-02-25</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">Nova Micro 1.0</td>
@@ -651,23 +648,23 @@ grid-auto-rows: minmax(0, 1fr);">
 </div>
 </div></div><div class="tab-pane html-fill-item html-fill-container" role="tabpanel" id="card-tabset-6-3"><div class="card-body html-fill-item html-fill-container" data-title="Full catalog — search &amp; sort">
 <script type="ojs-define">{"contents": [{"name": "models", "value": [{"name": "Fugu Ultra", "provider": "Sakana", "context_k": 1000, "price_in": 5.0, "price_out": 30.0, "modalities": "text, image", "created_str": "2026-06-24"}, {"name": "Nano Banana 2 (Gemini 3.1 Flash Image)", "provider": "Google", "context_k": 131, "price_in": 0.5, "price_out": 3.0, "modalities": "image, text", "created_str": "2026-06-18"}, {"name": "Nano Banana Pro (Gemini 3 Pro Image)", "provider": "Google", "context_k": 66, "price_in": 2.0, "price_out": 12.0, "modalities": "image, text", "created_str": "2026-06-18"}, {"name": "North Mini Code (free)", "provider": "Cohere", "context_k": 256, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2026-06-17"}, {"name": "GLM 5.2", "provider": "Z.ai", "context_k": 1049, "price_in": 0.95, "price_out": 3.0, "modalities": "text", "created_str": "2026-06-16"}, {"name": "Fusion", "provider": "OpenRouter", "context_k": 1000, "price_in": null, "price_out": null, "modalities": "text", "created_str": "2026-06-13"}, {"name": "Kimi K2.7 Code", "provider": "MoonshotAI", "context_k": 262, "price_in": 0.74, "price_out": 3.5, "modalities": "text, image", "created_str": "2026-06-12"}, {"name": "Claude Fable Latest", "provider": "Anthropic", "context_k": 1000, "price_in": 10.0, "price_out": 50.0, "modalities": "text, image, file", "created_str": "2026-06-09"}, {"name": "Claude Fable 5", "provider": "Anthropic", "context_k": 1000, "price_in": 10.0, "price_out": 50.0, "modalities": "text, image, file", "created_str": "2026-06-09"}, {"name": "Nex-N2-Pro", "provider": "Nex AGI", "context_k": 262, "price_in": 0.25, "price_out": 1.0, "modalities": "text, image", "created_str": "2026-06-08"}, {"name": "Nemotron 3.5 Content Safety (free)", "provider": "NVIDIA", "context_k": 128, "price_in": 0.0, "price_out": 0.0, "modalities": "text, image", "created_str": "2026-06-04"}, {"name": "Nemotron 3 Ultra (free)", "provider": "NVIDIA", "context_k": 1000, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2026-06-04"}, {"name": "Nemotron 3 Ultra", "provider": "NVIDIA", "context_k": 1000, "price_in": 0.5, "price_out": 2.2, "modalities": "text", "created_str": "2026-06-04"}, {"name": "Qwen3.7 Plus", "provider": "Qwen", "context_k": 1000, "price_in": 0.32, "price_out": 1.28, "modalities": "text, image", "created_str": "2026-06-03"}, {"name": "MiniMax M3", "provider": "MiniMax", "context_k": 1049, "price_in": 0.3, "price_out": 1.2, "modalities": "text, image, video", "created_str": "2026-05-31"}, {"name": "Step 3.7 Flash", "provider": "StepFun", "context_k": 256, "price_in": 0.2, "price_out": 1.15, "modalities": "text, image, video", "created_str": "2026-05-28"}, {"name": "Claude Opus 4.8 (Fast)", "provider": "Anthropic", "context_k": 1000, "price_in": 10.0, "price_out": 50.0, "modalities": "text, image, file", "created_str": "2026-05-27"}, {"name": "Claude Opus 4.8", "provider": "Anthropic", "context_k": 1000, "price_in": 5.0, "price_out": 25.0, "modalities": "text, image, file", "created_str": "2026-05-27"}, {"name": "Qwen3.7 Max", "provider": "Qwen", "context_k": 1000, "price_in": 1.25, "price_out": 3.75, "modalities": "text", "created_str": "2026-05-21"}, {"name": "Grok Build 0.1", "provider": "xAI", "context_k": 256, "price_in": 1.0, "price_out": 2.0, "modalities": "text, image", "created_str": "2026-05-20"}, {"name": "Gemini 3.5 Flash", "provider": "Google", "context_k": 1049, "price_in": 1.5, "price_out": 9.0, "modalities": "text, image, video, file, audio", "created_str": "2026-05-19"}, {"name": "Claude Opus 4.7 (Fast)", "provider": "Anthropic", "context_k": 1000, "price_in": 30.0, "price_out": 150.0, "modalities": "text, image, file", "created_str": "2026-05-12"}, {"name": "Perceptron Mk1", "provider": "Perceptron", "context_k": 33, "price_in": 0.15, "price_out": 1.5, "modalities": "text, image, video", "created_str": "2026-05-12"}, {"name": "Ring-2.6-1T", "provider": "inclusionAI", "context_k": 262, "price_in": 0.075, "price_out": 0.625, "modalities": "text", "created_str": "2026-05-08"}, {"name": "Gemini 3.1 Flash Lite", "provider": "Google", "context_k": 1049, "price_in": 0.25, "price_out": 1.5, "modalities": "text, image, video, file, audio", "created_str": "2026-05-07"}, {"name": "GPT Chat Latest", "provider": "OpenAI", "context_k": 400, "price_in": 5.0, "price_out": 30.0, "modalities": "text, image, file", "created_str": "2026-05-05"}, {"name": "Grok 4.3", "provider": "xAI", "context_k": 1000, "price_in": 1.25, "price_out": 2.5, "modalities": "text, image, file", "created_str": "2026-04-30"}, {"name": "Granite 4.1 8B", "provider": "IBM", "context_k": 131, "price_in": 0.05, "price_out": 0.1, "modalities": "text", "created_str": "2026-04-30"}, {"name": "Mistral Medium 3.5", "provider": "Mistral", "context_k": 262, "price_in": 1.5, "price_out": 7.5, "modalities": "text, image, file", "created_str": "2026-04-30"}, {"name": "Owl Alpha", "provider": "Openrouter", "context_k": 1049, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2026-04-28"}, {"name": "Nemotron 3 Nano Omni (free)", "provider": "NVIDIA", "context_k": 256, "price_in": 0.0, "price_out": 0.0, "modalities": "text, audio, image, video", "created_str": "2026-04-28"}, {"name": "Laguna XS.2 (free)", "provider": "Poolside", "context_k": 262, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2026-04-28"}, {"name": "Laguna XS.2", "provider": "Poolside", "context_k": 262, "price_in": 0.1, "price_out": 0.2, "modalities": "text", "created_str": "2026-04-28"}, {"name": "Laguna M.1 (free)", "provider": "Poolside", "context_k": 262, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2026-04-28"}, {"name": "Laguna M.1", "provider": "Poolside", "context_k": 262, "price_in": 0.2, "price_out": 0.4, "modalities": "text", "created_str": "2026-04-28"}, {"name": "Anthropic Claude Haiku Latest", "provider": "Anthropic", "context_k": 200, "price_in": 1.0, "price_out": 5.0, "modalities": "text, image, file", "created_str": "2026-04-27"}, {"name": "OpenAI GPT Mini Latest", "provider": "Openai", "context_k": 400, "price_in": 0.75, "price_out": 4.5, "modalities": "file, image, text", "created_str": "2026-04-27"}, {"name": "Google Gemini Pro Latest", "provider": "Google", "context_k": 1049, "price_in": 2.0, "price_out": 12.0, "modalities": "audio, file, image, text, video", "created_str": "2026-04-27"}, {"name": "MoonshotAI Kimi Latest", "provider": "Moonshotai", "context_k": 262, "price_in": 0.66, "price_out": 3.41, "modalities": "text, image", "created_str": "2026-04-27"}, {"name": "Google Gemini Flash Latest", "provider": "Google", "context_k": 1049, "price_in": 1.5, "price_out": 9.0, "modalities": "text, image, video, file, audio", "created_str": "2026-04-27"}, {"name": "Anthropic Claude Sonnet Latest", "provider": "Anthropic", "context_k": 1000, "price_in": 3.0, "price_out": 15.0, "modalities": "text, image, file", "created_str": "2026-04-27"}, {"name": "OpenAI GPT Latest", "provider": "Openai", "context_k": 1050, "price_in": 5.0, "price_out": 30.0, "modalities": "file, image, text", "created_str": "2026-04-27"}, {"name": "Qwen3.5 Plus 2026-04-20", "provider": "Qwen", "context_k": 1000, "price_in": 0.3, "price_out": 1.8, "modalities": "text, image, video", "created_str": "2026-04-27"}, {"name": "Qwen3.6 Flash", "provider": "Qwen", "context_k": 1000, "price_in": 0.1875, "price_out": 1.125, "modalities": "text, image, video", "created_str": "2026-04-27"}, {"name": "Qwen3.6 35B A3B", "provider": "Qwen", "context_k": 262, "price_in": 0.14, "price_out": 1.0, "modalities": "text, image, video", "created_str": "2026-04-27"}, {"name": "Qwen3.6 Max Preview", "provider": "Qwen", "context_k": 262, "price_in": 1.04, "price_out": 6.24, "modalities": "text", "created_str": "2026-04-27"}, {"name": "Qwen3.6 27B", "provider": "Qwen", "context_k": 262, "price_in": 0.2596, "price_out": 2.385, "modalities": "text, image, video", "created_str": "2026-04-27"}, {"name": "GPT-5.5 Pro", "provider": "OpenAI", "context_k": 1050, "price_in": 30.0, "price_out": 180.0, "modalities": "file, image, text", "created_str": "2026-04-24"}, {"name": "GPT-5.5", "provider": "OpenAI", "context_k": 1050, "price_in": 5.0, "price_out": 30.0, "modalities": "file, image, text", "created_str": "2026-04-24"}, {"name": "DeepSeek V4 Pro", "provider": "DeepSeek", "context_k": 1049, "price_in": 0.435, "price_out": 0.87, "modalities": "text", "created_str": "2026-04-24"}, {"name": "DeepSeek V4 Flash", "provider": "DeepSeek", "context_k": 1049, "price_in": 0.09, "price_out": 0.18, "modalities": "text", "created_str": "2026-04-24"}, {"name": "Ling-2.6-1T", "provider": "inclusionAI", "context_k": 262, "price_in": 0.075, "price_out": 0.625, "modalities": "text", "created_str": "2026-04-23"}, {"name": "Hy3 preview", "provider": "Tencent", "context_k": 262, "price_in": 0.063, "price_out": 0.21, "modalities": "text", "created_str": "2026-04-22"}, {"name": "MiMo-V2.5-Pro", "provider": "Xiaomi", "context_k": 1049, "price_in": 0.435, "price_out": 0.87, "modalities": "text", "created_str": "2026-04-22"}, {"name": "MiMo-V2.5", "provider": "Xiaomi", "context_k": 1049, "price_in": 0.105, "price_out": 0.28, "modalities": "text, audio, image, video", "created_str": "2026-04-22"}, {"name": "GPT-5.4 Image 2", "provider": "OpenAI", "context_k": 272, "price_in": 8.0, "price_out": 15.0, "modalities": "image, text, file", "created_str": "2026-04-21"}, {"name": "Ling-2.6-flash", "provider": "inclusionAI", "context_k": 262, "price_in": 0.01, "price_out": 0.03, "modalities": "text", "created_str": "2026-04-21"}, {"name": "Claude Opus Latest", "provider": "Anthropic", "context_k": 1000, "price_in": 5.0, "price_out": 25.0, "modalities": "text, image, file", "created_str": "2026-04-21"}, {"name": "Pareto Code Router", "provider": "Openrouter", "context_k": 2000, "price_in": null, "price_out": null, "modalities": "text", "created_str": "2026-04-21"}, {"name": "Kimi K2.6", "provider": "MoonshotAI", "context_k": 262, "price_in": 0.66, "price_out": 3.41, "modalities": "text, image", "created_str": "2026-04-20"}, {"name": "Claude Opus 4.7", "provider": "Anthropic", "context_k": 1000, "price_in": 5.0, "price_out": 25.0, "modalities": "text, image, file", "created_str": "2026-04-16"}, {"name": "Claude Opus 4.6 (Fast)", "provider": "Anthropic", "context_k": 1000, "price_in": 30.0, "price_out": 150.0, "modalities": "text, image, file", "created_str": "2026-04-07"}, {"name": "GLM 5.1", "provider": "Z.ai", "context_k": 203, "price_in": 0.98, "price_out": 3.08, "modalities": "text", "created_str": "2026-04-07"}, {"name": "Gemma 4 26B A4B  (free)", "provider": "Google", "context_k": 262, "price_in": 0.0, "price_out": 0.0, "modalities": "image, text, video", "created_str": "2026-04-03"}, {"name": "Gemma 4 26B A4B", "provider": "Google", "context_k": 262, "price_in": 0.06, "price_out": 0.33, "modalities": "image, text, video", "created_str": "2026-04-03"}, {"name": "Gemma 4 31B (free)", "provider": "Google", "context_k": 262, "price_in": 0.0, "price_out": 0.0, "modalities": "image, text, video", "created_str": "2026-04-02"}, {"name": "Gemma 4 31B", "provider": "Google", "context_k": 262, "price_in": 0.12, "price_out": 0.35, "modalities": "image, text, video", "created_str": "2026-04-02"}, {"name": "Qwen3.6 Plus", "provider": "Qwen", "context_k": 1000, "price_in": 0.325, "price_out": 1.95, "modalities": "text, image, video", "created_str": "2026-04-02"}, {"name": "GLM 5V Turbo", "provider": "Z.ai", "context_k": 203, "price_in": 1.2, "price_out": 4.0, "modalities": "image, text, video", "created_str": "2026-04-01"}, {"name": "Trinity Large Thinking", "provider": "Arcee AI", "context_k": 262, "price_in": 0.25, "price_out": 0.8, "modalities": "text", "created_str": "2026-04-01"}, {"name": "Grok 4.20 Multi-Agent", "provider": "xAI", "context_k": 2000, "price_in": 1.25, "price_out": 2.5, "modalities": "text, image, file", "created_str": "2026-03-31"}, {"name": "Grok 4.20", "provider": "xAI", "context_k": 2000, "price_in": 1.25, "price_out": 2.5, "modalities": "text, image, file", "created_str": "2026-03-31"}, {"name": "Lyria 3 Pro Preview", "provider": "Google", "context_k": 1049, "price_in": 0.0, "price_out": 0.0, "modalities": "text, image", "created_str": "2026-03-30"}, {"name": "Lyria 3 Clip Preview", "provider": "Google", "context_k": 1049, "price_in": 0.0, "price_out": 0.0, "modalities": "text, image", "created_str": "2026-03-30"}, {"name": "KAT-Coder-Pro V2", "provider": "Kwaipilot", "context_k": 256, "price_in": 0.3, "price_out": 1.2, "modalities": "text", "created_str": "2026-03-27"}, {"name": "Reka Edge", "provider": "Rekaai", "context_k": 16, "price_in": 0.1, "price_out": 0.1, "modalities": "image, text, video", "created_str": "2026-03-20"}, {"name": "MiniMax M2.7", "provider": "MiniMax", "context_k": 205, "price_in": 0.18, "price_out": 0.72, "modalities": "text", "created_str": "2026-03-18"}, {"name": "GPT-5.4 Nano", "provider": "OpenAI", "context_k": 400, "price_in": 0.2, "price_out": 1.25, "modalities": "file, image, text", "created_str": "2026-03-17"}, {"name": "GPT-5.4 Mini", "provider": "OpenAI", "context_k": 400, "price_in": 0.75, "price_out": 4.5, "modalities": "file, image, text", "created_str": "2026-03-17"}, {"name": "Mistral Small 4", "provider": "Mistral", "context_k": 262, "price_in": 0.15, "price_out": 0.6, "modalities": "text, image", "created_str": "2026-03-16"}, {"name": "GLM 5 Turbo", "provider": "Z.ai", "context_k": 262, "price_in": 1.2, "price_out": 4.0, "modalities": "text", "created_str": "2026-03-15"}, {"name": "Nemotron 3 Super (free)", "provider": "NVIDIA", "context_k": 1000, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2026-03-11"}, {"name": "Nemotron 3 Super", "provider": "NVIDIA", "context_k": 1000, "price_in": 0.085, "price_out": 0.4, "modalities": "text", "created_str": "2026-03-11"}, {"name": "Seed-2.0-Lite", "provider": "ByteDance Seed", "context_k": 262, "price_in": 0.25, "price_out": 2.0, "modalities": "text, image, video", "created_str": "2026-03-10"}, {"name": "Qwen3.5-9B", "provider": "Qwen", "context_k": 262, "price_in": 0.1, "price_out": 0.15, "modalities": "text, image, video", "created_str": "2026-03-10"}, {"name": "GPT-5.4 Pro", "provider": "OpenAI", "context_k": 1050, "price_in": 30.0, "price_out": 180.0, "modalities": "text, image, file", "created_str": "2026-03-05"}, {"name": "GPT-5.4", "provider": "OpenAI", "context_k": 1050, "price_in": 2.5, "price_out": 15.0, "modalities": "text, image, file", "created_str": "2026-03-05"}, {"name": "Mercury 2", "provider": "Inception", "context_k": 128, "price_in": 0.25, "price_out": 0.75, "modalities": "text", "created_str": "2026-03-04"}, {"name": "GPT-5.3 Chat", "provider": "OpenAI", "context_k": 128, "price_in": 1.75, "price_out": 14.0, "modalities": "text, image, file", "created_str": "2026-03-03"}, {"name": "Gemini 3.1 Flash Lite Preview", "provider": "Google", "context_k": 1049, "price_in": 0.25, "price_out": 1.5, "modalities": "text, image, video, file, audio", "created_str": "2026-03-03"}, {"name": "Seed-2.0-Mini", "provider": "ByteDance Seed", "context_k": 262, "price_in": 0.1, "price_out": 0.4, "modalities": "text, image, video", "created_str": "2026-02-26"}, {"name": "Nano Banana 2 (Gemini 3.1 Flash Image Preview)", "provider": "Google", "context_k": 131, "price_in": 0.5, "price_out": 3.0, "modalities": "image, text", "created_str": "2026-02-26"}, {"name": "Qwen3.5-35B-A3B", "provider": "Qwen", "context_k": 262, "price_in": 0.14, "price_out": 1.0, "modalities": "text, image, video", "created_str": "2026-02-25"}, {"name": "Qwen3.5-27B", "provider": "Qwen", "context_k": 262, "price_in": 0.195, "price_out": 1.56, "modalities": "text, image, video", "created_str": "2026-02-25"}, {"name": "Qwen3.5-122B-A10B", "provider": "Qwen", "context_k": 262, "price_in": 0.26, "price_out": 2.08, "modalities": "text, image, video", "created_str": "2026-02-25"}, {"name": "Qwen3.5-Flash", "provider": "Qwen", "context_k": 1000, "price_in": 0.065, "price_out": 0.26, "modalities": "text, image, video", "created_str": "2026-02-25"}, {"name": "LFM2-24B-A2B", "provider": "LiquidAI", "context_k": 128, "price_in": 0.03, "price_out": 0.12, "modalities": "text", "created_str": "2026-02-25"}, {"name": "Gemini 3.1 Pro Preview Custom Tools", "provider": "Google", "context_k": 1049, "price_in": 2.0, "price_out": 12.0, "modalities": "text, audio, image, video, file", "created_str": "2026-02-25"}, {"name": "GPT-5.3-Codex", "provider": "OpenAI", "context_k": 400, "price_in": 1.75, "price_out": 14.0, "modalities": "text, image, file", "created_str": "2026-02-24"}, {"name": "Aion-2.0", "provider": "AionLabs", "context_k": 131, "price_in": 0.8, "price_out": 1.6, "modalities": "text", "created_str": "2026-02-23"}, {"name": "Gemini 3.1 Pro Preview", "provider": "Google", "context_k": 1049, "price_in": 2.0, "price_out": 12.0, "modalities": "audio, file, image, text, video", "created_str": "2026-02-19"}, {"name": "Claude Sonnet 4.6", "provider": "Anthropic", "context_k": 1000, "price_in": 3.0, "price_out": 15.0, "modalities": "text, image, file", "created_str": "2026-02-17"}, {"name": "Qwen3.5 Plus 2026-02-15", "provider": "Qwen", "context_k": 1000, "price_in": 0.26, "price_out": 1.56, "modalities": "text, image, video", "created_str": "2026-02-16"}, {"name": "Qwen3.5 397B A17B", "provider": "Qwen", "context_k": 256, "price_in": 0.385, "price_out": 2.45, "modalities": "text, image, video", "created_str": "2026-02-16"}, {"name": "MiniMax M2.5", "provider": "MiniMax", "context_k": 205, "price_in": 0.12, "price_out": 0.48, "modalities": "text", "created_str": "2026-02-12"}, {"name": "GLM 5", "provider": "Z.ai", "context_k": 203, "price_in": 0.6, "price_out": 1.92, "modalities": "text", "created_str": "2026-02-11"}, {"name": "Qwen3 Max Thinking", "provider": "Qwen", "context_k": 262, "price_in": 0.78, "price_out": 3.9, "modalities": "text", "created_str": "2026-02-09"}, {"name": "Claude Opus 4.6", "provider": "Anthropic", "context_k": 1000, "price_in": 5.0, "price_out": 25.0, "modalities": "text, image, file", "created_str": "2026-02-04"}, {"name": "Qwen3 Coder Next", "provider": "Qwen", "context_k": 262, "price_in": 0.11, "price_out": 0.8, "modalities": "text", "created_str": "2026-02-04"}, {"name": "Free Models Router", "provider": "Openrouter", "context_k": 200, "price_in": 0.0, "price_out": 0.0, "modalities": "text, image", "created_str": "2026-02-01"}, {"name": "Step 3.5 Flash", "provider": "StepFun", "context_k": 262, "price_in": 0.09, "price_out": 0.3, "modalities": "text", "created_str": "2026-01-29"}, {"name": "Kimi K2.5", "provider": "MoonshotAI", "context_k": 262, "price_in": 0.375, "price_out": 2.025, "modalities": "text, image", "created_str": "2026-01-27"}, {"name": "Solar Pro 3", "provider": "Upstage", "context_k": 128, "price_in": 0.15, "price_out": 0.6, "modalities": "text", "created_str": "2026-01-27"}, {"name": "MiniMax M2-her", "provider": "MiniMax", "context_k": 66, "price_in": 0.3, "price_out": 1.2, "modalities": "text", "created_str": "2026-01-23"}, {"name": "Palmyra X5", "provider": "Writer", "context_k": 1040, "price_in": 0.6, "price_out": 6.0, "modalities": "text", "created_str": "2026-01-21"}, {"name": "LFM2.5-1.2B-Thinking (free)", "provider": "LiquidAI", "context_k": 33, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2026-01-20"}, {"name": "LFM2.5-1.2B-Instruct (free)", "provider": "LiquidAI", "context_k": 33, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2026-01-20"}, {"name": "GPT Audio", "provider": "OpenAI", "context_k": 128, "price_in": 2.5, "price_out": 10.0, "modalities": "text, audio", "created_str": "2026-01-19"}, {"name": "GPT Audio Mini", "provider": "OpenAI", "context_k": 128, "price_in": 0.6, "price_out": 2.4, "modalities": "text, audio", "created_str": "2026-01-19"}, {"name": "GLM 4.7 Flash", "provider": "Z.ai", "context_k": 203, "price_in": 0.06, "price_out": 0.4, "modalities": "text", "created_str": "2026-01-19"}, {"name": "GPT-5.2-Codex", "provider": "OpenAI", "context_k": 400, "price_in": 1.75, "price_out": 14.0, "modalities": "text, image", "created_str": "2026-01-14"}, {"name": "Seed 1.6 Flash", "provider": "ByteDance Seed", "context_k": 262, "price_in": 0.075, "price_out": 0.3, "modalities": "image, text, video", "created_str": "2025-12-23"}, {"name": "Seed 1.6", "provider": "ByteDance Seed", "context_k": 262, "price_in": 0.25, "price_out": 2.0, "modalities": "image, text, video", "created_str": "2025-12-23"}, {"name": "MiniMax M2.1", "provider": "MiniMax", "context_k": 205, "price_in": 0.29, "price_out": 0.95, "modalities": "text", "created_str": "2025-12-23"}, {"name": "GLM 4.7", "provider": "Z.ai", "context_k": 203, "price_in": 0.4, "price_out": 1.75, "modalities": "text", "created_str": "2025-12-22"}, {"name": "Gemini 3 Flash Preview", "provider": "Google", "context_k": 1049, "price_in": 0.5, "price_out": 3.0, "modalities": "text, image, file, audio, video", "created_str": "2025-12-17"}, {"name": "Nemotron 3 Nano 30B A3B", "provider": "NVIDIA", "context_k": 262, "price_in": 0.05, "price_out": 0.2, "modalities": "text", "created_str": "2025-12-14"}, {"name": "Nemotron 3 Nano 30B A3B (free)", "provider": "NVIDIA", "context_k": 256, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2025-12-14"}, {"name": "GPT-5.2 Chat", "provider": "OpenAI", "context_k": 128, "price_in": 1.75, "price_out": 14.0, "modalities": "file, image, text", "created_str": "2025-12-10"}, {"name": "GPT-5.2 Pro", "provider": "OpenAI", "context_k": 400, "price_in": 21.0, "price_out": 168.0, "modalities": "image, text, file", "created_str": "2025-12-10"}, {"name": "GPT-5.2", "provider": "OpenAI", "context_k": 400, "price_in": 1.75, "price_out": 14.0, "modalities": "file, image, text", "created_str": "2025-12-10"}, {"name": "Devstral 2 2512", "provider": "Mistral", "context_k": 262, "price_in": 0.4, "price_out": 2.0, "modalities": "text, file", "created_str": "2025-12-09"}, {"name": "Relace Search", "provider": "Relace", "context_k": 256, "price_in": 1.0, "price_out": 3.0, "modalities": "text", "created_str": "2025-12-08"}, {"name": "GLM 4.6V", "provider": "Z.ai", "context_k": 131, "price_in": 0.3, "price_out": 0.9, "modalities": "image, text, video", "created_str": "2025-12-08"}, {"name": "Body Builder (beta)", "provider": "Openrouter", "context_k": 128, "price_in": null, "price_out": null, "modalities": "text", "created_str": "2025-12-05"}, {"name": "GPT-5.1-Codex-Max", "provider": "OpenAI", "context_k": 400, "price_in": 1.25, "price_out": 10.0, "modalities": "text, image", "created_str": "2025-12-04"}, {"name": "Nova 2 Lite", "provider": "Amazon", "context_k": 1000, "price_in": 0.3, "price_out": 2.5, "modalities": "text, image, video, file", "created_str": "2025-12-02"}, {"name": "Ministral 3 14B 2512", "provider": "Mistral", "context_k": 262, "price_in": 0.2, "price_out": 0.2, "modalities": "text, image", "created_str": "2025-12-02"}, {"name": "Ministral 3 8B 2512", "provider": "Mistral", "context_k": 262, "price_in": 0.15, "price_out": 0.15, "modalities": "text, image", "created_str": "2025-12-02"}, {"name": "Ministral 3 3B 2512", "provider": "Mistral", "context_k": 131, "price_in": 0.1, "price_out": 0.1, "modalities": "text, image", "created_str": "2025-12-02"}, {"name": "Mistral Large 3 2512", "provider": "Mistral", "context_k": 262, "price_in": 0.5, "price_out": 1.5, "modalities": "text, image, file", "created_str": "2025-12-01"}, {"name": "Trinity Mini", "provider": "Arcee AI", "context_k": 131, "price_in": 0.045, "price_out": 0.15, "modalities": "text", "created_str": "2025-12-01"}, {"name": "DeepSeek V3.2", "provider": "DeepSeek", "context_k": 131, "price_in": 0.2288, "price_out": 0.3432, "modalities": "text", "created_str": "2025-12-01"}, {"name": "Claude Opus 4.5", "provider": "Anthropic", "context_k": 200, "price_in": 5.0, "price_out": 25.0, "modalities": "file, image, text", "created_str": "2025-11-24"}, {"name": "Olmo 3 32B Think", "provider": "AllenAI", "context_k": 66, "price_in": 0.15, "price_out": 0.5, "modalities": "text", "created_str": "2025-11-21"}, {"name": "Nano Banana Pro (Gemini 3 Pro Image Preview)", "provider": "Google", "context_k": 66, "price_in": 2.0, "price_out": 12.0, "modalities": "image, text", "created_str": "2025-11-20"}, {"name": "Cogito v2.1 671B", "provider": "Deep Cogito", "context_k": 128, "price_in": 1.25, "price_out": 1.25, "modalities": "text", "created_str": "2025-11-13"}, {"name": "GPT-5.1", "provider": "OpenAI", "context_k": 400, "price_in": 1.25, "price_out": 10.0, "modalities": "image, text, file", "created_str": "2025-11-13"}, {"name": "GPT-5.1 Chat", "provider": "OpenAI", "context_k": 128, "price_in": 1.25, "price_out": 10.0, "modalities": "file, image, text", "created_str": "2025-11-13"}, {"name": "GPT-5.1-Codex", "provider": "OpenAI", "context_k": 400, "price_in": 1.25, "price_out": 10.0, "modalities": "text, image", "created_str": "2025-11-13"}, {"name": "GPT-5.1-Codex-Mini", "provider": "OpenAI", "context_k": 400, "price_in": 0.25, "price_out": 2.0, "modalities": "image, text", "created_str": "2025-11-13"}, {"name": "Kimi K2 Thinking", "provider": "MoonshotAI", "context_k": 262, "price_in": 0.6, "price_out": 2.5, "modalities": "text", "created_str": "2025-11-06"}, {"name": "Nova Premier 1.0", "provider": "Amazon", "context_k": 1000, "price_in": 2.5, "price_out": 12.5, "modalities": "text, image", "created_str": "2025-10-31"}, {"name": "Sonar Pro Search", "provider": "Perplexity", "context_k": 200, "price_in": 3.0, "price_out": 15.0, "modalities": "text, image", "created_str": "2025-10-30"}, {"name": "Voxtral Small 24B 2507", "provider": "Mistral", "context_k": 32, "price_in": 0.1, "price_out": 0.3, "modalities": "text, audio, file", "created_str": "2025-10-30"}, {"name": "gpt-oss-safeguard-20b", "provider": "OpenAI", "context_k": 131, "price_in": 0.075, "price_out": 0.3, "modalities": "text", "created_str": "2025-10-29"}, {"name": "Nemotron Nano 12B 2 VL (free)", "provider": "NVIDIA", "context_k": 128, "price_in": 0.0, "price_out": 0.0, "modalities": "image, text, video", "created_str": "2025-10-28"}, {"name": "MiniMax M2", "provider": "MiniMax", "context_k": 205, "price_in": 0.255, "price_out": 1.0, "modalities": "text", "created_str": "2025-10-23"}, {"name": "Qwen3 VL 32B Instruct", "provider": "Qwen", "context_k": 262, "price_in": 0.104, "price_out": 0.416, "modalities": "text, image", "created_str": "2025-10-23"}, {"name": "Granite 4.0 Micro", "provider": "IBM", "context_k": 131, "price_in": 0.017, "price_out": 0.112, "modalities": "text", "created_str": "2025-10-20"}, {"name": "Phi 4 Mini Instruct", "provider": "Microsoft", "context_k": 131, "price_in": 0.08, "price_out": 0.35, "modalities": "text", "created_str": "2025-10-17"}, {"name": "GPT-5 Image Mini", "provider": "OpenAI", "context_k": 400, "price_in": 2.5, "price_out": 2.0, "modalities": "file, image, text", "created_str": "2025-10-16"}, {"name": "Claude Haiku 4.5", "provider": "Anthropic", "context_k": 200, "price_in": 1.0, "price_out": 5.0, "modalities": "text, image, file", "created_str": "2025-10-15"}, {"name": "Qwen3 VL 8B Thinking", "provider": "Qwen", "context_k": 256, "price_in": 0.117, "price_out": 1.365, "modalities": "image, text", "created_str": "2025-10-14"}, {"name": "Qwen3 VL 8B Instruct", "provider": "Qwen", "context_k": 256, "price_in": 0.08, "price_out": 0.5, "modalities": "image, text", "created_str": "2025-10-14"}, {"name": "GPT-5 Image", "provider": "OpenAI", "context_k": 400, "price_in": 10.0, "price_out": 10.0, "modalities": "image, text, file", "created_str": "2025-10-14"}, {"name": "o3 Deep Research", "provider": "OpenAI", "context_k": 200, "price_in": 10.0, "price_out": 40.0, "modalities": "image, text, file", "created_str": "2025-10-10"}, {"name": "o4 Mini Deep Research", "provider": "OpenAI", "context_k": 200, "price_in": 2.0, "price_out": 8.0, "modalities": "file, image, text", "created_str": "2025-10-10"}, {"name": "Llama 3.3 Nemotron Super 49B V1.5", "provider": "NVIDIA", "context_k": 131, "price_in": 0.4, "price_out": 0.4, "modalities": "text", "created_str": "2025-10-10"}, {"name": "Nano Banana (Gemini 2.5 Flash Image)", "provider": "Google", "context_k": 33, "price_in": 0.3, "price_out": 2.5, "modalities": "image, text", "created_str": "2025-10-07"}, {"name": "Qwen3 VL 30B A3B Thinking", "provider": "Qwen", "context_k": 131, "price_in": 0.13, "price_out": 1.56, "modalities": "text, image", "created_str": "2025-10-06"}, {"name": "Qwen3 VL 30B A3B Instruct", "provider": "Qwen", "context_k": 262, "price_in": 0.13, "price_out": 0.52, "modalities": "text, image", "created_str": "2025-10-06"}, {"name": "GPT-5 Pro", "provider": "OpenAI", "context_k": 400, "price_in": 15.0, "price_out": 120.0, "modalities": "image, text, file", "created_str": "2025-10-06"}, {"name": "GLM 4.6", "provider": "Z.ai", "context_k": 203, "price_in": 0.43, "price_out": 1.74, "modalities": "text", "created_str": "2025-09-30"}, {"name": "Claude Sonnet 4.5", "provider": "Anthropic", "context_k": 1000, "price_in": 3.0, "price_out": 15.0, "modalities": "text, image, file", "created_str": "2025-09-29"}, {"name": "DeepSeek V3.2 Exp", "provider": "DeepSeek", "context_k": 164, "price_in": 0.27, "price_out": 0.41, "modalities": "text", "created_str": "2025-09-29"}, {"name": "Cydonia 24B V4.1", "provider": "TheDrummer", "context_k": 131, "price_in": 0.3, "price_out": 0.5, "modalities": "text", "created_str": "2025-09-27"}, {"name": "Relace Apply 3", "provider": "Relace", "context_k": 256, "price_in": 0.85, "price_out": 1.25, "modalities": "text", "created_str": "2025-09-26"}, {"name": "Gemini 2.5 Flash Lite Preview 09-2025", "provider": "Google", "context_k": 1049, "price_in": 0.1, "price_out": 0.4, "modalities": "text, image, file, audio, video", "created_str": "2025-09-25"}, {"name": "Qwen3 VL 235B A22B Thinking", "provider": "Qwen", "context_k": 131, "price_in": 0.26, "price_out": 2.6, "modalities": "text, image", "created_str": "2025-09-23"}, {"name": "Qwen3 VL 235B A22B Instruct", "provider": "Qwen", "context_k": 262, "price_in": 0.2, "price_out": 0.88, "modalities": "text, image", "created_str": "2025-09-23"}, {"name": "Qwen3 Max", "provider": "Qwen", "context_k": 262, "price_in": 0.78, "price_out": 3.9, "modalities": "text", "created_str": "2025-09-23"}, {"name": "Qwen3 Coder Plus", "provider": "Qwen", "context_k": 1000, "price_in": 0.65, "price_out": 3.25, "modalities": "text", "created_str": "2025-09-23"}, {"name": "GPT-5 Codex", "provider": "OpenAI", "context_k": 400, "price_in": 1.25, "price_out": 10.0, "modalities": "text, image", "created_str": "2025-09-23"}, {"name": "DeepSeek V3.1 Terminus", "provider": "DeepSeek", "context_k": 164, "price_in": 0.27, "price_out": 0.95, "modalities": "text", "created_str": "2025-09-22"}, {"name": "Qwen3 Coder Flash", "provider": "Qwen", "context_k": 1000, "price_in": 0.195, "price_out": 0.975, "modalities": "text", "created_str": "2025-09-17"}, {"name": "Qwen3 Next 80B A3B Thinking", "provider": "Qwen", "context_k": 262, "price_in": 0.0975, "price_out": 0.78, "modalities": "text", "created_str": "2025-09-11"}, {"name": "Qwen3 Next 80B A3B Instruct (free)", "provider": "Qwen", "context_k": 262, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2025-09-11"}, {"name": "Qwen3 Next 80B A3B Instruct", "provider": "Qwen", "context_k": 262, "price_in": 0.09, "price_out": 1.1, "modalities": "text", "created_str": "2025-09-11"}, {"name": "Qwen Plus 0728 (thinking)", "provider": "Qwen", "context_k": 1000, "price_in": 0.26, "price_out": 0.78, "modalities": "text", "created_str": "2025-09-08"}, {"name": "Qwen Plus 0728", "provider": "Qwen", "context_k": 1000, "price_in": 0.26, "price_out": 0.78, "modalities": "text", "created_str": "2025-09-08"}, {"name": "Nemotron Nano 9B V2 (free)", "provider": "NVIDIA", "context_k": 128, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2025-09-05"}, {"name": "Kimi K2 0905", "provider": "MoonshotAI", "context_k": 262, "price_in": 0.6, "price_out": 2.5, "modalities": "text", "created_str": "2025-09-04"}, {"name": "Qwen3 30B A3B Thinking 2507", "provider": "Qwen", "context_k": 131, "price_in": 0.08, "price_out": 0.4, "modalities": "text", "created_str": "2025-08-28"}, {"name": "Hermes 4 70B", "provider": "Nous", "context_k": 131, "price_in": 0.13, "price_out": 0.4, "modalities": "text", "created_str": "2025-08-26"}, {"name": "Hermes 4 405B", "provider": "Nous", "context_k": 131, "price_in": 1.0, "price_out": 3.0, "modalities": "text", "created_str": "2025-08-26"}, {"name": "DeepSeek V3.1", "provider": "DeepSeek", "context_k": 164, "price_in": 0.21, "price_out": 0.79, "modalities": "text", "created_str": "2025-08-21"}, {"name": "Mistral Medium 3.1", "provider": "Mistral", "context_k": 131, "price_in": 0.4, "price_out": 2.0, "modalities": "text, image, file", "created_str": "2025-08-13"}, {"name": "GLM 4.5V", "provider": "Z.ai", "context_k": 66, "price_in": 0.6, "price_out": 1.8, "modalities": "text, image", "created_str": "2025-08-11"}, {"name": "Jamba Large 1.7", "provider": "AI21", "context_k": 256, "price_in": 2.0, "price_out": 8.0, "modalities": "text", "created_str": "2025-08-08"}, {"name": "GPT-5 Chat", "provider": "OpenAI", "context_k": 128, "price_in": 1.25, "price_out": 10.0, "modalities": "file, image, text", "created_str": "2025-08-07"}, {"name": "GPT-5", "provider": "OpenAI", "context_k": 400, "price_in": 1.25, "price_out": 10.0, "modalities": "text, image, file", "created_str": "2025-08-07"}, {"name": "GPT-5 Mini", "provider": "OpenAI", "context_k": 400, "price_in": 0.25, "price_out": 2.0, "modalities": "text, image, file", "created_str": "2025-08-07"}, {"name": "GPT-5 Nano", "provider": "OpenAI", "context_k": 400, "price_in": 0.05, "price_out": 0.4, "modalities": "text, image, file", "created_str": "2025-08-07"}, {"name": "gpt-oss-120b (free)", "provider": "OpenAI", "context_k": 131, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2025-08-05"}, {"name": "gpt-oss-120b", "provider": "OpenAI", "context_k": 131, "price_in": 0.03, "price_out": 0.15, "modalities": "text", "created_str": "2025-08-05"}, {"name": "gpt-oss-20b (free)", "provider": "OpenAI", "context_k": 131, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2025-08-05"}, {"name": "gpt-oss-20b", "provider": "OpenAI", "context_k": 131, "price_in": 0.029, "price_out": 0.14, "modalities": "text", "created_str": "2025-08-05"}, {"name": "Claude Opus 4.1", "provider": "Anthropic", "context_k": 200, "price_in": 15.0, "price_out": 75.0, "modalities": "image, text, file", "created_str": "2025-08-05"}, {"name": "Codestral 2508", "provider": "Mistral", "context_k": 256, "price_in": 0.3, "price_out": 0.9, "modalities": "text, file", "created_str": "2025-08-01"}, {"name": "Qwen3 Coder 30B A3B Instruct", "provider": "Qwen", "context_k": 160, "price_in": 0.07, "price_out": 0.27, "modalities": "text", "created_str": "2025-07-31"}, {"name": "Qwen3 30B A3B Instruct 2507", "provider": "Qwen", "context_k": 131, "price_in": 0.0481, "price_out": 0.193, "modalities": "text", "created_str": "2025-07-29"}, {"name": "GLM 4.5", "provider": "Z.ai", "context_k": 131, "price_in": 0.6, "price_out": 2.2, "modalities": "text", "created_str": "2025-07-25"}, {"name": "GLM 4.5 Air", "provider": "Z.ai", "context_k": 131, "price_in": 0.13, "price_out": 0.85, "modalities": "text", "created_str": "2025-07-25"}, {"name": "Qwen3 235B A22B Thinking 2507", "provider": "Qwen", "context_k": 262, "price_in": 0.1, "price_out": 0.1, "modalities": "text", "created_str": "2025-07-25"}, {"name": "Qwen3 Coder 480B A35B (free)", "provider": "Qwen", "context_k": 1049, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2025-07-23"}, {"name": "Qwen3 Coder 480B A35B", "provider": "Qwen", "context_k": 1049, "price_in": 0.22, "price_out": 1.8, "modalities": "text", "created_str": "2025-07-23"}, {"name": "UI-TARS 7B", "provider": "ByteDance", "context_k": 128, "price_in": 0.1, "price_out": 0.2, "modalities": "image, text", "created_str": "2025-07-22"}, {"name": "Gemini 2.5 Flash Lite", "provider": "Google", "context_k": 1049, "price_in": 0.1, "price_out": 0.4, "modalities": "text, image, file, audio, video", "created_str": "2025-07-22"}, {"name": "Qwen3 235B A22B Instruct 2507", "provider": "Qwen", "context_k": 262, "price_in": 0.09, "price_out": 0.1, "modalities": "text", "created_str": "2025-07-21"}, {"name": "Switchpoint Router", "provider": "Switchpoint", "context_k": 131, "price_in": 0.85, "price_out": 3.4, "modalities": "text", "created_str": "2025-07-11"}, {"name": "Kimi K2 0711", "provider": "MoonshotAI", "context_k": 131, "price_in": 0.57, "price_out": 2.3, "modalities": "text", "created_str": "2025-07-11"}, {"name": "Uncensored (free)", "provider": "Venice", "context_k": 33, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2025-07-09"}, {"name": "Hunyuan A13B Instruct", "provider": "Tencent", "context_k": 131, "price_in": 0.14, "price_out": 0.57, "modalities": "text", "created_str": "2025-07-08"}, {"name": "Morph V3 Large", "provider": "Morph", "context_k": 262, "price_in": 0.9, "price_out": 1.9, "modalities": "text", "created_str": "2025-07-07"}, {"name": "Morph V3 Fast", "provider": "Morph", "context_k": 82, "price_in": 0.8, "price_out": 1.2, "modalities": "text", "created_str": "2025-07-07"}, {"name": "ERNIE 4.5 VL 424B A47B", "provider": "Baidu", "context_k": 131, "price_in": 0.42, "price_out": 1.25, "modalities": "image, text", "created_str": "2025-06-30"}, {"name": "Mistral Small 3.2 24B", "provider": "Mistral", "context_k": 128, "price_in": 0.075, "price_out": 0.2, "modalities": "image, text", "created_str": "2025-06-20"}, {"name": "MiniMax M1", "provider": "MiniMax", "context_k": 1000, "price_in": 0.4, "price_out": 2.2, "modalities": "text", "created_str": "2025-06-17"}, {"name": "Gemini 2.5 Flash", "provider": "Google", "context_k": 1049, "price_in": 0.3, "price_out": 2.5, "modalities": "file, image, text, audio, video", "created_str": "2025-06-17"}, {"name": "Gemini 2.5 Pro", "provider": "Google", "context_k": 1049, "price_in": 1.25, "price_out": 10.0, "modalities": "text, image, file, audio, video", "created_str": "2025-06-17"}, {"name": "o3 Pro", "provider": "OpenAI", "context_k": 200, "price_in": 20.0, "price_out": 80.0, "modalities": "text, file, image", "created_str": "2025-06-10"}, {"name": "Gemini 2.5 Pro Preview 06-05", "provider": "Google", "context_k": 1049, "price_in": 1.25, "price_out": 10.0, "modalities": "file, image, text, audio", "created_str": "2025-06-05"}, {"name": "R1 0528", "provider": "DeepSeek", "context_k": 164, "price_in": 0.5, "price_out": 2.15, "modalities": "text", "created_str": "2025-05-28"}, {"name": "Claude Opus 4", "provider": "Anthropic", "context_k": 200, "price_in": 15.0, "price_out": 75.0, "modalities": "image, text, file", "created_str": "2025-05-22"}, {"name": "Claude Sonnet 4", "provider": "Anthropic", "context_k": 1000, "price_in": 3.0, "price_out": 15.0, "modalities": "image, text, file", "created_str": "2025-05-22"}, {"name": "Gemma 3n 4B", "provider": "Google", "context_k": 33, "price_in": 0.06, "price_out": 0.12, "modalities": "text", "created_str": "2025-05-20"}, {"name": "Mistral Medium 3", "provider": "Mistral", "context_k": 131, "price_in": 0.4, "price_out": 2.0, "modalities": "text, image, file", "created_str": "2025-05-07"}, {"name": "Gemini 2.5 Pro Preview 05-06", "provider": "Google", "context_k": 1049, "price_in": 1.25, "price_out": 10.0, "modalities": "text, image, file, audio, video", "created_str": "2025-05-07"}, {"name": "Virtuoso Large", "provider": "Arcee AI", "context_k": 131, "price_in": 0.75, "price_out": 1.2, "modalities": "text", "created_str": "2025-05-05"}, {"name": "Coder Large", "provider": "Arcee AI", "context_k": 33, "price_in": 0.5, "price_out": 0.8, "modalities": "text", "created_str": "2025-05-05"}, {"name": "Llama Guard 4 12B", "provider": "Meta", "context_k": 164, "price_in": 0.18, "price_out": 0.18, "modalities": "image, text", "created_str": "2025-04-30"}, {"name": "Qwen3 30B A3B", "provider": "Qwen", "context_k": 131, "price_in": 0.12, "price_out": 0.5, "modalities": "text", "created_str": "2025-04-28"}, {"name": "Qwen3 8B", "provider": "Qwen", "context_k": 131, "price_in": 0.05, "price_out": 0.4, "modalities": "text", "created_str": "2025-04-28"}, {"name": "Qwen3 14B", "provider": "Qwen", "context_k": 132, "price_in": 0.1, "price_out": 0.24, "modalities": "text", "created_str": "2025-04-28"}, {"name": "Qwen3 32B", "provider": "Qwen", "context_k": 131, "price_in": 0.08, "price_out": 0.28, "modalities": "text", "created_str": "2025-04-28"}, {"name": "Qwen3 235B A22B", "provider": "Qwen", "context_k": 131, "price_in": 0.455, "price_out": 1.82, "modalities": "text", "created_str": "2025-04-28"}, {"name": "o4 Mini High", "provider": "OpenAI", "context_k": 200, "price_in": 1.1, "price_out": 4.4, "modalities": "image, text, file", "created_str": "2025-04-16"}, {"name": "o3", "provider": "OpenAI", "context_k": 200, "price_in": 2.0, "price_out": 8.0, "modalities": "image, text, file", "created_str": "2025-04-16"}, {"name": "o4 Mini", "provider": "OpenAI", "context_k": 200, "price_in": 1.1, "price_out": 4.4, "modalities": "image, text, file", "created_str": "2025-04-16"}, {"name": "GPT-4.1", "provider": "OpenAI", "context_k": 1048, "price_in": 2.0, "price_out": 8.0, "modalities": "image, text, file", "created_str": "2025-04-14"}, {"name": "GPT-4.1 Mini", "provider": "OpenAI", "context_k": 1048, "price_in": 0.4, "price_out": 1.6, "modalities": "image, text, file", "created_str": "2025-04-14"}, {"name": "GPT-4.1 Nano", "provider": "OpenAI", "context_k": 1048, "price_in": 0.1, "price_out": 0.4, "modalities": "image, text, file", "created_str": "2025-04-14"}, {"name": "Llama 4 Maverick", "provider": "Meta", "context_k": 1049, "price_in": 0.15, "price_out": 0.6, "modalities": "text, image", "created_str": "2025-04-05"}, {"name": "Llama 4 Scout", "provider": "Meta", "context_k": 10000, "price_in": 0.1, "price_out": 0.3, "modalities": "text, image", "created_str": "2025-04-05"}, {"name": "DeepSeek V3 0324", "provider": "DeepSeek", "context_k": 164, "price_in": 0.2, "price_out": 0.77, "modalities": "text", "created_str": "2025-03-24"}, {"name": "o1-pro", "provider": "OpenAI", "context_k": 200, "price_in": 150.0, "price_out": 600.0, "modalities": "text, image, file", "created_str": "2025-03-19"}, {"name": "Mistral Small 3.1 24B", "provider": "Mistral", "context_k": 128, "price_in": 0.351, "price_out": 0.555, "modalities": "text, image", "created_str": "2025-03-17"}, {"name": "Gemma 3 4B", "provider": "Google", "context_k": 131, "price_in": 0.05, "price_out": 0.1, "modalities": "text, image", "created_str": "2025-03-13"}, {"name": "Gemma 3 12B", "provider": "Google", "context_k": 131, "price_in": 0.05, "price_out": 0.15, "modalities": "text, image", "created_str": "2025-03-13"}, {"name": "Command A", "provider": "Cohere", "context_k": 256, "price_in": 2.5, "price_out": 10.0, "modalities": "text", "created_str": "2025-03-13"}, {"name": "GPT-4o-mini Search Preview", "provider": "OpenAI", "context_k": 128, "price_in": 0.15, "price_out": 0.6, "modalities": "text", "created_str": "2025-03-12"}, {"name": "GPT-4o Search Preview", "provider": "OpenAI", "context_k": 128, "price_in": 2.5, "price_out": 10.0, "modalities": "text", "created_str": "2025-03-12"}, {"name": "Reka Flash 3", "provider": "Rekaai", "context_k": 66, "price_in": 0.1, "price_out": 0.2, "modalities": "text", "created_str": "2025-03-12"}, {"name": "Gemma 3 27B", "provider": "Google", "context_k": 131, "price_in": 0.08, "price_out": 0.16, "modalities": "text, image", "created_str": "2025-03-12"}, {"name": "Skyfall 36B V2", "provider": "TheDrummer", "context_k": 33, "price_in": 0.55, "price_out": 0.8, "modalities": "text", "created_str": "2025-03-10"}, {"name": "Sonar Reasoning Pro", "provider": "Perplexity", "context_k": 128, "price_in": 2.0, "price_out": 8.0, "modalities": "text, image", "created_str": "2025-03-07"}, {"name": "Sonar Pro", "provider": "Perplexity", "context_k": 200, "price_in": 3.0, "price_out": 15.0, "modalities": "text, image", "created_str": "2025-03-07"}, {"name": "Sonar Deep Research", "provider": "Perplexity", "context_k": 128, "price_in": 2.0, "price_out": 8.0, "modalities": "text", "created_str": "2025-03-07"}, {"name": "Saba", "provider": "Mistral", "context_k": 33, "price_in": 0.2, "price_out": 0.6, "modalities": "text, file", "created_str": "2025-02-17"}, {"name": "o3 Mini High", "provider": "OpenAI", "context_k": 200, "price_in": 1.1, "price_out": 4.4, "modalities": "text, file", "created_str": "2025-02-12"}, {"name": "Aion-1.0", "provider": "AionLabs", "context_k": 131, "price_in": 4.0, "price_out": 8.0, "modalities": "text", "created_str": "2025-02-04"}, {"name": "Aion-1.0-Mini", "provider": "AionLabs", "context_k": 131, "price_in": 0.7, "price_out": 1.4, "modalities": "text", "created_str": "2025-02-04"}, {"name": "Aion-RP 1.0 (8B)", "provider": "AionLabs", "context_k": 33, "price_in": 0.8, "price_out": 1.6, "modalities": "text", "created_str": "2025-02-04"}, {"name": "Qwen2.5 VL 72B Instruct", "provider": "Qwen", "context_k": 131, "price_in": 0.8, "price_out": 1.0, "modalities": "text, image", "created_str": "2025-02-01"}, {"name": "Qwen-Plus", "provider": "Qwen", "context_k": 1000, "price_in": 0.26, "price_out": 0.78, "modalities": "text", "created_str": "2025-02-01"}, {"name": "o3 Mini", "provider": "OpenAI", "context_k": 200, "price_in": 1.1, "price_out": 4.4, "modalities": "text, file", "created_str": "2025-01-31"}, {"name": "Mistral Small 3", "provider": "Mistral", "context_k": 33, "price_in": 0.05, "price_out": 0.08, "modalities": "text", "created_str": "2025-01-30"}, {"name": "Sonar", "provider": "Perplexity", "context_k": 127, "price_in": 1.0, "price_out": 1.0, "modalities": "text, image", "created_str": "2025-01-27"}, {"name": "R1 Distill Llama 70B", "provider": "DeepSeek", "context_k": 128, "price_in": 0.8, "price_out": 0.8, "modalities": "text", "created_str": "2025-01-23"}, {"name": "R1", "provider": "DeepSeek", "context_k": 164, "price_in": 0.7, "price_out": 2.5, "modalities": "text", "created_str": "2025-01-20"}, {"name": "MiniMax-01", "provider": "MiniMax", "context_k": 1000, "price_in": 0.2, "price_out": 1.1, "modalities": "text, image", "created_str": "2025-01-15"}, {"name": "Phi 4", "provider": "Microsoft", "context_k": 16, "price_in": 0.07, "price_out": 0.14, "modalities": "text", "created_str": "2025-01-10"}, {"name": "Llama 3.1 70B Hanami x1", "provider": "Sao10K", "context_k": 16, "price_in": 3.0, "price_out": 3.0, "modalities": "text", "created_str": "2025-01-08"}, {"name": "DeepSeek V3", "provider": "DeepSeek", "context_k": 131, "price_in": 0.2002, "price_out": 0.8001, "modalities": "text", "created_str": "2024-12-26"}, {"name": "Llama 3.3 Euryale 70B", "provider": "Sao10K", "context_k": 131, "price_in": 0.65, "price_out": 0.75, "modalities": "text", "created_str": "2024-12-18"}, {"name": "o1", "provider": "OpenAI", "context_k": 200, "price_in": 15.0, "price_out": 60.0, "modalities": "text, image, file", "created_str": "2024-12-17"}, {"name": "Command R7B (12-2024)", "provider": "Cohere", "context_k": 128, "price_in": 0.0375, "price_out": 0.15, "modalities": "text", "created_str": "2024-12-14"}, {"name": "Llama 3.3 70B Instruct (free)", "provider": "Meta", "context_k": 131, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2024-12-06"}, {"name": "Llama 3.3 70B Instruct", "provider": "Meta", "context_k": 131, "price_in": 0.1, "price_out": 0.32, "modalities": "text", "created_str": "2024-12-06"}, {"name": "Nova Lite 1.0", "provider": "Amazon", "context_k": 300, "price_in": 0.06, "price_out": 0.24, "modalities": "text, image", "created_str": "2024-12-05"}, {"name": "Nova Micro 1.0", "provider": "Amazon", "context_k": 128, "price_in": 0.035, "price_out": 0.14, "modalities": "text", "created_str": "2024-12-05"}, {"name": "Nova Pro 1.0", "provider": "Amazon", "context_k": 300, "price_in": 0.8, "price_out": 3.2, "modalities": "text, image", "created_str": "2024-12-05"}, {"name": "GPT-4o (2024-11-20)", "provider": "OpenAI", "context_k": 128, "price_in": 2.5, "price_out": 10.0, "modalities": "text, image, file", "created_str": "2024-11-20"}, {"name": "Mistral Large 2407", "provider": "Mistralai", "context_k": 131, "price_in": 2.0, "price_out": 6.0, "modalities": "text, file", "created_str": "2024-11-19"}, {"name": "Qwen2.5 Coder 32B Instruct", "provider": "Qwen", "context_k": 128, "price_in": 0.66, "price_out": 1.0, "modalities": "text", "created_str": "2024-11-11"}, {"name": "UnslopNemo 12B", "provider": "TheDrummer", "context_k": 33, "price_in": 0.4, "price_out": 0.4, "modalities": "text", "created_str": "2024-11-08"}, {"name": "Magnum v4 72B", "provider": "Anthracite-Org", "context_k": 33, "price_in": 3.0, "price_out": 5.0, "modalities": "text", "created_str": "2024-10-22"}, {"name": "Qwen2.5 7B Instruct", "provider": "Qwen", "context_k": 131, "price_in": 0.04, "price_out": 0.1, "modalities": "text", "created_str": "2024-10-16"}, {"name": "Inflection 3 Productivity", "provider": "Inflection", "context_k": 8, "price_in": 2.5, "price_out": 10.0, "modalities": "text", "created_str": "2024-10-11"}, {"name": "Inflection 3 Pi", "provider": "Inflection", "context_k": 8, "price_in": 2.5, "price_out": 10.0, "modalities": "text", "created_str": "2024-10-11"}, {"name": "Rocinante 12B", "provider": "TheDrummer", "context_k": 33, "price_in": 0.25, "price_out": 0.5, "modalities": "text", "created_str": "2024-09-30"}, {"name": "Llama 3.2 3B Instruct (free)", "provider": "Meta", "context_k": 131, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2024-09-25"}, {"name": "Llama 3.2 3B Instruct", "provider": "Meta", "context_k": 131, "price_in": 0.0509, "price_out": 0.335, "modalities": "text", "created_str": "2024-09-25"}, {"name": "Llama 3.2 1B Instruct", "provider": "Meta", "context_k": 131, "price_in": 0.027, "price_out": 0.201, "modalities": "text", "created_str": "2024-09-25"}, {"name": "Llama 3.2 11B Vision Instruct", "provider": "Meta", "context_k": 131, "price_in": 0.345, "price_out": 0.345, "modalities": "text, image", "created_str": "2024-09-25"}, {"name": "Qwen2.5 72B Instruct", "provider": "Qwen", "context_k": 131, "price_in": 0.36, "price_out": 0.4, "modalities": "text", "created_str": "2024-09-19"}, {"name": "Command R (08-2024)", "provider": "Cohere", "context_k": 128, "price_in": 0.15, "price_out": 0.6, "modalities": "text", "created_str": "2024-08-30"}, {"name": "Command R+ (08-2024)", "provider": "Cohere", "context_k": 128, "price_in": 2.5, "price_out": 10.0, "modalities": "text", "created_str": "2024-08-30"}, {"name": "Llama 3.1 Euryale 70B v2.2", "provider": "Sao10K", "context_k": 131, "price_in": 0.85, "price_out": 0.85, "modalities": "text", "created_str": "2024-08-28"}, {"name": "Hermes 3 70B Instruct", "provider": "Nous", "context_k": 131, "price_in": 0.7, "price_out": 0.7, "modalities": "text", "created_str": "2024-08-18"}, {"name": "Hermes 3 405B Instruct (free)", "provider": "Nous", "context_k": 131, "price_in": 0.0, "price_out": 0.0, "modalities": "text", "created_str": "2024-08-16"}, {"name": "Hermes 3 405B Instruct", "provider": "Nous", "context_k": 131, "price_in": 1.0, "price_out": 1.0, "modalities": "text", "created_str": "2024-08-16"}, {"name": "Llama 3 8B Lunaris", "provider": "Sao10K", "context_k": 8, "price_in": 0.04, "price_out": 0.05, "modalities": "text", "created_str": "2024-08-13"}, {"name": "GPT-4o (2024-08-06)", "provider": "OpenAI", "context_k": 128, "price_in": 2.5, "price_out": 10.0, "modalities": "text, image, file", "created_str": "2024-08-06"}, {"name": "Llama 3.1 8B Instruct", "provider": "Meta", "context_k": 131, "price_in": 0.02, "price_out": 0.03, "modalities": "text", "created_str": "2024-07-23"}, {"name": "Llama 3.1 70B Instruct", "provider": "Meta", "context_k": 131, "price_in": 0.4, "price_out": 0.4, "modalities": "text", "created_str": "2024-07-23"}, {"name": "Mistral Nemo", "provider": "Mistral", "context_k": 131, "price_in": 0.02, "price_out": 0.03, "modalities": "text", "created_str": "2024-07-19"}, {"name": "GPT-4o-mini", "provider": "OpenAI", "context_k": 128, "price_in": 0.15, "price_out": 0.6, "modalities": "text, image, file", "created_str": "2024-07-18"}, {"name": "GPT-4o-mini (2024-07-18)", "provider": "OpenAI", "context_k": 128, "price_in": 0.15, "price_out": 0.6, "modalities": "text, image, file", "created_str": "2024-07-18"}, {"name": "Gemma 2 27B", "provider": "Google", "context_k": 8, "price_in": 0.65, "price_out": 0.65, "modalities": "text", "created_str": "2024-07-13"}, {"name": "GPT-4o (2024-05-13)", "provider": "OpenAI", "context_k": 128, "price_in": 5.0, "price_out": 15.0, "modalities": "text, image, file", "created_str": "2024-05-13"}, {"name": "GPT-4o", "provider": "OpenAI", "context_k": 128, "price_in": 2.5, "price_out": 10.0, "modalities": "text, image, file", "created_str": "2024-05-13"}, {"name": "Llama 3 8B Instruct", "provider": "Meta", "context_k": 8, "price_in": 0.14, "price_out": 0.14, "modalities": "text", "created_str": "2024-04-18"}, {"name": "Mixtral 8x22B Instruct", "provider": "Mistral", "context_k": 66, "price_in": 2.0, "price_out": 6.0, "modalities": "text, file", "created_str": "2024-04-17"}, {"name": "WizardLM-2 8x22B", "provider": "Microsoft", "context_k": 66, "price_in": 0.62, "price_out": 0.62, "modalities": "text", "created_str": "2024-04-16"}, {"name": "GPT-4 Turbo", "provider": "OpenAI", "context_k": 128, "price_in": 10.0, "price_out": 30.0, "modalities": "text, image", "created_str": "2024-04-09"}, {"name": "Claude 3 Haiku", "provider": "Anthropic", "context_k": 200, "price_in": 0.25, "price_out": 1.25, "modalities": "text, image", "created_str": "2024-03-13"}, {"name": "Mistral Large", "provider": "Mistralai", "context_k": 128, "price_in": 2.0, "price_out": 6.0, "modalities": "text, file", "created_str": "2024-02-26"}, {"name": "GPT-4 Turbo Preview", "provider": "OpenAI", "context_k": 128, "price_in": 10.0, "price_out": 30.0, "modalities": "text", "created_str": "2024-01-25"}, {"name": "GPT-3.5 Turbo (older v0613)", "provider": "OpenAI", "context_k": 4, "price_in": 1.0, "price_out": 2.0, "modalities": "text", "created_str": "2024-01-25"}, {"name": "Auto Router", "provider": "Openrouter", "context_k": 2000, "price_in": null, "price_out": null, "modalities": "text, image, audio, file, video", "created_str": "2023-11-08"}, {"name": "GPT-3.5 Turbo Instruct", "provider": "OpenAI", "context_k": 4, "price_in": 1.5, "price_out": 2.0, "modalities": "text", "created_str": "2023-09-28"}, {"name": "GPT-3.5 Turbo 16k", "provider": "OpenAI", "context_k": 16, "price_in": 3.0, "price_out": 4.0, "modalities": "text", "created_str": "2023-08-28"}, {"name": "Weaver (alpha)", "provider": "Mancer", "context_k": 8, "price_in": 0.75, "price_out": 1.0, "modalities": "text", "created_str": "2023-08-02"}, {"name": "ReMM SLERP 13B", "provider": "Undi95", "context_k": 6, "price_in": 0.45, "price_out": 0.65, "modalities": "text", "created_str": "2023-07-22"}, {"name": "MythoMax 13B", "provider": "Gryphe", "context_k": 4, "price_in": 0.06, "price_out": 0.06, "modalities": "text", "created_str": "2023-07-02"}, {"name": "GPT-3.5 Turbo", "provider": "OpenAI", "context_k": 16, "price_in": 0.5, "price_out": 1.5, "modalities": "text", "created_str": "2023-05-28"}, {"name": "GPT-4", "provider": "OpenAI", "context_k": 8, "price_in": 30.0, "price_out": 60.0, "modalities": "text", "created_str": "2023-05-28"}]}]}</script>
-<div class="code-copy-outer-scaffold html-fill-item html-fill-container"><div class="sourceCode cell-code hidden html-fill-item html-fill-container" id="cb1" data-startfrom="85" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 84;"><span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>viewof q <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">search</span>(models<span class="op">,</span> { <span class="dt">placeholder</span><span class="op">:</span> <span class="vs">`Search </span><span class="sc">${</span>models<span class="op">.</span><span class="at">length</span><span class="sc">}</span><span class="vs"> models…`</span> })</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold html-fill-item html-fill-container"><div class="sourceCode cell-code hidden html-fill-item html-fill-container" id="cb1" data-startfrom="98" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 97;"><span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>viewof q <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">search</span>(models<span class="op">,</span> { <span class="dt">placeholder</span><span class="op">:</span> <span class="vs">`Search </span><span class="sc">${</span>models<span class="op">.</span><span class="at">length</span><span class="sc">}</span><span class="vs"> models…`</span> })</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
 <div id="ojs-cell-1" data-nodetype="declaration" class="html-fill-item html-fill-container">
 
 </div>
 </div>
-<div class="code-copy-outer-scaffold html-fill-item html-fill-container"><div class="sourceCode cell-code hidden html-fill-item html-fill-container" id="cb2" data-startfrom="90" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 89;"><span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(q<span class="op">,</span> {</span>
-<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>  <span class="dt">columns</span><span class="op">:</span> [<span class="st">"name"</span><span class="op">,</span> <span class="st">"provider"</span><span class="op">,</span> <span class="st">"context_k"</span><span class="op">,</span> <span class="st">"price_in"</span><span class="op">,</span> <span class="st">"price_out"</span><span class="op">,</span> <span class="st">"modalities"</span><span class="op">,</span> <span class="st">"created_str"</span>]<span class="op">,</span></span>
-<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>  <span class="dt">header</span><span class="op">:</span> {</span>
-<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>    <span class="dt">name</span><span class="op">:</span> <span class="st">"Model"</span><span class="op">,</span> <span class="dt">provider</span><span class="op">:</span> <span class="st">"Provider"</span><span class="op">,</span> <span class="dt">context_k</span><span class="op">:</span> <span class="st">"Context (K)"</span><span class="op">,</span></span>
-<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>    <span class="dt">price_in</span><span class="op">:</span> <span class="st">"$/1M in"</span><span class="op">,</span> <span class="dt">price_out</span><span class="op">:</span> <span class="st">"$/1M out"</span><span class="op">,</span> <span class="dt">modalities</span><span class="op">:</span> <span class="st">"Modalities"</span><span class="op">,</span> <span class="dt">created_str</span><span class="op">:</span> <span class="st">"Added"</span></span>
-<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>  <span class="dt">sort</span><span class="op">:</span> <span class="st">"created_str"</span><span class="op">,</span></span>
-<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>  <span class="dt">reverse</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
-<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>  <span class="dt">rows</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span></span>
-<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>  <span class="dt">layout</span><span class="op">:</span> <span class="st">"auto"</span></span>
-<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold html-fill-item html-fill-container"><div class="sourceCode cell-code hidden html-fill-item html-fill-container" id="cb2" data-startfrom="103" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 102;"><span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(q<span class="op">,</span> {</span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>  <span class="dt">columns</span><span class="op">:</span> [<span class="st">"name"</span><span class="op">,</span> <span class="st">"provider"</span><span class="op">,</span> <span class="st">"context_k"</span><span class="op">,</span> <span class="st">"price_in"</span><span class="op">,</span> <span class="st">"price_out"</span><span class="op">,</span> <span class="st">"modalities"</span><span class="op">,</span> <span class="st">"created_str"</span>]<span class="op">,</span></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>  <span class="dt">header</span><span class="op">:</span> {</span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>    <span class="dt">name</span><span class="op">:</span> <span class="st">"Model"</span><span class="op">,</span> <span class="dt">provider</span><span class="op">:</span> <span class="st">"Provider"</span><span class="op">,</span> <span class="dt">context_k</span><span class="op">:</span> <span class="st">"Context (K)"</span><span class="op">,</span></span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>    <span class="dt">price_in</span><span class="op">:</span> <span class="st">"$/1M in"</span><span class="op">,</span> <span class="dt">price_out</span><span class="op">:</span> <span class="st">"$/1M out"</span><span class="op">,</span> <span class="dt">modalities</span><span class="op">:</span> <span class="st">"Modalities"</span><span class="op">,</span> <span class="dt">created_str</span><span class="op">:</span> <span class="st">"Added"</span></span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a>  <span class="dt">sort</span><span class="op">:</span> <span class="st">"created_str"</span><span class="op">,</span></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>  <span class="dt">reverse</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>  <span class="dt">rows</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span></span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>  <span class="dt">layout</span><span class="op">:</span> <span class="st">"auto"</span></span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
 <div id="ojs-cell-2" data-nodetype="expression" class="html-fill-item html-fill-container">
 
@@ -681,10 +678,600 @@ grid-auto-rows: minmax(0, 1fr);">
 </bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 </div>
 </div>
+</div>
+<div id="open-weights" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-open-weights">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 24fr) minmax(3em, 76fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card valuebox cell html-fill-item html-fill-container bslib-card bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #1f3a5f;">
+<div class="card-body html-fill-item html-fill-container">
+<div data-icon="boxes" class="html-fill-item html-fill-container value-box-grid">
+<div class="value-box-showcase html-fill-item html-fill-container">
+
+<i class="bi bi-boxes"></i></div>
+<div class="value-box-area">
+<p class="value-box-title">
+Open LLMs
+</p>
+<p class="value-box-value">
+58
+</p>
+</div>
+</div>
+</div>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card valuebox cell html-fill-item html-fill-container bslib-card bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #15803d;">
+<div class="card-body html-fill-item html-fill-container">
+<div data-icon="unlock" class="html-fill-item html-fill-container value-box-grid">
+<div class="value-box-showcase html-fill-item html-fill-container">
+
+<i class="bi bi-unlock"></i></div>
+<div class="value-box-area">
+<p class="value-box-title">
+Permissive license
+</p>
+<p class="value-box-value">
+74%
+</p>
+</div>
+</div>
+</div>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card valuebox cell html-fill-item html-fill-container bslib-card bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #a8482b;">
+<div class="card-body html-fill-item html-fill-container">
+<div data-icon="lock" class="html-fill-item html-fill-container value-box-grid">
+<div class="value-box-showcase html-fill-item html-fill-container">
+
+<i class="bi bi-lock"></i></div>
+<div class="value-box-area">
+<p class="value-box-title">
+Gated models
+</p>
+<p class="value-box-value">
+7
+</p>
+</div>
+</div>
+</div>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card valuebox cell html-fill-item html-fill-container bslib-card bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #2563a8;">
+<div class="card-body html-fill-item html-fill-container">
+<div data-icon="building" class="html-fill-item html-fill-container value-box-grid">
+<div class="value-box-showcase html-fill-item html-fill-container">
+
+<i class="bi bi-building"></i></div>
+<div class="value-box-area">
+<p class="value-box-title">
+Orgs
+</p>
+<p class="value-box-value">
+21
+</p>
+</div>
+</div>
+</div>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card valuebox cell html-fill-item html-fill-container bslib-card bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #16202e;">
+<div class="card-body html-fill-item html-fill-container">
+<div data-icon="stars" class="html-fill-item html-fill-container value-box-grid">
+<div class="value-box-showcase html-fill-item html-fill-container">
+
+<i class="bi bi-stars"></i></div>
+<div class="value-box-area">
+<p class="value-box-title">
+New this week
+</p>
+<p class="value-box-value">
+0
+</p>
+</div>
+</div>
+</div>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card tabset html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-header dashboard-card-no-title bslib-navs-card-title">
+
+<ul class="nav nav-tabs card-header-tabs" role="tablist" data-tabsetid="card-tabset-12"><li class="nav-item" role="presentation"><a href="#card-tabset-12-1" role="tab" data-toggle="tab" data-bs-toggle="tab" data-value="Most downloaded" aria-selected="true" class="nav-link active">Most downloaded</a></li><li class="nav-item" role="presentation"><a href="#card-tabset-12-2" role="tab" data-toggle="tab" data-bs-toggle="tab" data-value="Community favorites" aria-selected="false" class="nav-link">Community favorites</a></li><li class="nav-item" role="presentation"><a href="#card-tabset-12-3" role="tab" data-toggle="tab" data-bs-toggle="tab" data-value="Open-weights catalog — search &amp; sort" aria-selected="false" class="nav-link">Open-weights catalog — search &amp; sort</a></li></ul></div>
+
+
+
+
+
+<div id="3ade8a4a-fb1d-4a6c-8409-ac45482d5fc9" class="hidden html-fill-item html-fill-container">
+
+</div>
+<div class="tab-content html-fill-item html-fill-container" data-tabset-id="card-tabset-12"><div class="tab-pane active show html-fill-item html-fill-container" role="tabpanel" id="card-tabset-12-1"><div class="card-body html-fill-item html-fill-container" data-title="Most downloaded">
+<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="15">
+<div id="bgqvmgvckg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;" class="html-fill-item html-fill-container">
+<style>
+#bgqvmgvckg table {
+          font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+
+#bgqvmgvckg thead, tbody, tfoot, tr, td, th { border-style: none; }
+ tr { background-color: transparent; }
+#bgqvmgvckg p { margin: 0; padding: 0; }
+ #bgqvmgvckg .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 13px; font-weight: normal; font-style: normal; background-color: #faf7f1; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #bgqvmgvckg .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #bgqvmgvckg .gt_title { color: #333333; font-size: 20px; font-weight: 600; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #faf7f1; border-bottom-width: 0; }
+ #bgqvmgvckg .gt_subtitle { color: #333333; font-size: 13px; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #faf7f1; border-top-width: 0; }
+ #bgqvmgvckg .gt_heading { background-color: #faf7f1; text-align: center; border-bottom-color: #faf7f1; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #bgqvmgvckg .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #bgqvmgvckg .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #bgqvmgvckg .gt_col_heading { color: #FFFFFF; background-color: #1f3a5f; font-size: 100%; font-weight: 600; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #bgqvmgvckg .gt_column_spanner_outer { color: #FFFFFF; background-color: #1f3a5f; font-size: 100%; font-weight: 600; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #bgqvmgvckg .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #bgqvmgvckg .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #bgqvmgvckg .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #bgqvmgvckg .gt_spanner_row { border-bottom-style: hidden; }
+ #bgqvmgvckg .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #faf7f1; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #bgqvmgvckg .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #faf7f1; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #bgqvmgvckg .gt_from_md> :first-child { margin-top: 0; }
+ #bgqvmgvckg .gt_from_md> :last-child { margin-bottom: 0; }
+ #bgqvmgvckg .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #bgqvmgvckg .gt_stub { color: #333333; background-color: #faf7f1; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #bgqvmgvckg .gt_stub_row_group { color: #333333; background-color: #faf7f1; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #bgqvmgvckg .gt_row_group_first td { border-top-width: 2px; }
+ #bgqvmgvckg .gt_row_group_first th { border-top-width: 2px; }
+ #bgqvmgvckg .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #bgqvmgvckg .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #bgqvmgvckg .gt_summary_row { color: #333333; background-color: #faf7f1; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #bgqvmgvckg .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
+ #bgqvmgvckg .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #bgqvmgvckg .gt_grand_summary_row { color: #333333; background-color: #faf7f1; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #bgqvmgvckg .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #bgqvmgvckg .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #bgqvmgvckg .gt_sourcenotes { color: #333333; background-color: #faf7f1; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #bgqvmgvckg .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #bgqvmgvckg .gt_left { text-align: left; }
+ #bgqvmgvckg .gt_center { text-align: center; }
+ #bgqvmgvckg .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #bgqvmgvckg .gt_font_normal { font-weight: normal; }
+ #bgqvmgvckg .gt_font_bold { font-weight: bold; }
+ #bgqvmgvckg .gt_font_italic { font-style: italic; }
+ #bgqvmgvckg .gt_super { font-size: 65%; }
+ #bgqvmgvckg .gt_footnotes { color: font-color(#faf7f1); background-color: #faf7f1; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #bgqvmgvckg .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
+ #bgqvmgvckg .gt_sourcenotes { color: #333333; background-color: #faf7f1; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #bgqvmgvckg .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #bgqvmgvckg .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #bgqvmgvckg .gt_asterisk { font-size: 100%; vertical-align: 0; }
+ 
+</style>
+
+<table class="gt_table caption-top table" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<td colspan="7" class="gt_heading gt_title gt_font_normal">Most-downloaded open LLMs</td>
+</tr>
+<tr class="gt_heading even">
+<td colspan="7" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Text-generation models by 30-day downloads (Hugging Face)</td>
+</tr>
+<tr class="gt_col_headings header">
+<th id="name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Model</th>
+<th id="org" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Org</th>
+<th id="downloads_disp" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Downloads 30d</th>
+<th id="likes" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Likes</th>
+<th id="license" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">License</th>
+<th id="gated_disp" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Gated</th>
+<th id="created_str" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Added</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">Qwen3-0.6B</td>
+<td class="gt_row gt_left">Qwen</td>
+<td class="gt_row gt_right">27.4M</td>
+<td class="gt_row gt_right">1362</td>
+<td class="gt_row gt_left">apache-2.0</td>
+<td class="gt_row gt_center">—</td>
+<td class="gt_row gt_right">2025-04-27</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" style="color: #1f3a5f; font-weight: 600">Qwen3-4B</td>
+<td class="gt_row gt_left gt_striped">Qwen</td>
+<td class="gt_row gt_right gt_striped">15.5M</td>
+<td class="gt_row gt_right gt_striped">641</td>
+<td class="gt_row gt_left gt_striped">apache-2.0</td>
+<td class="gt_row gt_center gt_striped">—</td>
+<td class="gt_row gt_right gt_striped">2025-04-27</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">Qwen3-8B</td>
+<td class="gt_row gt_left">Qwen</td>
+<td class="gt_row gt_right">13.6M</td>
+<td class="gt_row gt_right">1167</td>
+<td class="gt_row gt_left">apache-2.0</td>
+<td class="gt_row gt_center">—</td>
+<td class="gt_row gt_right">2025-04-27</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" style="color: #1f3a5f; font-weight: 600">gpt2</td>
+<td class="gt_row gt_left gt_striped">openai-community</td>
+<td class="gt_row gt_right gt_striped">12.9M</td>
+<td class="gt_row gt_right gt_striped">3319</td>
+<td class="gt_row gt_left gt_striped">mit</td>
+<td class="gt_row gt_center gt_striped">—</td>
+<td class="gt_row gt_right gt_striped">2022-03-02</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">opt-125m</td>
+<td class="gt_row gt_left">facebook</td>
+<td class="gt_row gt_right">12.8M</td>
+<td class="gt_row gt_right">267</td>
+<td class="gt_row gt_left">other</td>
+<td class="gt_row gt_center">—</td>
+<td class="gt_row gt_right">2022-05-11</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" style="color: #1f3a5f; font-weight: 600">Qwen2.5-7B-Instruct</td>
+<td class="gt_row gt_left gt_striped">Qwen</td>
+<td class="gt_row gt_right gt_striped">12.7M</td>
+<td class="gt_row gt_right gt_striped">1387</td>
+<td class="gt_row gt_left gt_striped">apache-2.0</td>
+<td class="gt_row gt_center gt_striped">—</td>
+<td class="gt_row gt_right gt_striped">2024-09-16</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">Qwen2.5-1.5B-Instruct</td>
+<td class="gt_row gt_left">Qwen</td>
+<td class="gt_row gt_right">11.8M</td>
+<td class="gt_row gt_right">749</td>
+<td class="gt_row gt_left">apache-2.0</td>
+<td class="gt_row gt_center">—</td>
+<td class="gt_row gt_right">2024-09-17</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" style="color: #1f3a5f; font-weight: 600">Llama-3.1-8B-Instruct</td>
+<td class="gt_row gt_left gt_striped">meta-llama</td>
+<td class="gt_row gt_right gt_striped">10.1M</td>
+<td class="gt_row gt_right gt_striped">6163</td>
+<td class="gt_row gt_left gt_striped">llama3.1</td>
+<td class="gt_row gt_center gt_striped">🔒</td>
+<td class="gt_row gt_right gt_striped">2024-07-18</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">Llama-3.2-1B-Instruct</td>
+<td class="gt_row gt_left">meta-llama</td>
+<td class="gt_row gt_right">8.5M</td>
+<td class="gt_row gt_right">1502</td>
+<td class="gt_row gt_left">llama3.2</td>
+<td class="gt_row gt_center">🔒</td>
+<td class="gt_row gt_right">2024-09-18</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" style="color: #1f3a5f; font-weight: 600">Qwen2.5-3B-Instruct</td>
+<td class="gt_row gt_left gt_striped">Qwen</td>
+<td class="gt_row gt_right gt_striped">7.9M</td>
+<td class="gt_row gt_right gt_striped">513</td>
+<td class="gt_row gt_left gt_striped">other</td>
+<td class="gt_row gt_center gt_striped">—</td>
+<td class="gt_row gt_right gt_striped">2024-09-17</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">DeepSeek-R1</td>
+<td class="gt_row gt_left">deepseek-ai</td>
+<td class="gt_row gt_right">7.4M</td>
+<td class="gt_row gt_right">13419</td>
+<td class="gt_row gt_left">mit</td>
+<td class="gt_row gt_center">—</td>
+<td class="gt_row gt_right">2025-01-20</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" style="color: #1f3a5f; font-weight: 600">gpt-oss-20b</td>
+<td class="gt_row gt_left gt_striped">openai</td>
+<td class="gt_row gt_right gt_striped">7.0M</td>
+<td class="gt_row gt_right gt_striped">4737</td>
+<td class="gt_row gt_left gt_striped">apache-2.0</td>
+<td class="gt_row gt_center gt_striped">—</td>
+<td class="gt_row gt_right gt_striped">2025-08-04</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">gemma-3-270m</td>
+<td class="gt_row gt_left">google</td>
+<td class="gt_row gt_right">6.5M</td>
+<td class="gt_row gt_right">1040</td>
+<td class="gt_row gt_left">gemma</td>
+<td class="gt_row gt_center">🔒</td>
+<td class="gt_row gt_right">2025-08-05</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" style="color: #1f3a5f; font-weight: 600">deepseek-v4-gguf</td>
+<td class="gt_row gt_left gt_striped">antirez</td>
+<td class="gt_row gt_right gt_striped">6.5M</td>
+<td class="gt_row gt_right gt_striped">279</td>
+<td class="gt_row gt_left gt_striped">mit</td>
+<td class="gt_row gt_center gt_striped">—</td>
+<td class="gt_row gt_right gt_striped">2026-04-26</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">Qwen3-1.7B</td>
+<td class="gt_row gt_left">Qwen</td>
+<td class="gt_row gt_right">5.8M</td>
+<td class="gt_row gt_right">491</td>
+<td class="gt_row gt_left">apache-2.0</td>
+<td class="gt_row gt_center">—</td>
+<td class="gt_row gt_right">2025-04-27</td>
+</tr>
+</tbody><tfoot>
+<tr class="gt_sourcenotes odd">
+<td colspan="7" class="gt_sourcenote"><span class="gt_from_md">🔒 gated (acceptance required) · Data: <a href="https://huggingface.co/models">Hugging Face Hub</a></span></td>
+</tr>
+</tfoot>
+
+</table>
+
+
+</div>
+</div>
+</div></div><div class="tab-pane html-fill-item html-fill-container" role="tabpanel" id="card-tabset-12-2"><div class="card-body html-fill-item html-fill-container" data-title="Community favorites">
+<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="16">
+<div id="cnzdredutw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;" class="html-fill-item html-fill-container">
+<style>
+#cnzdredutw table {
+          font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+
+#cnzdredutw thead, tbody, tfoot, tr, td, th { border-style: none; }
+ tr { background-color: transparent; }
+#cnzdredutw p { margin: 0; padding: 0; }
+ #cnzdredutw .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 13px; font-weight: normal; font-style: normal; background-color: #faf7f1; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #cnzdredutw .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #cnzdredutw .gt_title { color: #333333; font-size: 20px; font-weight: 600; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #faf7f1; border-bottom-width: 0; }
+ #cnzdredutw .gt_subtitle { color: #333333; font-size: 13px; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #faf7f1; border-top-width: 0; }
+ #cnzdredutw .gt_heading { background-color: #faf7f1; text-align: center; border-bottom-color: #faf7f1; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #cnzdredutw .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #cnzdredutw .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #cnzdredutw .gt_col_heading { color: #FFFFFF; background-color: #1f3a5f; font-size: 100%; font-weight: 600; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #cnzdredutw .gt_column_spanner_outer { color: #FFFFFF; background-color: #1f3a5f; font-size: 100%; font-weight: 600; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #cnzdredutw .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #cnzdredutw .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #cnzdredutw .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #cnzdredutw .gt_spanner_row { border-bottom-style: hidden; }
+ #cnzdredutw .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #faf7f1; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #cnzdredutw .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #faf7f1; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #cnzdredutw .gt_from_md> :first-child { margin-top: 0; }
+ #cnzdredutw .gt_from_md> :last-child { margin-bottom: 0; }
+ #cnzdredutw .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #cnzdredutw .gt_stub { color: #333333; background-color: #faf7f1; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #cnzdredutw .gt_stub_row_group { color: #333333; background-color: #faf7f1; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #cnzdredutw .gt_row_group_first td { border-top-width: 2px; }
+ #cnzdredutw .gt_row_group_first th { border-top-width: 2px; }
+ #cnzdredutw .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #cnzdredutw .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #cnzdredutw .gt_summary_row { color: #333333; background-color: #faf7f1; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #cnzdredutw .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
+ #cnzdredutw .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #cnzdredutw .gt_grand_summary_row { color: #333333; background-color: #faf7f1; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #cnzdredutw .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #cnzdredutw .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #cnzdredutw .gt_sourcenotes { color: #333333; background-color: #faf7f1; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #cnzdredutw .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #cnzdredutw .gt_left { text-align: left; }
+ #cnzdredutw .gt_center { text-align: center; }
+ #cnzdredutw .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #cnzdredutw .gt_font_normal { font-weight: normal; }
+ #cnzdredutw .gt_font_bold { font-weight: bold; }
+ #cnzdredutw .gt_font_italic { font-style: italic; }
+ #cnzdredutw .gt_super { font-size: 65%; }
+ #cnzdredutw .gt_footnotes { color: font-color(#faf7f1); background-color: #faf7f1; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #cnzdredutw .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
+ #cnzdredutw .gt_sourcenotes { color: #333333; background-color: #faf7f1; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #cnzdredutw .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #cnzdredutw .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #cnzdredutw .gt_asterisk { font-size: 100%; vertical-align: 0; }
+ 
+</style>
+
+<table class="gt_table caption-top table" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<td colspan="7" class="gt_heading gt_title gt_font_normal">Community favorites</td>
+</tr>
+<tr class="gt_heading even">
+<td colspan="7" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Same set, ranked by likes — surfaces the flagship models</td>
+</tr>
+<tr class="gt_col_headings header">
+<th id="name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Model</th>
+<th id="org" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Org</th>
+<th id="downloads_disp" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Downloads 30d</th>
+<th id="likes" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Likes</th>
+<th id="license" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">License</th>
+<th id="gated_disp" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Gated</th>
+<th id="created_str" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Added</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">DeepSeek-R1</td>
+<td class="gt_row gt_left">deepseek-ai</td>
+<td class="gt_row gt_right">7.4M</td>
+<td class="gt_row gt_right">13419</td>
+<td class="gt_row gt_left">mit</td>
+<td class="gt_row gt_center">—</td>
+<td class="gt_row gt_right">2025-01-20</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" style="color: #1f3a5f; font-weight: 600">Llama-3.1-8B-Instruct</td>
+<td class="gt_row gt_left gt_striped">meta-llama</td>
+<td class="gt_row gt_right gt_striped">10.1M</td>
+<td class="gt_row gt_right gt_striped">6163</td>
+<td class="gt_row gt_left gt_striped">llama3.1</td>
+<td class="gt_row gt_center gt_striped">🔒</td>
+<td class="gt_row gt_right gt_striped">2024-07-18</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">gpt-oss-120b</td>
+<td class="gt_row gt_left">openai</td>
+<td class="gt_row gt_right">4.0M</td>
+<td class="gt_row gt_right">4926</td>
+<td class="gt_row gt_left">apache-2.0</td>
+<td class="gt_row gt_center">—</td>
+<td class="gt_row gt_right">2025-08-04</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" style="color: #1f3a5f; font-weight: 600">gpt-oss-20b</td>
+<td class="gt_row gt_left gt_striped">openai</td>
+<td class="gt_row gt_right gt_striped">7.0M</td>
+<td class="gt_row gt_right gt_striped">4737</td>
+<td class="gt_row gt_left gt_striped">apache-2.0</td>
+<td class="gt_row gt_center gt_striped">—</td>
+<td class="gt_row gt_right gt_striped">2025-08-04</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">gpt2</td>
+<td class="gt_row gt_left">openai-community</td>
+<td class="gt_row gt_right">12.9M</td>
+<td class="gt_row gt_right">3319</td>
+<td class="gt_row gt_left">mit</td>
+<td class="gt_row gt_center">—</td>
+<td class="gt_row gt_right">2022-03-02</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" style="color: #1f3a5f; font-weight: 600">Llama-3.2-1B</td>
+<td class="gt_row gt_left gt_striped">meta-llama</td>
+<td class="gt_row gt_right gt_striped">1.9M</td>
+<td class="gt_row gt_right gt_striped">2461</td>
+<td class="gt_row gt_left gt_striped">llama3.2</td>
+<td class="gt_row gt_center gt_striped">🔒</td>
+<td class="gt_row gt_right gt_striped">2024-09-18</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">DeepSeek-R1-0528</td>
+<td class="gt_row gt_left">deepseek-ai</td>
+<td class="gt_row gt_right">4.4M</td>
+<td class="gt_row gt_right">2454</td>
+<td class="gt_row gt_left">mit</td>
+<td class="gt_row gt_center">—</td>
+<td class="gt_row gt_right">2025-05-28</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" style="color: #1f3a5f; font-weight: 600">Llama-3.1-8B</td>
+<td class="gt_row gt_left gt_striped">meta-llama</td>
+<td class="gt_row gt_right gt_striped">1.5M</td>
+<td class="gt_row gt_right gt_striped">2289</td>
+<td class="gt_row gt_left gt_striped">llama3.1</td>
+<td class="gt_row gt_center gt_striped">🔒</td>
+<td class="gt_row gt_right gt_striped">2024-07-14</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">Llama-3.2-3B-Instruct</td>
+<td class="gt_row gt_left">meta-llama</td>
+<td class="gt_row gt_right">2.0M</td>
+<td class="gt_row gt_right">2278</td>
+<td class="gt_row gt_left">llama3.2</td>
+<td class="gt_row gt_center">🔒</td>
+<td class="gt_row gt_right">2024-09-18</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" style="color: #1f3a5f; font-weight: 600">GLM-4.7-Flash</td>
+<td class="gt_row gt_left gt_striped">zai-org</td>
+<td class="gt_row gt_right gt_striped">2.3M</td>
+<td class="gt_row gt_right gt_striped">1758</td>
+<td class="gt_row gt_left gt_striped">mit</td>
+<td class="gt_row gt_center gt_striped">—</td>
+<td class="gt_row gt_right gt_striped">2026-01-19</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">TinyLlama-1.1B-Chat-v1.0</td>
+<td class="gt_row gt_left">TinyLlama</td>
+<td class="gt_row gt_right">2.2M</td>
+<td class="gt_row gt_right">1649</td>
+<td class="gt_row gt_left">apache-2.0</td>
+<td class="gt_row gt_center">—</td>
+<td class="gt_row gt_right">2023-12-30</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" style="color: #1f3a5f; font-weight: 600">DeepSeek-V4-Flash</td>
+<td class="gt_row gt_left gt_striped">deepseek-ai</td>
+<td class="gt_row gt_right gt_striped">2.0M</td>
+<td class="gt_row gt_right gt_striped">1625</td>
+<td class="gt_row gt_left gt_striped">mit</td>
+<td class="gt_row gt_center gt_striped">—</td>
+<td class="gt_row gt_right gt_striped">2026-04-22</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">Llama-3.2-1B-Instruct</td>
+<td class="gt_row gt_left">meta-llama</td>
+<td class="gt_row gt_right">8.5M</td>
+<td class="gt_row gt_right">1502</td>
+<td class="gt_row gt_left">llama3.2</td>
+<td class="gt_row gt_center">🔒</td>
+<td class="gt_row gt_right">2024-09-18</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" style="color: #1f3a5f; font-weight: 600">DeepSeek-V3.2</td>
+<td class="gt_row gt_left gt_striped">deepseek-ai</td>
+<td class="gt_row gt_right gt_striped">2.6M</td>
+<td class="gt_row gt_right gt_striped">1451</td>
+<td class="gt_row gt_left gt_striped">mit</td>
+<td class="gt_row gt_center gt_striped">—</td>
+<td class="gt_row gt_right gt_striped">2025-12-01</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" style="color: #1f3a5f; font-weight: 600">Qwen2.5-7B-Instruct</td>
+<td class="gt_row gt_left">Qwen</td>
+<td class="gt_row gt_right">12.7M</td>
+<td class="gt_row gt_right">1387</td>
+<td class="gt_row gt_left">apache-2.0</td>
+<td class="gt_row gt_center">—</td>
+<td class="gt_row gt_right">2024-09-16</td>
+</tr>
+</tbody><tfoot>
+<tr class="gt_sourcenotes odd">
+<td colspan="7" class="gt_sourcenote"><span class="gt_from_md">🔒 gated (acceptance required) · Data: <a href="https://huggingface.co/models">Hugging Face Hub</a></span></td>
+</tr>
+</tfoot>
+
+</table>
+
+
+</div>
+</div>
+</div></div><div class="tab-pane html-fill-item html-fill-container" role="tabpanel" id="card-tabset-12-3"><div class="card-body html-fill-item html-fill-container" data-title="Open-weights catalog — search &amp; sort">
+<script type="ojs-define">{"contents": [{"name": "hf_models", "value": [{"name": "Qwen3-0.6B", "org": "Qwen", "downloads": 27428876, "likes": 1362, "license": "apache-2.0", "task": "text-generation", "created_str": "2025-04-27"}, {"name": "Qwen3-4B", "org": "Qwen", "downloads": 15500203, "likes": 641, "license": "apache-2.0", "task": "text-generation", "created_str": "2025-04-27"}, {"name": "Qwen3-8B", "org": "Qwen", "downloads": 13562142, "likes": 1167, "license": "apache-2.0", "task": "text-generation", "created_str": "2025-04-27"}, {"name": "gpt2", "org": "openai-community", "downloads": 12912245, "likes": 3319, "license": "mit", "task": "text-generation", "created_str": "2022-03-02"}, {"name": "opt-125m", "org": "facebook", "downloads": 12833293, "likes": 267, "license": "other", "task": "text-generation", "created_str": "2022-05-11"}, {"name": "Qwen2.5-7B-Instruct", "org": "Qwen", "downloads": 12682318, "likes": 1387, "license": "apache-2.0", "task": "text-generation", "created_str": "2024-09-16"}, {"name": "Qwen2.5-1.5B-Instruct", "org": "Qwen", "downloads": 11800482, "likes": 749, "license": "apache-2.0", "task": "text-generation", "created_str": "2024-09-17"}, {"name": "Llama-3.1-8B-Instruct", "org": "meta-llama", "downloads": 10098873, "likes": 6163, "license": "llama3.1", "task": "text-generation", "created_str": "2024-07-18"}, {"name": "Llama-3.2-1B-Instruct", "org": "meta-llama", "downloads": 8461992, "likes": 1502, "license": "llama3.2", "task": "text-generation", "created_str": "2024-09-18"}, {"name": "Qwen2.5-3B-Instruct", "org": "Qwen", "downloads": 7890917, "likes": 513, "license": "other", "task": "text-generation", "created_str": "2024-09-17"}, {"name": "DeepSeek-R1", "org": "deepseek-ai", "downloads": 7365944, "likes": 13419, "license": "mit", "task": "text-generation", "created_str": "2025-01-20"}, {"name": "gpt-oss-20b", "org": "openai", "downloads": 6994396, "likes": 4737, "license": "apache-2.0", "task": "text-generation", "created_str": "2025-08-04"}, {"name": "gemma-3-270m", "org": "google", "downloads": 6475549, "likes": 1040, "license": "gemma", "task": "text-generation", "created_str": "2025-08-05"}, {"name": "deepseek-v4-gguf", "org": "antirez", "downloads": 6464783, "likes": 279, "license": "mit", "task": "text-generation", "created_str": "2026-04-26"}, {"name": "Qwen3-1.7B", "org": "Qwen", "downloads": 5753488, "likes": 491, "license": "apache-2.0", "task": "text-generation", "created_str": "2025-04-27"}, {"name": "Qwen3-4B-Instruct-2507", "org": "Qwen", "downloads": 5400964, "likes": 886, "license": "apache-2.0", "task": "text-generation", "created_str": "2025-08-05"}, {"name": "Qwen3.6-35B-A3B-NVFP4", "org": "nvidia", "downloads": 5235413, "likes": 369, "license": "apache-2.0", "task": "text-generation", "created_str": "2026-05-27"}, {"name": "Qwen2.5-0.5B-Instruct", "org": "Qwen", "downloads": 4973955, "likes": 543, "license": "apache-2.0", "task": "text-generation", "created_str": "2024-09-16"}, {"name": "dolphin-2.9.1-yi-1.5-34b", "org": "dphn", "downloads": 4607522, "likes": 65, "license": "apache-2.0", "task": "text-generation", "created_str": "2024-05-18"}, {"name": "Qwen2.5-Coder-14B-Instruct", "org": "Qwen", "downloads": 4385616, "likes": 167, "license": "apache-2.0", "task": "text-generation", "created_str": "2024-11-06"}, {"name": "DeepSeek-R1-0528", "org": "deepseek-ai", "downloads": 4366970, "likes": 2454, "license": "mit", "task": "text-generation", "created_str": "2025-05-28"}, {"name": "Qwen3-32B", "org": "Qwen", "downloads": 4245935, "likes": 709, "license": "apache-2.0", "task": "text-generation", "created_str": "2025-04-27"}, {"name": "gpt-oss-120b", "org": "openai", "downloads": 4044343, "likes": 4926, "license": "apache-2.0", "task": "text-generation", "created_str": "2025-08-04"}, {"name": "gemma-3-1b-it", "org": "google", "downloads": 3815447, "likes": 1024, "license": "gemma", "task": "text-generation", "created_str": "2025-03-10"}, {"name": "Qwen2-1.5B-Instruct", "org": "Qwen", "downloads": 3787562, "likes": 162, "license": "apache-2.0", "task": "text-generation", "created_str": "2024-06-03"}, {"name": "Qwen3-14B", "org": "Qwen", "downloads": 3616576, "likes": 417, "license": "apache-2.0", "task": "text-generation", "created_str": "2025-04-27"}, {"name": "Qwen2.5-7B-Instruct-AWQ", "org": "Qwen", "downloads": 3545159, "likes": 47, "license": "apache-2.0", "task": "text-generation", "created_str": "2024-09-17"}, {"name": "distilgpt2", "org": "distilbert", "downloads": 3419399, "likes": 630, "license": "apache-2.0", "task": "text-generation", "created_str": "2022-03-02"}, {"name": "Gemma-3-1B-it-GLM-4.7-Flash-Heretic-Uncensored-Thinking_GGUF", "org": "Andycurrent", "downloads": 3333060, "likes": 85, "license": "gemma", "task": "text-generation", "created_str": "2026-02-18"}, {"name": "pythia-160m", "org": "EleutherAI", "downloads": 3051220, "likes": 42, "license": "apache-2.0", "task": "text-generation", "created_str": "2023-02-08"}, {"name": "Qwen2.5-32B-Instruct", "org": "Qwen", "downloads": 2846971, "likes": 352, "license": "apache-2.0", "task": "text-generation", "created_str": "2024-09-17"}, {"name": "Qwen3-30B-A3B", "org": "Qwen", "downloads": 2770178, "likes": 904, "license": "apache-2.0", "task": "text-generation", "created_str": "2025-04-27"}, {"name": "DeepSeek-V3.2", "org": "deepseek-ai", "downloads": 2578918, "likes": 1451, "license": "mit", "task": "text-generation", "created_str": "2025-12-01"}, {"name": "Qwen2.5-0.5B", "org": "Qwen", "downloads": 2309290, "likes": 424, "license": "apache-2.0", "task": "text-generation", "created_str": "2024-09-15"}, {"name": "GLM-4.7-Flash", "org": "zai-org", "downloads": 2270100, "likes": 1758, "license": "mit", "task": "text-generation", "created_str": "2026-01-19"}, {"name": "GLM-5-FP8", "org": "zai-org", "downloads": 2263417, "likes": 181, "license": "mit", "task": "text-generation", "created_str": "2026-02-11"}, {"name": "TinyLlama-1.1B-Chat-v1.0", "org": "TinyLlama", "downloads": 2202540, "likes": 1649, "license": "apache-2.0", "task": "text-generation", "created_str": "2023-12-30"}, {"name": "Qwen2.5-14B-Instruct", "org": "Qwen", "downloads": 2192539, "likes": 351, "license": "apache-2.0", "task": "text-generation", "created_str": "2024-09-16"}, {"name": "SmolLM2-135M-Instruct", "org": "HuggingFaceTB", "downloads": 2145269, "likes": 361, "license": "apache-2.0", "task": "text-generation", "created_str": "2024-10-31"}, {"name": "Gemma-4-26B-A4B-NVFP4", "org": "nvidia", "downloads": 2087906, "likes": 102, "license": "apache-2.0", "task": "text-generation", "created_str": "2026-05-01"}, {"name": "MiniMax-M2.7", "org": "MiniMaxAI", "downloads": 2063892, "likes": 1221, "license": "other", "task": "text-generation", "created_str": "2026-04-09"}, {"name": "Qwen3-0.6B-FP8", "org": "Qwen", "downloads": 2020888, "likes": 62, "license": "apache-2.0", "task": "text-generation", "created_str": "2025-04-28"}, {"name": "Llama-3.2-3B-Instruct", "org": "meta-llama", "downloads": 2018457, "likes": 2278, "license": "llama3.2", "task": "text-generation", "created_str": "2024-09-18"}, {"name": "DeepSeek-V4-Flash", "org": "deepseek-ai", "downloads": 1991598, "likes": 1625, "license": "mit", "task": "text-generation", "created_str": "2026-04-22"}, {"name": "Qwen2.5-Coder-7B-Instruct", "org": "Qwen", "downloads": 1965457, "likes": 743, "license": "apache-2.0", "task": "text-generation", "created_str": "2024-09-17"}, {"name": "NVIDIA-Nemotron-3-Nano-4B-BF16", "org": "nvidia", "downloads": 1899014, "likes": 97, "license": "other", "task": "text-generation", "created_str": "2026-03-07"}, {"name": "Qwen3-Coder-30B-A3B-Instruct", "org": "Qwen", "downloads": 1895576, "likes": 1130, "license": "apache-2.0", "task": "text-generation", "created_str": "2025-07-31"}, {"name": "Llama-3.2-1B", "org": "meta-llama", "downloads": 1878502, "likes": 2461, "license": "llama3.2", "task": "text-generation", "created_str": "2024-09-18"}, {"name": "Qwen3-Coder-Next-FP8", "org": "Qwen", "downloads": 1859460, "likes": 154, "license": "apache-2.0", "task": "text-generation", "created_str": "2026-02-01"}, {"name": "Llama-3.2-1B-Instruct-FP8-dynamic", "org": "RedHatAI", "downloads": 1813333, "likes": 4, "license": "llama3.2", "task": "text-generation", "created_str": "2024-09-25"}, {"name": "gpt2-large", "org": "openai-community", "downloads": 1797866, "likes": 353, "license": "mit", "task": "text-generation", "created_str": "2022-03-02"}, {"name": "Qwen3-14B-AWQ", "org": "Qwen", "downloads": 1704661, "likes": 69, "license": "apache-2.0", "task": "text-generation", "created_str": "2025-05-01"}, {"name": "pythia-70m-deduped", "org": "EleutherAI", "downloads": 1703551, "likes": 28, "license": "apache-2.0", "task": "text-generation", "created_str": "2023-02-13"}, {"name": "Qwen2.5-Coder-32B-Instruct-AWQ", "org": "Qwen", "downloads": 1658675, "likes": 37, "license": "apache-2.0", "task": "text-generation", "created_str": "2024-11-09"}, {"name": "Kimi-K2-Instruct-0905", "org": "moonshotai", "downloads": 1644640, "likes": 752, "license": "other", "task": "text-generation", "created_str": "2025-09-03"}, {"name": "PowerMoE-3b", "org": "ibm-research", "downloads": 1576076, "likes": 21, "license": "apache-2.0", "task": "text-generation", "created_str": "2024-08-14"}, {"name": "OpenELM-1_1B-Instruct", "org": "apple", "downloads": 1564530, "likes": 75, "license": "apple-amlr", "task": "text-generation", "created_str": "2024-04-12"}, {"name": "Llama-3.1-8B", "org": "meta-llama", "downloads": 1517691, "likes": 2289, "license": "llama3.1", "task": "text-generation", "created_str": "2024-07-14"}]}]}</script>
+<div class="code-copy-outer-scaffold html-fill-item html-fill-container"><div class="sourceCode cell-code hidden html-fill-item html-fill-container" id="cb3" data-startfrom="180" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 179;"><span id="cb3-180"><a href="#cb3-180" aria-hidden="true" tabindex="-1"></a>viewof hfq <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">search</span>(hf_models<span class="op">,</span> { <span class="dt">placeholder</span><span class="op">:</span> <span class="vs">`Search </span><span class="sc">${</span>hf_models<span class="op">.</span><span class="at">length</span><span class="sc">}</span><span class="vs"> open models…`</span> })</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display html-fill-item html-fill-container">
+<div id="ojs-cell-3" data-nodetype="declaration" class="html-fill-item html-fill-container">
+
+</div>
+</div>
+<div class="code-copy-outer-scaffold html-fill-item html-fill-container"><div class="sourceCode cell-code hidden html-fill-item html-fill-container" id="cb4" data-startfrom="185" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 184;"><span id="cb4-185"><a href="#cb4-185" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(hfq<span class="op">,</span> {</span>
+<span id="cb4-186"><a href="#cb4-186" aria-hidden="true" tabindex="-1"></a>  <span class="dt">columns</span><span class="op">:</span> [<span class="st">"name"</span><span class="op">,</span> <span class="st">"org"</span><span class="op">,</span> <span class="st">"downloads"</span><span class="op">,</span> <span class="st">"likes"</span><span class="op">,</span> <span class="st">"license"</span><span class="op">,</span> <span class="st">"task"</span><span class="op">,</span> <span class="st">"created_str"</span>]<span class="op">,</span></span>
+<span id="cb4-187"><a href="#cb4-187" aria-hidden="true" tabindex="-1"></a>  <span class="dt">header</span><span class="op">:</span> {</span>
+<span id="cb4-188"><a href="#cb4-188" aria-hidden="true" tabindex="-1"></a>    <span class="dt">name</span><span class="op">:</span> <span class="st">"Model"</span><span class="op">,</span> <span class="dt">org</span><span class="op">:</span> <span class="st">"Org"</span><span class="op">,</span> <span class="dt">downloads</span><span class="op">:</span> <span class="st">"Downloads 30d"</span><span class="op">,</span> <span class="dt">likes</span><span class="op">:</span> <span class="st">"Likes"</span><span class="op">,</span></span>
+<span id="cb4-189"><a href="#cb4-189" aria-hidden="true" tabindex="-1"></a>    <span class="dt">license</span><span class="op">:</span> <span class="st">"License"</span><span class="op">,</span> <span class="dt">task</span><span class="op">:</span> <span class="st">"Task"</span><span class="op">,</span> <span class="dt">created_str</span><span class="op">:</span> <span class="st">"Added"</span></span>
+<span id="cb4-190"><a href="#cb4-190" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb4-191"><a href="#cb4-191" aria-hidden="true" tabindex="-1"></a>  <span class="dt">format</span><span class="op">:</span> {</span>
+<span id="cb4-192"><a href="#cb4-192" aria-hidden="true" tabindex="-1"></a>    <span class="dt">downloads</span><span class="op">:</span> x <span class="kw">=&gt;</span> x <span class="op">&gt;=</span> <span class="fl">1e6</span> <span class="op">?</span> (x<span class="op">/</span><span class="fl">1e6</span>)<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">1</span>) <span class="op">+</span> <span class="st">"M"</span> <span class="op">:</span> x <span class="op">&gt;=</span> <span class="fl">1e3</span> <span class="op">?</span> (x<span class="op">/</span><span class="fl">1e3</span>)<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>) <span class="op">+</span> <span class="st">"k"</span> <span class="op">:</span> x</span>
+<span id="cb4-193"><a href="#cb4-193" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb4-194"><a href="#cb4-194" aria-hidden="true" tabindex="-1"></a>  <span class="dt">sort</span><span class="op">:</span> <span class="st">"downloads"</span><span class="op">,</span></span>
+<span id="cb4-195"><a href="#cb4-195" aria-hidden="true" tabindex="-1"></a>  <span class="dt">reverse</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb4-196"><a href="#cb4-196" aria-hidden="true" tabindex="-1"></a>  <span class="dt">rows</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span></span>
+<span id="cb4-197"><a href="#cb4-197" aria-hidden="true" tabindex="-1"></a>  <span class="dt">layout</span><span class="op">:</span> <span class="st">"auto"</span></span>
+<span id="cb4-198"><a href="#cb4-198" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display html-fill-item html-fill-container">
+<div id="ojs-cell-4" data-nodetype="expression" class="html-fill-item html-fill-container">
+
+</div>
+</div>
+</div></div></div><bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+</div>
+</div>
+</div>
 
 
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBxID0gSW5wdXRzLnNlYXJjaChtb2RlbHMsIHsgcGxhY2Vob2xkZXI6IGBTZWFyY2ggJHttb2RlbHMubGVuZ3RofSBtb2RlbHPigKZgIH0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJJbnB1dHMudGFibGUocSwge1xuICBjb2x1bW5zOiBbXCJuYW1lXCIsIFwicHJvdmlkZXJcIiwgXCJjb250ZXh0X2tcIiwgXCJwcmljZV9pblwiLCBcInByaWNlX291dFwiLCBcIm1vZGFsaXRpZXNcIiwgXCJjcmVhdGVkX3N0clwiXSxcbiAgaGVhZGVyOiB7XG4gICAgbmFtZTogXCJNb2RlbFwiLCBwcm92aWRlcjogXCJQcm92aWRlclwiLCBjb250ZXh0X2s6IFwiQ29udGV4dCAoSylcIixcbiAgICBwcmljZV9pbjogXCIkLzFNIGluXCIsIHByaWNlX291dDogXCIkLzFNIG91dFwiLCBtb2RhbGl0aWVzOiBcIk1vZGFsaXRpZXNcIiwgY3JlYXRlZF9zdHI6IFwiQWRkZWRcIlxuICB9LFxuICBzb3J0OiBcImNyZWF0ZWRfc3RyXCIsXG4gIHJldmVyc2U6IHRydWUsXG4gIHJvd3M6IDIwLFxuICBsYXlvdXQ6IFwiYXV0b1wiXG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdxJykifV19
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBxID0gSW5wdXRzLnNlYXJjaChtb2RlbHMsIHsgcGxhY2Vob2xkZXI6IGBTZWFyY2ggJHttb2RlbHMubGVuZ3RofSBtb2RlbHPigKZgIH0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJJbnB1dHMudGFibGUocSwge1xuICBjb2x1bW5zOiBbXCJuYW1lXCIsIFwicHJvdmlkZXJcIiwgXCJjb250ZXh0X2tcIiwgXCJwcmljZV9pblwiLCBcInByaWNlX291dFwiLCBcIm1vZGFsaXRpZXNcIiwgXCJjcmVhdGVkX3N0clwiXSxcbiAgaGVhZGVyOiB7XG4gICAgbmFtZTogXCJNb2RlbFwiLCBwcm92aWRlcjogXCJQcm92aWRlclwiLCBjb250ZXh0X2s6IFwiQ29udGV4dCAoSylcIixcbiAgICBwcmljZV9pbjogXCIkLzFNIGluXCIsIHByaWNlX291dDogXCIkLzFNIG91dFwiLCBtb2RhbGl0aWVzOiBcIk1vZGFsaXRpZXNcIiwgY3JlYXRlZF9zdHI6IFwiQWRkZWRcIlxuICB9LFxuICBzb3J0OiBcImNyZWF0ZWRfc3RyXCIsXG4gIHJldmVyc2U6IHRydWUsXG4gIHJvd3M6IDIwLFxuICBsYXlvdXQ6IFwiYXV0b1wiXG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0zIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIGhmcSA9IElucHV0cy5zZWFyY2goaGZfbW9kZWxzLCB7IHBsYWNlaG9sZGVyOiBgU2VhcmNoICR7aGZfbW9kZWxzLmxlbmd0aH0gb3BlbiBtb2RlbHPigKZgIH0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTQiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJJbnB1dHMudGFibGUoaGZxLCB7XG4gIGNvbHVtbnM6IFtcIm5hbWVcIiwgXCJvcmdcIiwgXCJkb3dubG9hZHNcIiwgXCJsaWtlc1wiLCBcImxpY2Vuc2VcIiwgXCJ0YXNrXCIsIFwiY3JlYXRlZF9zdHJcIl0sXG4gIGhlYWRlcjoge1xuICAgIG5hbWU6IFwiTW9kZWxcIiwgb3JnOiBcIk9yZ1wiLCBkb3dubG9hZHM6IFwiRG93bmxvYWRzIDMwZFwiLCBsaWtlczogXCJMaWtlc1wiLFxuICAgIGxpY2Vuc2U6IFwiTGljZW5zZVwiLCB0YXNrOiBcIlRhc2tcIiwgY3JlYXRlZF9zdHI6IFwiQWRkZWRcIlxuICB9LFxuICBmb3JtYXQ6IHtcbiAgICBkb3dubG9hZHM6IHggPT4geCA+PSAxZTYgPyAoeC8xZTYpLnRvRml4ZWQoMSkgKyBcIk1cIiA6IHggPj0gMWUzID8gKHgvMWUzKS50b0ZpeGVkKDApICsgXCJrXCIgOiB4XG4gIH0sXG4gIHNvcnQ6IFwiZG93bmxvYWRzXCIsXG4gIHJldmVyc2U6IHRydWUsXG4gIHJvd3M6IDIwLFxuICBsYXlvdXQ6IFwiYXV0b1wiXG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdxJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ2hmcScpIn1dfQ==
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
