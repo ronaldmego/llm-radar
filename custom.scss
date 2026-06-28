@@ -34,3 +34,16 @@ input[type="search"] {
   border-radius: 6px;
   padding: 6px 10px;
 }
+
+// The dashboard "fill" layout collapses the Observable search cell to ~14px,
+// so the 36px input overflows and the table below clips it. Pin the search
+// cell to its natural height and let the table cell take the remaining space.
+.card-body .cell-output-display:has(form input[type="search"]) {
+  flex: 0 0 auto !important;
+  min-height: 46px;
+  overflow: visible;
+  margin-bottom: 8px;
+}
+.card-body .cell-output-display:has(table) {
+  overflow: auto;
+}
