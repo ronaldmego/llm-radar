@@ -95,3 +95,68 @@ def cheapest_capable_table(df: pd.DataFrame, n: int = 12) -> GT:
         title="Cheapest capable models",
         subtitle="≥100K context, lowest input price ($/1M tokens)",
     )
+
+
+# --- Open-weights (Hugging Face) views -------------------------------------
+
+def _hf_view(df: pd.DataFrame) -> pd.DataFrame:
+    out = df.copy()
+    out["gated_disp"] = out["gated"].map(lambda g: "🔒" if g else "—")
+    return out[
+        ["name", "org", "downloads_disp", "likes", "license", "gated_disp", "created_str"]
+    ]
+
+
+def hf_build_table(df: pd.DataFrame, title: str, subtitle: str) -> GT:
+    """Styled great-tables view of open-weight models (matches the hosted theme)."""
+    view = _hf_view(df)
+    gt = (
+        GT(view)
+        .tab_header(title=title, subtitle=subtitle)
+        .cols_label(
+            name="Model",
+            org="Org",
+            downloads_disp="Downloads 30d",
+            likes="Likes",
+            license="License",
+            gated_disp="Gated",
+            created_str="Added",
+        )
+        .cols_align("right", columns=["downloads_disp", "likes"])
+        .cols_align("center", columns=["gated_disp"])
+        .tab_source_note(
+            md("🔒 gated (acceptance required) · Data: [Hugging Face Hub](https://huggingface.co/models)")
+        )
+        .opt_table_font(font="IBM Plex Sans")
+        .tab_options(
+            table_background_color=PAPER,
+            heading_title_font_size="20px",
+            heading_title_font_weight="600",
+            heading_subtitle_font_size="13px",
+            column_labels_background_color=NAVY,
+            column_labels_font_weight="600",
+            table_font_size="13px",
+            row_striping_include_table_body=True,
+        )
+    )
+    gt = gt.tab_style(
+        style=style.text(color=NAVY, weight="600"),
+        locations=loc.body(columns=["name"]),
+    )
+    return gt
+
+
+def hf_most_downloaded_table(df: pd.DataFrame, n: int = 15) -> GT:
+    return hf_build_table(
+        df.head(n),
+        title="Most-downloaded open LLMs",
+        subtitle="Text-generation models by 30-day downloads (Hugging Face)",
+    )
+
+
+def hf_most_liked_table(df: pd.DataFrame, n: int = 15) -> GT:
+    return hf_build_table(
+        df.sort_values("likes", ascending=False).head(n),
+        title="Community favorites",
+        subtitle="Same set, ranked by likes — surfaces the flagship models",
+    )

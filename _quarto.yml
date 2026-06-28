@@ -7,4 +7,4 @@ project:
 website:
   title: "LLM Radar"
   site-url: "https://ronaldmego.github.io/llm-radar"
-  description: "The live LLM landscape — pricing, context & capabilities of 300+ models, auto-updated daily."
+  description: "The full LLM landscape — hosted pricing & context (300+ models) plus open-weights adoption & licenses, auto-updated daily."

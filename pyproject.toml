@@ -1,7 +1,7 @@
 [project]
 name = "llm-radar"
 version = "0.1.0"
-description = "A live, auto-updating dashboard of the LLM landscape (pricing, context, capabilities) — data from the OpenRouter API."
+description = "A live, auto-updating dashboard of the full LLM landscape — hosted pricing/context (OpenRouter) plus open-weights adoption & licenses (Hugging Face)."
 requires-python = ">=3.11"
 dependencies = [
     "requests>=2.32",

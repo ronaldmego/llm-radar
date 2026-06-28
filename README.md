@@ -5,7 +5,7 @@
 <h1 align="center">LLM Radar</h1>
 
 <p align="center">
-  <strong>The live LLM landscape</strong> — pricing, context windows, and capabilities of 300+ models, auto-updated daily.
+  <strong>The full LLM landscape</strong> — hosted pricing & context (300+ models) plus open-weights adoption & licenses, auto-updated daily.
 </p>
 
 <p align="center">
@@ -22,23 +22,28 @@
 
 The LLM landscape moves weekly — new models, shifting prices, bigger context windows. Comparing them usually means juggling a dozen pricing pages. **LLM Radar** pulls the whole catalog into one view and keeps it current automatically, so you can see at a glance what's new, what's cheap, and what fits your context needs.
 
-## What it shows
+Two tabs — the **commercial** side you pay to call, and the **open** side you can self-host:
 
+### Hosted (OpenRouter)
 - **At-a-glance stats** — models tracked, providers, new this week, biggest context window, free models.
-- **Newest models** — what was just added to the catalog.
-- **Cheapest capable** — lowest input price among models with ≥100K context.
-- **Full catalog** — a searchable, sortable table of every model: provider, context, `$/1M` in/out, modalities, date added.
+- **Newest models** · **Cheapest capable** (≥100K context, lowest input price) · **Full catalog** — searchable table with provider, context, `$/1M` in/out, modalities, date added.
+- Capability flags: 🧠 reasoning · 🖼️ multimodal · 🔧 tools.
 
-Capability flags: 🧠 reasoning · 🖼️ multimodal · 🔧 tools.
+### Open-weights (Hugging Face)
+- **At-a-glance stats** — open LLMs tracked, **permissive-license share**, **gated** (acceptance-required) count, orgs represented, new this week.
+- **Most downloaded** · **Community favorites** (by likes) · **Catalog** — searchable table with org, 30-day downloads, likes, **license**, task, date added.
+- License and the 🔒 gated flag are first-class: they're what decide whether a model can be self-hosted for data-residency or used commercially.
 
 ## How it works
 
 ```
-OpenRouter API  →  Python (pandas + great-tables)  →  Quarto dashboard  →  GitHub Pages
-        \__________________ refreshed daily by GitHub Actions __________________/
+OpenRouter API  ┐
+                ├─►  Python (pandas + great-tables)  →  Quarto dashboard  →  GitHub Pages
+Hugging Face API ┘
+        \____________________ refreshed daily by GitHub Actions ____________________/
 ```
 
-**Zero server, zero cost, no API key.** The model catalog endpoint is public, so a daily GitHub Actions cron re-fetches the data, re-renders the dashboard, and redeploys to GitHub Pages — no secrets, no backend.
+**Zero server, zero cost, no API key.** Both catalog endpoints are public, so a daily GitHub Actions cron re-fetches the data, re-renders the dashboard, and redeploys to GitHub Pages — no secrets, no backend.
 
 ## Run locally
 
@@ -56,9 +61,12 @@ To check the data pipeline alone:
 uv run python src/data_processor.py
 ```
 
-## Data source
+## Data sources
 
-[OpenRouter](https://openrouter.ai) — the public `/api/v1/models` catalog. LLM Radar is an independent project and is not affiliated with OpenRouter.
+- [OpenRouter](https://openrouter.ai) — the public `/api/v1/models` catalog (hosted tab).
+- [Hugging Face Hub](https://huggingface.co/models) — the public model listing API (open-weights tab).
+
+LLM Radar is an independent project and is not affiliated with OpenRouter or Hugging Face.
 
 ## License
 

@@ -17,11 +17,24 @@ sys.path.insert(0, "src")
 import numpy as np
 from api_client import OpenRouterClient
 from data_processor import process_models, summary_stats
-from visualizations import newest_table, cheapest_capable_table
+from hf_client import HuggingFaceClient, process_hf_models, hf_summary_stats
+from visualizations import (
+    newest_table,
+    cheapest_capable_table,
+    hf_most_downloaded_table,
+    hf_most_liked_table,
+)
 
+# Hosted / commercial side — OpenRouter
 df = process_models(OpenRouterClient().get_models())
 stats = summary_stats(df)
+
+# Open-weights side — Hugging Face
+hf_df = process_hf_models(HuggingFaceClient().get_models())
+hf_stats = hf_summary_stats(hf_df)
 ```
+
+# Hosted
 
 ## Row {height=24%}
 
@@ -95,6 +108,91 @@ Inputs.table(q, {
     price_in: "$/1M in", price_out: "$/1M out", modalities: "Modalities", created_str: "Added"
   },
   sort: "created_str",
+  reverse: true,
+  rows: 20,
+  layout: "auto"
+})
+```
+
+:::
+
+# Open-weights
+
+## Row {height=24%}
+
+```{python}
+#| content: valuebox
+#| title: "Open LLMs"
+dict(value=hf_stats["tracked"], icon="boxes", color="#1f3a5f")
+```
+
+```{python}
+#| content: valuebox
+#| title: "Permissive license"
+dict(value=f'{hf_stats["permissive_pct"]}%', icon="unlock", color="#15803d")
+```
+
+```{python}
+#| content: valuebox
+#| title: "Gated models"
+dict(value=hf_stats["gated"], icon="lock", color="#a8482b")
+```
+
+```{python}
+#| content: valuebox
+#| title: "Orgs"
+dict(value=hf_stats["orgs"], icon="building", color="#2563a8")
+```
+
+```{python}
+#| content: valuebox
+#| title: "New this week"
+dict(value=hf_stats["new_this_week"], icon="stars", color="#16202e")
+```
+
+## Row {height=76%}
+
+### Column {.tabset}
+
+```{python}
+#| title: Most downloaded
+#| echo: false
+hf_most_downloaded_table(hf_df)
+```
+
+```{python}
+#| title: Community favorites
+#| echo: false
+hf_most_liked_table(hf_df)
+```
+
+::: {.card title="Open-weights catalog — search & sort"}
+
+```{python}
+#| echo: false
+#| output: false
+hf_cols = ["name", "org", "downloads", "likes", "license", "task", "created_str"]
+hf_records = hf_df[hf_cols].replace({np.nan: None}).to_dict("records")
+ojs_define(hf_models=hf_records)
+```
+
+```{ojs}
+//| echo: false
+viewof hfq = Inputs.search(hf_models, { placeholder: `Search ${hf_models.length} open models…` })
+```
+
+```{ojs}
+//| echo: false
+Inputs.table(hfq, {
+  columns: ["name", "org", "downloads", "likes", "license", "task", "created_str"],
+  header: {
+    name: "Model", org: "Org", downloads: "Downloads 30d", likes: "Likes",
+    license: "License", task: "Task", created_str: "Added"
+  },
+  format: {
+    downloads: x => x >= 1e6 ? (x/1e6).toFixed(1) + "M" : x >= 1e3 ? (x/1e3).toFixed(0) + "k" : x
+  },
+  sort: "downloads",
   reverse: true,
   rows: 20,
   layout: "auto"
