@@ -126,10 +126,10 @@ Inputs.table(q, {
 #| echo: false
 #| output: asis
 print(
-    "**Source:** OpenRouter `/api/v1/models` (public, no auth) — "
-    "[open the raw JSON](https://openrouter.ai/api/v1/models) · "
-    f"**Data as of:** {updated} · "
-    "**Code:** [github.com/ronaldmego/llm-radar](https://github.com/ronaldmego/llm-radar)"
+    "Source: **OpenRouter** — "
+    "[API documentation](https://openrouter.ai/docs) · "
+    f"Data as of {updated} · "
+    "[source code](https://github.com/ronaldmego/llm-radar)"
 )
 ```
 
@@ -224,10 +224,9 @@ Inputs.table(hfq, {
 #| echo: false
 #| output: asis
 print(
-    "**Source:** Hugging Face Hub `/api/models?pipeline_tag=text-generation&sort=downloads` "
-    "(public, no auth) — "
-    "[open the raw JSON](https://huggingface.co/api/models?pipeline_tag=text-generation&sort=downloads&direction=-1&limit=5) · "
-    f"**Data as of:** {updated} · "
-    "**Code:** [github.com/ronaldmego/llm-radar](https://github.com/ronaldmego/llm-radar)"
+    "Source: **Hugging Face Hub** — "
+    "[API documentation](https://huggingface.co/docs/hub/api) · "
+    f"Data as of {updated} · "
+    "[source code](https://github.com/ronaldmego/llm-radar)"
 )
 ```
