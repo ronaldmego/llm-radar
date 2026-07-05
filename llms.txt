@@ -1,0 +1,45 @@
+# LLM Radar
+
+> The full LLM landscape in one auto-updated dashboard: hosted models (pricing &
+> context) and open-weights models (adoption & licenses). Independent, open-source,
+> refreshed daily. By Ronald Mego — https://ronaldmego.github.io/llm-radar
+
+LLM Radar consolidates the large-language-model market into a single continuously
+updated view, split into two catalogs. It is an independent project, not affiliated
+with OpenRouter or Hugging Face.
+
+## What it tracks
+
+- Hosted models (commercial, API-called): source OpenRouter public `/api/v1/models`.
+  Fields: model name, provider, context window (K tokens), price per 1M input tokens,
+  price per 1M output tokens, modalities, release date.
+- Open-weights models (self-hostable): source Hugging Face Hub public model listing.
+  Fields: model name, org, 30-day downloads, community likes, license, gated status,
+  task, release date.
+
+## Definitions
+
+- Context window (K): max tokens (prompt + response) per call, in thousands.
+- $/1M in, $/1M out: US dollars per one million input / output tokens.
+- Permissive license: open license (Apache-2.0, MIT, etc.) allowing commercial use
+  and redistribution without acceptance gates.
+- Gated model: open-weights model whose download requires accepting terms.
+- Cheapest capable: lowest input price among models with >=100K context.
+
+## Method
+
+OpenRouter API + Hugging Face API -> Python (pandas, great-tables) -> Quarto ->
+GitHub Pages, refreshed daily by GitHub Actions. Zero server, no API key. Fully
+open-source: https://github.com/ronaldmego/llm-radar
+
+## How to cite
+
+LLM Radar — the full LLM landscape (hosted pricing & context plus open-weights
+adoption & licenses), by Ronald Mego. https://ronaldmego.github.io/llm-radar
+
+## Links
+
+- Live dashboard: https://ronaldmego.github.io/llm-radar
+- Source code: https://github.com/ronaldmego/llm-radar
+- OpenRouter API docs: https://openrouter.ai/docs
+- Hugging Face Hub API docs: https://huggingface.co/docs/hub/api

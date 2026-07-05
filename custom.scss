@@ -47,3 +47,42 @@ input[type="search"] {
 .card-body .cell-output-display:has(table) {
   overflow: auto;
 }
+
+// --- Mobile (≤768px) --------------------------------------------------------
+// Quarto's dashboard "fill" mode crams the whole page into one phone screen and
+// keeps the value boxes in a fixed 5-column grid, so the numbers clip. On narrow
+// viewports: break the viewport-fill so the page scrolls, stack the rows, wrap
+// the value boxes to 2 per row, and shrink the type. Give tables a usable
+// height since fill no longer sizes them.
+@media (max-width: 768px) {
+  html:has(body.dashboard-fill),
+  body.quarto-dashboard.dashboard-fill { height: auto !important; }
+  #quarto-content.bslib-page-fill { height: auto !important; }
+
+  .dashboard-page.html-fill-container { display: block !important; }
+  .dashboard-page > .bslib-grid {
+    display: block !important;
+    height: auto !important;
+  }
+  .dashboard-page > .bslib-grid > .bslib-grid,
+  .dashboard-page > .bslib-grid > .bslib-grid-item { margin-bottom: 1rem; }
+
+  // The real value-box container is the bslib-grid whose direct children are the
+  // boxes (inline-styled to 5 columns). Force it back to a 2-up grid — overriding
+  // both the inline template and the display:block above — so numbers don't clip.
+  .bslib-grid:has(> .bslib-value-box) {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-auto-rows: minmax(80px, auto) !important;
+    gap: .5rem;
+    height: auto !important;
+  }
+  .bslib-value-box { min-height: 80px; }
+  .bslib-value-box .value-box-value { font-size: 1.25rem; }
+  .bslib-value-box .value-box-title { font-size: .62rem; }
+  .bslib-value-box .value-box-showcase .bi { font-size: 1.2rem; }
+
+  // Tabset + searchable catalog need an explicit height once fill is off.
+  .dashboard-page .bslib-grid-item.tab-content { min-height: 360px; }
+  .card-body:has(table) { min-height: 320px; }
+}

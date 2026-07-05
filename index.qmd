@@ -230,3 +230,64 @@ print(
     "[source code](https://github.com/ronaldmego/llm-radar)"
 )
 ```
+
+# About
+
+## Row
+
+::: {.card title="What LLM Radar tracks"}
+
+**LLM Radar** is an open dashboard that consolidates the large-language-model
+landscape into one continuously-updated view, split into two catalogs:
+
+- **Hosted** — commercial models you call through an API. Sourced from the public
+  [OpenRouter](https://openrouter.ai) `/api/v1/models` endpoint: pricing per
+  million tokens (input/output), context-window size, modalities, and release date.
+- **Open-weights** — models you can download and self-host. Sourced from the public
+  [Hugging Face Hub](https://huggingface.co/docs/hub/api) model listing: 30-day
+  downloads, community likes, **license**, gated status, and task.
+
+The data refreshes **daily** via a GitHub Actions cron that re-fetches both public
+APIs, re-renders the dashboard, and redeploys — no server, no backend, no API key.
+
+```{python}
+#| echo: false
+#| output: asis
+print(f"*Both catalogs last refreshed {updated}.*")
+```
+
+:::
+
+## Row
+
+::: {.card title="Definitions"}
+
+- **Context window (K)** — the maximum number of tokens (prompt + response) a model
+  can process in one call, in thousands. A 200K context ≈ ~150,000 words.
+- **`$/1M in` · `$/1M out`** — price in US dollars per one million input / output
+  tokens, as published by the provider on OpenRouter.
+- **Permissive license** — an open-weights license (Apache-2.0, MIT, and similar)
+  that allows commercial use and redistribution without acceptance gates. The
+  opposite is a restricted or research-only license.
+- **Gated model** — an open-weights model whose download requires accepting terms or
+  requesting access. Relevant for data-residency and commercial-use decisions.
+- **Cheapest capable** — lowest input price among models with ≥100K context, i.e. the
+  cheapest model still large enough for real document / agent workloads.
+
+:::
+
+::: {.card title="Methodology & how to cite"}
+
+**Pipeline:** OpenRouter API + Hugging Face API → Python (pandas, great-tables) →
+Quarto dashboard → GitHub Pages, refreshed daily by GitHub Actions. Fully
+open-source and reproducible — the entire pipeline is in the
+[source repository](https://github.com/ronaldmego/llm-radar).
+
+LLM Radar is an **independent** project and is not affiliated with OpenRouter or
+Hugging Face. Figures reflect what those public APIs report at fetch time; always
+confirm pricing and licenses against the provider before relying on them.
+
+**To cite:** *LLM Radar — the full LLM landscape (hosted pricing & context plus
+open-weights adoption & licenses), by Ronald Mego. https://ronaldmego.github.io/llm-radar*
+
+:::
