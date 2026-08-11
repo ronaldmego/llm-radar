@@ -93,7 +93,7 @@ dict(value=f'{stats["max_context_k"]:,}K', icon="arrows-angle-expand", color="#1
 dict(value=stats["free_models"], icon="gift", color="#16202e")
 ```
 
-## Row {height=560}
+## Row {height=700}
 
 ::: {.card title="The market on one plane — context vs price, by what a model can be fed"}
 
@@ -209,7 +209,7 @@ dict(value=hf_stats["multimodal"], icon="image", color="#2563a8")
 dict(value=hf_stats["new_this_week"], icon="stars", color="#16202e")
 ```
 
-## Row {height=560}
+## Row {height=700}
 
 ::: {.card title="Traction against release date — bubble size is 30-day downloads"}
 

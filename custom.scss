@@ -52,9 +52,13 @@ $link-color: #a8482b;
     border-radius: 50%;
     display: inline-block;
   }
+  // Sin `nowrap` la nota parte en dos ("hollow =" / "closed") y la palabra
+  // huérfana cae alineada bajo los puntos de color, donde se lee por un segundo
+  // como una entrada más de la leyenda a la que le falta la bolita.
   .ck-note {
     color: #6b7a8d;
     font-style: italic;
+    white-space: nowrap;
   }
 }
 .nav-tabs .nav-link.active { color: #1f3a5f; font-weight: 600; }
@@ -116,4 +120,13 @@ input[type="search"] {
   // Tabset + searchable catalog need an explicit height once fill is off.
   .dashboard-page .bslib-grid-item.tab-content { min-height: 360px; }
   .card-body:has(table) { min-height: 320px; }
+
+  // A seven-column great-table does not fit in 390px and was being cut mid-column
+  // ("Just landed" rendered as "Just", the $/1M columns lost their right edge).
+  // Let the table scroll sideways inside its own card instead of truncating; the
+  // page itself still never scrolls horizontally.
+  .card-body:has(table) {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 }
