@@ -9,7 +9,10 @@
 </p>
 
 <p align="center">
-  <a href="https://ronaldmego.github.io/llm-radar"><img src="https://img.shields.io/badge/live%20demo-llm--radar-1f3a5f?style=for-the-badge" alt="Live demo"></a>
+  <strong>See the live dashboard here → <a href="https://ronaldmego.github.io/llm-radar">ronaldmego.github.io/llm-radar</a></strong>
+</p>
+
+<p align="center">
   <a href="https://github.com/ronaldmego/llm-radar/actions/workflows/publish.yml"><img src="https://github.com/ronaldmego/llm-radar/actions/workflows/publish.yml/badge.svg" alt="Publish"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT"></a>
 </p>
