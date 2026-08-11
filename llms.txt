@@ -14,8 +14,12 @@ with OpenRouter or Hugging Face.
   Fields: model name, provider, context window (K tokens), price per 1M input tokens,
   price per 1M output tokens, modalities, release date.
 - Open-weights models (self-hostable): source Hugging Face Hub public model listing.
-  Fields: model name, org, 30-day downloads, community likes, license, gated status,
-  task, release date.
+  Fields: model name, org, type, 30-day downloads, community likes, license, gated
+  status, release date. The universe covers text, multimodal (image-text-to-text)
+  and vision/OCR (image-to-text) models, and is built from two rankings per type —
+  30-day downloads (established adoption) and the Hub trending signal (what landed
+  this week) — so a release published days ago is present, not just what is already
+  popular.
 
 ## Definitions
 
@@ -25,10 +29,19 @@ with OpenRouter or Hugging Face.
   and redistribution without acceptance gates.
 - Gated model: open-weights model whose download requires accepting terms.
 - Cheapest capable: lowest input price among models with >=100K context.
+- Type: what a model can be fed. Hosted side, from OpenRouter input modalities (text
+  only / image / document + image / audio+video); open-weights side, from the Hub
+  pipeline tag (text / multimodal / vision-OCR). Read from the API, never hand-assigned.
+- Just landed: models published in the last 45 days, ranked by likes. Ranking recent
+  arrivals by downloads returns nothing — the 30-day counter has not moved yet.
+- Third-party quantization: a repackaging of someone else's weights (GGUF, AWQ, MLX,
+  4-bit). Kept in the catalog, excluded from charts and ranked tables.
+- Open weights available (hosted): the hosted model has a published Hugging Face
+  repository, so the same weights can be self-hosted.
 
 ## Method
 
-OpenRouter API + Hugging Face API -> Python (pandas, great-tables) -> Quarto ->
+OpenRouter API + Hugging Face API -> Python (pandas, great-tables, plotly) -> Quarto ->
 GitHub Pages, refreshed daily by GitHub Actions. Zero server, no API key. Fully
 open-source: https://github.com/ronaldmego/llm-radar
 

@@ -3,6 +3,11 @@ title: "LLM Radar"
 format:
   dashboard:
     theme: [cosmo, custom.scss]
+    # Charts need vertical room. Quarto's default "fill" mode crams every row into
+    # one viewport, which squashed the scatter into a 130px band and clipped the
+    # captions; scrolling lets each row take the height it needs, on desktop and
+    # on a phone.
+    scrolling: true
     nav-buttons:
       - icon: github
         href: https://github.com/ronaldmego/llm-radar
@@ -16,13 +21,21 @@ import sys
 sys.path.insert(0, "src")
 import numpy as np
 from api_client import OpenRouterClient
-from data_processor import process_models, summary_stats
-from hf_client import HuggingFaceClient, process_hf_models, hf_summary_stats
+from data_processor import process_models, summary_stats, CATEGORIES
+from hf_client import (
+    HuggingFaceClient,
+    process_hf_models,
+    hf_summary_stats,
+    originals,
+    PIPELINE_TAGS,
+)
+from charts import cost_vs_context, traction_vs_age, category_key, CHART_CONFIG
 from visualizations import (
     newest_table,
     cheapest_capable_table,
     hf_most_downloaded_table,
     hf_most_liked_table,
+    hf_just_landed_table,
 )
 
 # Hosted / commercial side — OpenRouter
@@ -32,6 +45,14 @@ stats = summary_stats(df)
 # Open-weights side — Hugging Face
 hf_df = process_hf_models(HuggingFaceClient().get_models())
 hf_stats = hf_summary_stats(hf_df)
+# Charts plot originals only: third-party quantizations are real downloads but
+# they are re-uploads of someone else's weights, and they crowd out the models
+# they were built from. They stay in the searchable catalog below.
+hf_orig = originals(hf_df)
+HF_CATEGORIES = tuple(PIPELINE_TAGS.values())
+
+# Rows a logarithmic price axis cannot hold, counted rather than silently dropped.
+off_chart = int(((df["price_out"].isna()) | (df["price_out"] <= 0)).sum())
 
 # Fetch/render timestamp for the source-and-freshness footers (veracity).
 from datetime import datetime, timezone
@@ -40,7 +61,7 @@ updated = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
 # Hosted
 
-## Row {height=24%}
+## Row {height=140}
 
 ```{python}
 #| content: valuebox
@@ -72,7 +93,28 @@ dict(value=f'{stats["max_context_k"]:,}K', icon="arrows-angle-expand", color="#1
 dict(value=stats["free_models"], icon="gift", color="#16202e")
 ```
 
-## Row {height=68%}
+## Row {height=560}
+
+::: {.card title="The market on one plane — context vs price, by what a model can be fed"}
+
+```{python}
+#| echo: false
+cost_vs_context(df, CATEGORIES).show(config=CHART_CONFIG)
+```
+
+```{python}
+#| echo: false
+#| output: asis
+print(category_key(CATEGORIES, note="filled = open weights · hollow = closed"))
+print(
+    f"\nBoth axes are logarithmic. {off_chart} models are off-chart: the free tier "
+    f"and the routers OpenRouter prices at −1, neither of which a log scale admits."
+)
+```
+
+:::
+
+## Row {height=520}
 
 ### Column {.tabset}
 
@@ -120,7 +162,7 @@ Inputs.table(q, {
 
 :::
 
-## Row {height=8%}
+## Row {height=70}
 
 ```{python}
 #| echo: false
@@ -135,7 +177,7 @@ print(
 
 # Open-weights
 
-## Row {height=24%}
+## Row {height=140}
 
 ```{python}
 #| content: valuebox
@@ -157,8 +199,8 @@ dict(value=hf_stats["gated"], icon="lock", color="#a8482b")
 
 ```{python}
 #| content: valuebox
-#| title: "Orgs"
-dict(value=hf_stats["orgs"], icon="building", color="#2563a8")
+#| title: "Multimodal"
+dict(value=hf_stats["multimodal"], icon="image", color="#2563a8")
 ```
 
 ```{python}
@@ -167,20 +209,49 @@ dict(value=hf_stats["orgs"], icon="building", color="#2563a8")
 dict(value=hf_stats["new_this_week"], icon="stars", color="#16202e")
 ```
 
-## Row {height=68%}
+## Row {height=560}
+
+::: {.card title="Traction against release date — bubble size is 30-day downloads"}
+
+```{python}
+#| echo: false
+traction_vs_age(hf_orig, HF_CATEGORIES).show(config=CHART_CONFIG)
+```
+
+```{python}
+#| echo: false
+#| output: asis
+print(category_key(HF_CATEGORIES, note="bubble = 30-day downloads"))
+print(
+    "\nFar right and small = published days ago and already liked, before the "
+    "download counter can move. That corner is invisible to any table ranked by "
+    "downloads. Third-party quantizations are excluded here and kept in the "
+    "catalog below; the likes axis is logarithmic."
+)
+```
+
+:::
+
+## Row {height=520}
 
 ### Column {.tabset}
 
 ```{python}
+#| title: Just landed
+#| echo: false
+hf_just_landed_table(hf_orig)
+```
+
+```{python}
 #| title: Most downloaded
 #| echo: false
-hf_most_downloaded_table(hf_df)
+hf_most_downloaded_table(hf_orig)
 ```
 
 ```{python}
 #| title: Community favorites
 #| echo: false
-hf_most_liked_table(hf_df)
+hf_most_liked_table(hf_orig)
 ```
 
 ::: {.card title="Open-weights catalog — search & sort"}
@@ -188,7 +259,7 @@ hf_most_liked_table(hf_df)
 ```{python}
 #| echo: false
 #| output: false
-hf_cols = ["name", "org", "downloads", "likes", "license", "task", "created_str"]
+hf_cols = ["name", "org", "category", "downloads", "likes", "license", "created_str"]
 hf_records = hf_df[hf_cols].replace({np.nan: None}).to_dict("records")
 ojs_define(hf_models=hf_records)
 ```
@@ -201,10 +272,10 @@ viewof hfq = Inputs.search(hf_models, { placeholder: `Search ${hf_models.length}
 ```{ojs}
 //| echo: false
 Inputs.table(hfq, {
-  columns: ["name", "org", "downloads", "likes", "license", "task", "created_str"],
+  columns: ["name", "org", "category", "downloads", "likes", "license", "created_str"],
   header: {
-    name: "Model", org: "Org", downloads: "Downloads 30d", likes: "Likes",
-    license: "License", task: "Task", created_str: "Added"
+    name: "Model", org: "Org", category: "Type", downloads: "Downloads 30d",
+    likes: "Likes", license: "License", created_str: "Published"
   },
   format: {
     downloads: x => x >= 1e6 ? (x/1e6).toFixed(1) + "M" : x >= 1e3 ? (x/1e3).toFixed(0) + "k" : x
@@ -218,7 +289,7 @@ Inputs.table(hfq, {
 
 :::
 
-## Row {height=8%}
+## Row {height=70}
 
 ```{python}
 #| echo: false
@@ -245,7 +316,19 @@ landscape into one continuously-updated view, split into two catalogs:
   million tokens (input/output), context-window size, modalities, and release date.
 - **Open-weights** — models you can download and self-host. Sourced from the public
   [Hugging Face Hub](https://huggingface.co/docs/hub/api) model listing: 30-day
-  downloads, community likes, **license**, gated status, and task.
+  downloads, community likes, **license**, gated status, and type.
+
+**How the open-weights universe is chosen.** Two decisions shape what appears, and
+both exist to stop the catalog from lagging the market:
+
+- **Not only text.** Open models are no longer just `text-generation`; a new
+  multimodal release lands under `image-text-to-text` and would be invisible to a
+  text-only query. Each tracked type is queried separately and labelled.
+- **Not only downloads.** The 30-day download counter takes weeks to move, so a
+  ranking built on it can only show what was already popular — a model published
+  two days ago sits at zero however important it is. Each type is therefore also
+  pulled by the Hub's **trending** signal, which surfaces a release the day after
+  it lands. Both lists are merged.
 
 The data refreshes **daily** via a GitHub Actions cron that re-fetches both public
 APIs, re-renders the dashboard, and redeploys — no server, no backend, no API key.
@@ -273,6 +356,20 @@ print(f"*Both catalogs last refreshed {updated}.*")
   requesting access. Relevant for data-residency and commercial-use decisions.
 - **Cheapest capable** — lowest input price among models with ≥100K context, i.e. the
   cheapest model still large enough for real document / agent workloads.
+- **Type** — what a model can be fed. On the hosted side it is derived from the input
+  modalities OpenRouter publishes (*text only · image · document + image · audio /
+  video*); on the open-weights side it is the Hub pipeline tag (*text · multimodal ·
+  vision / OCR*). It is read from the API, never assigned by hand.
+- **Just landed** — models published in the last 45 days, ranked by likes. Ranking
+  recent arrivals by downloads would return an empty table: the counter has not had
+  time to move.
+- **Third-party quantization** — a repackaging of someone else's weights (GGUF, AWQ,
+  MLX, 4-bit and similar). Real downloads, but not a new model, and numerous enough
+  to crowd out the originals. Kept in the searchable catalog, excluded from the
+  charts and the ranked tables.
+- **Open weights available** (hosted chart) — the hosted model has a published Hugging
+  Face repository, so the same weights can be self-hosted. Shown as a filled marker;
+  closed models are hollow.
 
 :::
 

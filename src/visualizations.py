@@ -103,7 +103,16 @@ def _hf_view(df: pd.DataFrame) -> pd.DataFrame:
     out = df.copy()
     out["gated_disp"] = out["gated"].map(lambda g: "🔒" if g else "—")
     return out[
-        ["name", "org", "downloads_disp", "likes", "license", "gated_disp", "created_str"]
+        [
+            "name",
+            "org",
+            "category",
+            "downloads_disp",
+            "likes",
+            "license",
+            "gated_disp",
+            "created_str",
+        ]
     ]
 
 
@@ -116,11 +125,12 @@ def hf_build_table(df: pd.DataFrame, title: str, subtitle: str) -> GT:
         .cols_label(
             name="Model",
             org="Org",
+            category="Type",
             downloads_disp="Downloads 30d",
             likes="Likes",
             license="License",
             gated_disp="Gated",
-            created_str="Added",
+            created_str="Published",
         )
         .cols_align("right", columns=["downloads_disp", "likes"])
         .cols_align("center", columns=["gated_disp"])
@@ -148,15 +158,30 @@ def hf_build_table(df: pd.DataFrame, title: str, subtitle: str) -> GT:
 
 def hf_most_downloaded_table(df: pd.DataFrame, n: int = 15) -> GT:
     return hf_build_table(
-        df.head(n),
-        title="Most-downloaded open LLMs",
-        subtitle="Text-generation models by 30-day downloads (Hugging Face)",
+        df.nlargest(n, "downloads"),
+        title="Most-downloaded open models",
+        subtitle="Ranked by 30-day downloads — established adoption, slow to move",
     )
 
 
 def hf_most_liked_table(df: pd.DataFrame, n: int = 15) -> GT:
     return hf_build_table(
-        df.sort_values("likes", ascending=False).head(n),
+        df.nlargest(n, "likes"),
         title="Community favorites",
         subtitle="Same set, ranked by likes — surfaces the flagship models",
+    )
+
+
+def hf_just_landed_table(df: pd.DataFrame, n: int = 15, days: int = 45) -> GT:
+    """Recent arrivals ranked by likes.
+
+    The download counter needs weeks to move, so a release ranked by downloads is
+    invisible while it matters most. Restricting to what was published recently and
+    ranking by likes is the view where a model published days ago can appear at all.
+    """
+    recent = df[df["age_days"].notna() & (df["age_days"] <= days)]
+    return hf_build_table(
+        recent.nlargest(n, "likes"),
+        title="Just landed",
+        subtitle=f"Published in the last {days} days, ranked by likes — the newcomers",
     )
