@@ -26,6 +26,41 @@ $link-color: #a8482b;
   border: 1px solid #d9d0bf;
   border-radius: 8px;
 }
+
+// Chart legend, drawn in HTML instead of by plotly (see src/charts.py). Wraps by
+// itself, so it survives a phone without any layout maths.
+// Inline flow, not flex: inside a dashboard card the parent is a flex column that
+// stretches its children, which turned a wrapped flex row into two columns with a
+// gap the width of the card. Inline-block items wrap on width and nothing else.
+.chart-key {
+  display: block;
+  margin: .1rem 0 .5rem;
+  font-size: .82rem;
+  line-height: 1.9;
+  color: #3c4a5c;
+
+  .ck-item {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    margin-right: 1.4rem;
+    white-space: nowrap;
+  }
+  i {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  // Sin `nowrap` la nota parte en dos ("hollow =" / "closed") y la palabra
+  // huérfana cae alineada bajo los puntos de color, donde se lee por un segundo
+  // como una entrada más de la leyenda a la que le falta la bolita.
+  .ck-note {
+    color: #6b7a8d;
+    font-style: italic;
+    white-space: nowrap;
+  }
+}
 .nav-tabs .nav-link.active { color: #1f3a5f; font-weight: 600; }
 
 // Observable search + table polish
@@ -85,4 +120,13 @@ input[type="search"] {
   // Tabset + searchable catalog need an explicit height once fill is off.
   .dashboard-page .bslib-grid-item.tab-content { min-height: 360px; }
   .card-body:has(table) { min-height: 320px; }
+
+  // A seven-column great-table does not fit in 390px and was being cut mid-column
+  // ("Just landed" rendered as "Just", the $/1M columns lost their right edge).
+  // Let the table scroll sideways inside its own card instead of truncating; the
+  // page itself still never scrolls horizontally.
+  .card-body:has(table) {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 }

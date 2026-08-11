@@ -28,20 +28,24 @@ The LLM landscape moves weekly — new models, shifting prices, bigger context w
 Two tabs — the **commercial** side you pay to call, and the **open** side you can self-host:
 
 ### Hosted (OpenRouter)
+- **The market on one plane** — every priced model plotted by context window against output price, both axes logarithmic, coloured by what it can be fed. Filled markers are models whose weights you could also self-host; hollow ones are closed.
 - **At-a-glance stats** — models tracked, providers, new this week, biggest context window, free models.
 - **Newest models** · **Cheapest capable** (≥100K context, lowest input price) · **Full catalog** — searchable table with provider, context, `$/1M` in/out, modalities, date added.
 - Capability flags: 🧠 reasoning · 🖼️ multimodal · 🔧 tools.
 
 ### Open-weights (Hugging Face)
-- **At-a-glance stats** — open LLMs tracked, **permissive-license share**, **gated** (acceptance-required) count, orgs represented, new this week.
-- **Most downloaded** · **Community favorites** (by likes) · **Catalog** — searchable table with org, 30-day downloads, likes, **license**, task, date added.
+- **Traction against release date** — likes on a log axis against publication date, bubble size = 30-day downloads. New and loved but not yet installed shows up as *far right, high, small*: the corner no download ranking can display.
+- **At-a-glance stats** — open models tracked, **permissive-license share**, **gated** (acceptance-required) count, multimodal count, new this week.
+- **Just landed** (last 45 days, by likes) · **Most downloaded** · **Community favorites** · **Catalog** — searchable, with org, type, 30-day downloads, likes, **license**, date.
 - License and the 🔒 gated flag are first-class: they're what decide whether a model can be self-hosted for data-residency or used commercially.
+
+**The universe is text *and* multimodal *and* vision/OCR**, and it is built from two rankings per type: 30-day downloads for established adoption, plus the Hub's trending signal for what landed this week. Downloads alone are a rear-view mirror — the counter needs weeks to move, so a model published two days ago sits at zero however important it is, and a catalog ranked only by downloads can never show it.
 
 ## How it works
 
 ```
 OpenRouter API  ┐
-                ├─►  Python (pandas + great-tables)  →  Quarto dashboard  →  GitHub Pages
+                ├─►  Python (pandas + great-tables + plotly)  →  Quarto dashboard  →  GitHub Pages
 Hugging Face API ┘
         \____________________ refreshed daily by GitHub Actions ____________________/
 ```

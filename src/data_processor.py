@@ -7,6 +7,24 @@ import pandas as pd
 
 _NEW_WINDOW_DAYS = 7
 
+# What a model can be fed, collapsed into the four groups the charts colour by.
+# `input_modalities` arrives in arbitrary order, so it is normalised to a set
+# before testing — comparing the raw list produces duplicate categories.
+# Order matters: the test runs widest-input first, so a model that takes audio
+# *and* images lands in one bucket instead of two.
+CATEGORIES = ("Text only", "Image", "Document + image", "Audio / video")
+
+
+def _category(in_mods: list[str] | None) -> str:
+    mods = {m.lower() for m in (in_mods or [])} or {"text"}
+    if mods & {"audio", "video"}:
+        return "Audio / video"
+    if "file" in mods:
+        return "Document + image"
+    if "image" in mods:
+        return "Image"
+    return "Text only"
+
 
 def _provider(model: dict) -> str:
     """Human provider label, e.g. 'Anthropic'. Prefer the 'Provider: Model' name."""
@@ -57,6 +75,12 @@ def process_models(raw: list[dict], now: datetime | None = None) -> pd.DataFrame
                 "is_free": (price_in == 0 and price_out == 0),
                 "multimodal": any(x != "text" for x in in_mods),
                 "modalities": ", ".join(in_mods) if in_mods else "text",
+                "category": _category(in_mods),
+                # The join key to the open-weights side: OpenRouter names the Hub
+                # repo a hosted model comes from, when there is one. Absent for
+                # closed models — that absence is itself the "is it open?" signal.
+                "hf_id": m.get("hugging_face_id") or None,
+                "open_weights": bool(m.get("hugging_face_id")),
                 "reasoning": "reasoning" in params or "include_reasoning" in params,
                 "tools": "tools" in params,
                 "created": created_dt,
