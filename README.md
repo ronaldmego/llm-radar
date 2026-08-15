@@ -37,7 +37,7 @@ Two tabs — the **commercial** side you pay to call, and the **open** side you 
 - **Traction against release date** — likes on a log axis against publication date, bubble size = 30-day downloads. New and loved but not yet installed shows up as *far right, high, small*: the corner no download ranking can display.
 - **At-a-glance stats** — open models tracked, **permissive-license share**, **gated** (acceptance-required) count, multimodal count, new this week.
 - **Just landed** (last 45 days, by likes) · **Most downloaded** · **Community favorites** · **Catalog** — searchable, with org, type, 30-day downloads, likes, **license**, date.
-- License and the 🔒 gated flag are first-class: they're what decide whether a model can be self-hosted for data-residency or used commercially.
+- License and the gated flag are first-class: they're what decide whether a model can be self-hosted for data-residency or used commercially.
 
 **The universe is text *and* multimodal *and* vision/OCR**, and it is built from two rankings per type: 30-day downloads for established adoption, plus the Hub's trending signal for what landed this week. Downloads alone are a rear-view mirror — the counter needs weeks to move, so a model published two days ago sits at zero however important it is, and a catalog ranked only by downloads can never show it.
 
